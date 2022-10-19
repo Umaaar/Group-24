@@ -1,0 +1,71 @@
+p {
+ font-size: 14px;
+ font-family: "Arial";
+}
+h1 {
+ font-size: 26px;
+ font-family: "Arial";
+}
+
+/* ----------- TEST NAVBAR ----------- */
+ul {
+  margin: 0; padding: 0;
+  overflow: hidden;
+}
+li {
+  float: left;
+  border-right:1px solid;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* ----------- TEST NAVBAR END ----------- */
+
+ul li {
+  font-family: "Arial";
+  font-size: 16px;
+  justify-content: center;
+}
+nav {
+  margin-top: 10px;
+  padding: 10px;
+  color: #C0BAB6;
+  background-color: #333;
+}
+nav ul {
+ margin-left: 600px;
+}
+nav li {
+  display: inline;
+}
+nav li a {
+  color: #ffffff;
+  font-size: 12px;
+  display:inline;
+}
+nav li a:hover {
+  color: #CCD1D1;
+}
+.contact-me h1 {
+  text-indent: 10px;
+}
+form p:not(#confirm-email) {
+  display:inline;
+}
+fieldset {
+  margin: 10px;
+}
+#fname, #lname, #email, #password {
+  display:inline;
+}
+.submit {
+float:left;
+margin-left:0.6em;
+}
+#searchbutton {
+  margin-left: -3px;
+}
