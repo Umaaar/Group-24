@@ -20,7 +20,7 @@
 <!-- @include('assets.header') -->
 
 <!-- Navbar starts here
-     @yield('assets.navbar') -->
+     @yield('assets.common.navbar') -->
 
 <!-- Main body starts here
      @yield('layouts.main') -->

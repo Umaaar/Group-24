@@ -9,7 +9,7 @@
 <body>
 
   <!-- Import header -->
-  @include('assets.header')
+  @include('assets.common.navbar')
 
   <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h1 class="display-6">Admin Page</h1>
@@ -18,7 +18,7 @@
   <!-- Insert Home body here -->
 
   <!-- Import footer -->
-  @include('assets.footer')
+  @include('assets.common.footer')
 
 </body>
 </html>
