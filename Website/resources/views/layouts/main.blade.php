@@ -15,18 +15,5 @@
     <title>@yield('title')</title>
   </head>
   <body>
-
-<!-- Header starts here -->
-<!-- @include('assets.header') -->
-
-<!-- Navbar starts here
-     @yield('assets.common.navbar') -->
-
-<!-- Main body starts here
-     @yield('layouts.main') -->
-
-<!-- Footer starts here
-    @yield('assets.footer') -->
-
   </body>
 </html>
