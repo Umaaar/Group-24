@@ -1,24 +1,20 @@
+<!-- Import boilerplate -->
+@include('assets.main')
+
+<!-- Import navigation bar -->
+@include('assets.common.navbar')
+
 <head>
-
-  <!-- Import main -->
-  @include('assets.main')
-
-  <title>@yield('title')</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Oxygen'); * { font-family: 'Oxygen' }
+  </style>
 </head>
 
-<body>
+<!-- Import page header -->
+@include('assets.common.header')
 
-  <!-- Import header -->
-  @include('assets.common.navbar')
+<!-- Import product cards header -->
+@include('assets.products.grid')
 
-  <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h1 class="display-6">Product List</h1>
-  </div>
-
-  <!-- Insert Home body here -->
-
-  <!-- Import footer -->
-  @include('assets.common.footer')
-
-</body>
-</html>
+<!-- Import footer -->
+@include('assets.common.footer')
