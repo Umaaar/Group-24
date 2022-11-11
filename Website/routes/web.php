@@ -30,3 +30,9 @@ Route::get('/checkout', [PageController::class, 'checkout']);
 Route::get('/', [PageController::class, 'home']);
 
 Route::get('/products', [ProductsController::class, 'products']);
+
+Route::get('/login',[PageController::class, 'customerLogin']);
+
+Route::get('/loginAdmin',[PageController::class,'adminLogin']);
+
+Route::get('/register',[PageController::class,'register']);

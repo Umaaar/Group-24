@@ -24,4 +24,13 @@ class PageController extends Controller
   public function account() {
     return view('pages.account');
   }
+  public function customerLogin(){
+    return view('pages.customerLogin');
+  }
+  public function adminLogin(){
+    return view('pages.adminLogin');
+  }
+  public function register(){
+    return view('pages.customerRegister');
+  }
 }

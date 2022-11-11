@@ -1,0 +1,194 @@
+/* Main container */
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    margin-top: 0%;
+    padding: 0%;
+
+}
+
+.container>h1{
+    width: 100px;
+    padding: 0%;
+    
+}
+
+h1[name="h1customerRegister"]{
+    width: 150px;
+    padding: 0%;
+}
+
+/* Form container */
+.formContainer{
+    padding: 0;
+    margin: 0;
+    width: 300px;
+    height: auto;
+    border: 0.5px;
+    border-style: solid;
+    border-color: gray;
+}
+
+.formContainerRegister{
+    padding: 0;
+    margin: 0;
+    width: 500px;
+    height: auto;
+    border: 0.5px;
+    border-style: solid;
+    border-color: gray;
+}
+
+.formContainer>form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    
+}
+/* Name containers */
+
+.nameContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 12%;
+    margin: 20px;
+}
+
+
+.firstNameContainer{
+    width: 50%;
+}
+
+.firstNameContainer>input{
+    width: 80%;
+    border-radius: 10px;
+    height: 35px;
+}
+
+.surnameContainer{
+    width: 50%;
+}
+
+.surnameContainer>input{
+    width: 80%;
+    border-radius: 10px;
+    height: 35px;
+}
+
+/* Adress Container */
+.addressContainer{
+    height: 12%; 
+    margin: 20px;
+    margin-bottom: 0px;
+}
+
+.addressContainer>input{
+    width: 100%;
+    border-radius: 10px;
+    height: 35px;
+}
+
+/* PostcodeContainer */
+.postcodeContainer{
+    height: 12%; 
+    margin: 20px;
+    margin-bottom: 0px;
+}
+
+.postcodeContainer>input{
+    width: 100%;
+    border-radius: 10px;
+    height: 35px;
+}
+
+/* Gender container */
+.genderContainer{
+    height: 12%; 
+    margin: 20px;
+    margin-bottom: 0px;
+}
+
+.genderContainer>select{
+    width: 100%;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: black;
+    height: 40px;
+}
+
+/* Date of Birth Container */
+.dateOfBirthContainer{
+    height: 12%; 
+    margin: 20px;
+    margin-bottom: 0px;
+}
+
+.dateOfBirthContainer>input{
+    width: 100%;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: black;
+    height: 40px;
+}
+
+/* Email container */
+.emailContainer{
+    height: 12%; 
+    margin: 20px;
+    margin-bottom: 0px;
+}
+
+.emailContainer>input{
+    width: 100%;
+    border-radius: 10px;
+    height: 35px;
+}
+
+/* Password Container */
+.passwordContainer{
+    height: 12%;
+    margin: 20px;
+}
+
+.passwordContainer>input{
+    width: 100%;
+    border-radius: 10px;
+    height: 35px;
+}
+
+/* Confirm password container */
+
+.confirmPasswordContainer{
+    height: 12%; 
+    margin: 20px;
+}
+
+.confirmPasswordContainer>input{
+    width: 100%;
+    border-radius: 10px;
+    height: 35px;
+}
+
+/* Submit Button Container */
+.submitButtonContainer{
+    height: 12%;
+    margin: 20px;
+    margin-top: 0px;
+}  
+
+.submitButtonContainer>button{
+    width: 100%;
+    border-radius: 10px;
+    height: 40px;
+    background-color: #38b6ff;
+}
+
+
+
+
