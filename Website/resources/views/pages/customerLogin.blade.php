@@ -19,10 +19,6 @@
 <body>
     @include('assets.common.navbar')
 
-   
-
-   
-
         {{-- Main container --}}
         <div class="maincontainer">
             <h1 name ="customerLogin">Login</h1>
