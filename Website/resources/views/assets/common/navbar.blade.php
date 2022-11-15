@@ -1,20 +1,15 @@
 <head>
-    <style>
-      .navbar-dark { background: black; }
-      .border-bottom { border-width:2px !important; }
-      .navbar-nav { margin-left: -50px; font-size: 20px; }
-      .vertical { border: 1px solid white; margin-right: 150px; height: 50px; }
-    </style>
-    
+  <link rel="stylesheet" href="../../../css/navbar.css">
+
   <nav class="navbar navbar-expand-lg navbar-dark border-dark border-bottom">
     <a href="#" class="px-4 navbar-brand">
       <img src="{{URL::asset('aston_sport.png')}}" width="170" height="75">
     </a>
-    
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav m-auto">
         <li class="nav-item active px-4">
@@ -33,7 +28,6 @@
           <a class="nav-link" href="#">DASHBOARD</a>
         </li>
     </ul>
-  
 
     <button type="btn" class="p4-auto text-black btn btn-primary btn-sm mr-2">Login</button>
     <button type="btn" class="p4-auto text-black btn btn-light btn-sm mr-2">Register</button>
