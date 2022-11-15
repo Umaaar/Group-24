@@ -1,5 +1,10 @@
+---Overarching comment---
+--Date--
+--regular comment
+
 --8/11/22--
---Making the regular tables
+---Making the regular tables---
+
 --User table
 CREATE TABLE `u_210103351_TP_website_schema`.`Users` 
     ( `UserID` INT NOT NULL AUTO_INCREMENT , 
@@ -44,7 +49,8 @@ CREATE TABLE `u_210103351_TP_website_schema`.`Categories`
     PRIMARY KEY (`CategoryID`)) ENGINE = InnoDB;
 
 --10/11/22--
---Making the composite tables
+---Making the composite tables---
+
 --Basket Contents table
 CREATE TABLE `u_210103351_TP_website_schema`.`Basket Contents` 
     ( `BasketID` INT NOT NULL  , 
@@ -67,7 +73,17 @@ CREATE TABLE `u_210103351_TP_website_schema`.`Product Categories`
     PRIMARY KEY (`ProductID`, `CategoryID`)) ENGINE = InnoDB;
 
 --Making it relate to the products table
-ALTER TABLE `Product Categories` ADD FOREIGN KEY (`ProductID`) REFERENCES `Products`(`ProductID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `Product Categories` ADD FOREIGN KEY (`ProductID`) 
+    REFERENCES `Products`(`ProductID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --Making it relate to the categories table
-ALTER TABLE `Product Categories` ADD FOREIGN KEY (`CategoryID`) REFERENCES `Categories`(`CategoryID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `Product Categories` ADD FOREIGN KEY (`CategoryID`) 
+    REFERENCES `Categories`(`CategoryID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--15/11/22--
+---Making sure NOT NULL and NULLs are correct on the tables (NOT NULL means that the field cannot be a NULL value,---
+    ---NULL means it can be a NULL value in that field).---
+
+--Changed to NOT Null, also corrected mistake being the default value is 0. This column works as a boolean, 
+    --0 means that the user is not an admin and 1 means the user is an admin.
+ALTER TABLE `Users` CHANGE `isAdmin` `isAdmin` TINYINT(1) NOT NULL DEFAULT '0';
