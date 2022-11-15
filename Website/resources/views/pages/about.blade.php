@@ -21,9 +21,7 @@
   <link rel="stylesheet" type="text/css" href="/css/about.css" />
     <title> About Us</title>
 <body>
-    <?php
-    inlcude("nav.php");
-    ?>
+   
     <div class="container">
     <div class="box">
 <h1> About Us</h1>
