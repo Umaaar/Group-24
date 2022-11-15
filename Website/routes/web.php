@@ -48,3 +48,14 @@ Route::get('/products', function () {
 Route::get('/about', function () {
   return view('pages.about');
 });
+/////////////////////
+// Login & Register//
+////////////////////
+
+Route::get('/login', function () {
+  return view('pages.customerLogin');
+});
+
+Route::get('/register', function () {
+  return view('pages.customerRegister');
+});
