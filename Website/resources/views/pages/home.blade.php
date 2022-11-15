@@ -24,7 +24,7 @@
   <div class="col-md-4 p-lg-5 mx-auto my-5">
     <!-- <img class="img-custom" src="{{URL::asset('product1.jpg')}}"> -->
     <p class="lead font-weight-normal">A modern, innovative, and affordable clothing retailer with an emphasis on sustainability and ethical sourcing.</p>
-    <a class="btn btn-outline-secondary" href="#">Find out more...</a>
+    <a class="btn btn-outline-secondary" href="/about">Find out more...</a>
   </div>
 </div>
 
