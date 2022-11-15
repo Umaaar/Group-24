@@ -25,10 +25,10 @@
     <h5 class="nav-text">Navigation</h5>
     <ul class="list-unstyled">
       <li class=""><a class="text-secondary" href="/">Home</a></li>
-      <li class=""><a class="text-secondary" href="">Men</a></li>
-      <li class=""><a class="text-secondary" href="">Women</a></li>
-      <li class=""><a class="text-secondary" href="">About Us</a></li>
-      <li class=""><a class="text-secondary" href="">Admin Page</a></li>
+      <li class=""><a class="text-secondary" href="/products">Men</a></li>
+      <li class=""><a class="text-secondary" href="/products">Women</a></li>
+      <li class=""><a class="text-secondary" href="/about">About Us</a></li>
+      <li class=""><a class="text-secondary" href="/admin">Admin Page</a></li>
     </ul>
   </div>
 
