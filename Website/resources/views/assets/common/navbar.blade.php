@@ -1,5 +1,5 @@
 <head>
-  <link rel="stylesheet" href="../../../css/navbar.css">
+<link rel="stylesheet" href="{{asset('/css/navbar.css')}}">
 
   <nav class="navbar navbar-expand-lg navbar-dark border-dark border-bottom">
     <a href="#" class="px-4 navbar-brand">
