@@ -24,7 +24,7 @@
    
 
         {{-- Main container --}}
-        <div class="container">
+        <div class="maincontainer">
             <h1 name ="h1customerRegister">Register</h1>
             {{-- Form container --}}
             <div class="formContainerRegister">
