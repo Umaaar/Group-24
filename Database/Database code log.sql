@@ -87,3 +87,20 @@ ALTER TABLE `Product Categories` ADD FOREIGN KEY (`CategoryID`)
 --Changed to NOT Null, also corrected mistake being the default value is 0. This column works as a boolean, 
     --0 means that the user is not an admin and 1 means the user is an admin.
 ALTER TABLE `Users` CHANGE `isAdmin` `isAdmin` TINYINT(1) NOT NULL DEFAULT '0';
+
+---Creating the admin table as it needs to be seperate from users---
+
+--removing the isAdmin field from the Users table (no more need for it as there's going to be an admin table).
+ALTER TABLE `Users` DROP `isAdmin`;
+
+--Admin table
+CREATE TABLE `u_210103351_TP_website_schema`.`Admins` 
+    ( `AdminID` INT NOT NULL AUTO_INCREMENT , 
+    `Name` VARCHAR(100) NOT NULL , 
+    `Email` VARCHAR(100) NOT NULL , 
+    `Password` VARCHAR(100) NOT NULL , 
+    PRIMARY KEY (`AdminID`)) ENGINE = InnoDB;
+
+--Adding the Admin foreign key to the Basket table.
+ALTER TABLE `Basket` ADD `AdminID` INT NOT NULL AFTER `UserID`;
+ALTER TABLE `Basket` ADD FOREIGN KEY (`AdminID`) REFERENCES `Admins`(`AdminID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
