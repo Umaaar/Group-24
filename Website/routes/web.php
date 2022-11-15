@@ -36,3 +36,15 @@ Route::get('/login',[PageController::class, 'customerLogin']);
 Route::get('/loginAdmin',[PageController::class,'adminLogin']);
 
 Route::get('/register',[PageController::class,'register']);
+
+Route::get('/', function () {
+  return view('pages.home');
+});
+
+Route::get('/products', function () {
+  return view('pages.products');
+});
+
+Route::get('/about', function () {
+  return view('pages.about');
+});

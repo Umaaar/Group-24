@@ -13,19 +13,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav m-auto">
         <li class="nav-item active px-4">
-          <a class="nav-link" href="#">HOME</a>
+          <a class="nav-link" href="/">HOME</a>
         </li>
         <li class="nav-item active px-4">
-          <a class="nav-link" href="#">MEN</a>
+          <a class="nav-link" href="/products">MEN</a>
         </li>
         <li class="nav-item active px-4">
-          <a class="nav-link" href="#">WOMEN</a>
+          <a class="nav-link" href="/products">WOMEN</a>
         </li>
         <li class="nav-item active px-4">
-          <a class="nav-link" href="#">ABOUT</a>
+          <a class="nav-link" href="/about">ABOUT</a>
         </li>
         <li class="nav-item active px-4">
-          <a class="nav-link" href="#">DASHBOARD</a>
+          <a class="nav-link" href="/dashboard">DASHBOARD</a>
         </li>
     </ul>
 
