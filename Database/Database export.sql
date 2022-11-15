@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 15, 2022 at 01:25 PM
+-- Generation Time: Nov 15, 2022 at 02:52 PM
 -- Server version: 8.0.31-0ubuntu0.20.04.1
 -- PHP Version: 8.0.25
 
@@ -24,12 +24,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `Admins`
+--
+
+CREATE TABLE `Admins` (
+  `AdminID` int NOT NULL,
+  `Name` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `Email` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `Password` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `Basket`
 --
 
 CREATE TABLE `Basket` (
   `BasketID` int NOT NULL,
-  `UserID` int NOT NULL
+  `UserID` int NOT NULL,
+  `AdminID` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
@@ -98,8 +112,7 @@ CREATE TABLE `Users` (
   `Gender` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `DateOfBirth` date NOT NULL,
   `Email` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `Password` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `isAdmin` tinyint(1) NOT NULL DEFAULT '0'
+  `Password` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
@@ -107,11 +120,18 @@ CREATE TABLE `Users` (
 --
 
 --
+-- Indexes for table `Admins`
+--
+ALTER TABLE `Admins`
+  ADD PRIMARY KEY (`AdminID`);
+
+--
 -- Indexes for table `Basket`
 --
 ALTER TABLE `Basket`
   ADD PRIMARY KEY (`BasketID`),
-  ADD KEY `UserID` (`UserID`);
+  ADD KEY `UserID` (`UserID`),
+  ADD KEY `AdminID` (`AdminID`);
 
 --
 -- Indexes for table `Basket Contents`
@@ -150,6 +170,12 @@ ALTER TABLE `Users`
 --
 
 --
+-- AUTO_INCREMENT for table `Admins`
+--
+ALTER TABLE `Admins`
+  MODIFY `AdminID` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `Basket`
 --
 ALTER TABLE `Basket`
@@ -181,7 +207,8 @@ ALTER TABLE `Users`
 -- Constraints for table `Basket`
 --
 ALTER TABLE `Basket`
-  ADD CONSTRAINT `Basket_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `Users` (`UserID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `Basket_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `Users` (`UserID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `Basket_ibfk_2` FOREIGN KEY (`AdminID`) REFERENCES `Admins` (`AdminID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `Basket Contents`
