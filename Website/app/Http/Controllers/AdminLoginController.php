@@ -1,14 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Validator;
 
-class LoginController extends Controller
+class AdminLoginController extends Controller
 {
     protected function login(Request $request)
     {
@@ -18,18 +17,13 @@ class LoginController extends Controller
             'password' => ['required'],
         ]);
         
-        if(Auth::attempt($credentials)) {
+        if(Auth::guard('webadmins')->attempt($credentials)) {
 
-             return redirect('/');
+             return redirect('/admin');
 
-        }
-
-        else{
+        }else{
             return redirect('/register');
         }
-
-       
-        
-
     }
+       
 }
