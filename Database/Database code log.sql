@@ -104,3 +104,9 @@ CREATE TABLE `u_210103351_TP_website_schema`.`Admins`
 --Adding the Admin foreign key to the Basket table.
 ALTER TABLE `Basket` ADD `AdminID` INT NOT NULL AFTER `UserID`;
 ALTER TABLE `Basket` ADD FOREIGN KEY (`AdminID`) REFERENCES `Admins`(`AdminID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--16/11/22--
+---Correcting a varchar character limit mistake on the user table (swapping address and postcode)---
+
+ALTER TABLE `Users` CHANGE `Address` `Address` VARCHAR(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL;
+ALTER TABLE `Users` CHANGE `PostCode` `PostCode` VARCHAR(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL;
