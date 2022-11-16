@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 15, 2022 at 02:52 PM
+-- Generation Time: Nov 16, 2022 at 08:58 AM
 -- Server version: 8.0.31-0ubuntu0.20.04.1
 -- PHP Version: 8.0.25
 
@@ -107,8 +107,8 @@ CREATE TABLE `Users` (
   `UserID` int NOT NULL,
   `FirstName` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `Surname` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `Address` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `PostCode` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `Address` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `PostCode` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `Gender` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `DateOfBirth` date NOT NULL,
   `Email` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
