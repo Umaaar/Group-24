@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 16, 2022 at 08:58 AM
+-- Generation Time: Nov 16, 2022 at 09:50 AM
 -- Server version: 8.0.31-0ubuntu0.20.04.1
 -- PHP Version: 8.0.25
 
@@ -20,6 +20,17 @@ SET time_zone = "+00:00";
 --
 -- Database: `u_210103351_TP_website_schema`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Admin Basket View`
+--
+
+CREATE TABLE `Admin Basket View` (
+  `AdminID` int NOT NULL,
+  `BasketID` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
 
@@ -42,8 +53,7 @@ CREATE TABLE `Admins` (
 
 CREATE TABLE `Basket` (
   `BasketID` int NOT NULL,
-  `UserID` int NOT NULL,
-  `AdminID` int NOT NULL
+  `UserID` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
@@ -120,6 +130,13 @@ CREATE TABLE `Users` (
 --
 
 --
+-- Indexes for table `Admin Basket View`
+--
+ALTER TABLE `Admin Basket View`
+  ADD PRIMARY KEY (`AdminID`,`BasketID`),
+  ADD KEY `BasketID` (`BasketID`);
+
+--
 -- Indexes for table `Admins`
 --
 ALTER TABLE `Admins`
@@ -130,8 +147,7 @@ ALTER TABLE `Admins`
 --
 ALTER TABLE `Basket`
   ADD PRIMARY KEY (`BasketID`),
-  ADD KEY `UserID` (`UserID`),
-  ADD KEY `AdminID` (`AdminID`);
+  ADD KEY `UserID` (`UserID`);
 
 --
 -- Indexes for table `Basket Contents`
@@ -204,11 +220,17 @@ ALTER TABLE `Users`
 --
 
 --
+-- Constraints for table `Admin Basket View`
+--
+ALTER TABLE `Admin Basket View`
+  ADD CONSTRAINT `Admin Basket View_ibfk_1` FOREIGN KEY (`AdminID`) REFERENCES `Admins` (`AdminID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `Admin Basket View_ibfk_2` FOREIGN KEY (`BasketID`) REFERENCES `Basket` (`BasketID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
 -- Constraints for table `Basket`
 --
 ALTER TABLE `Basket`
-  ADD CONSTRAINT `Basket_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `Users` (`UserID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `Basket_ibfk_2` FOREIGN KEY (`AdminID`) REFERENCES `Admins` (`AdminID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `Basket_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `Users` (`UserID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `Basket Contents`
