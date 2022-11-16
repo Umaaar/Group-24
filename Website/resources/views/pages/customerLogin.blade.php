@@ -25,17 +25,18 @@
             {{-- Form container --}}
             <div class="formContainer">
 
-                <form action="#" method="post">
+                <form action="{{ asset('login')}}" method="post">
+                    {{ csrf_field() }}
                     {{-- Login container --}}
                     <div class="loginContainer">
-                        <h3>Email: </h3>
-                        <input type="email" name="customerEmail" id="customerEmail">
+                        <label for="customerEmail">Email:</label>
+                        <input type="email" name="email" id="email">
                     </div>
 
                     {{-- Password container --}}
                     <div class="passwordContainer">
-                        <h3>Password: </h3>
-                        <input type="password" name="customerPassword" id="customerPassword">
+                        <label for="customerPassword">Password:</label>
+                        <input type="password" name="password" id="password">
                     </div>
 
                     <div class="submitButtonContainer">

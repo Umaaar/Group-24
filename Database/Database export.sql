@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 16, 2022 at 09:50 AM
+-- Generation Time: Nov 16, 2022 at 10:58 AM
 -- Server version: 8.0.31-0ubuntu0.20.04.1
 -- PHP Version: 8.0.25
 
@@ -104,7 +104,8 @@ CREATE TABLE `Products` (
   `Price` int NOT NULL,
   `Stock` int NOT NULL DEFAULT '0',
   `Description` varchar(535) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `Gender` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL
+  `Gender` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `Images` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------

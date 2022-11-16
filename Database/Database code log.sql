@@ -126,3 +126,7 @@ ALTER TABLE `Admin Basket View` ADD FOREIGN KEY (`BasketID`) REFERENCES `Basket`
 --Removing the connection between admins and basket
 ALTER TABLE u_210103351_TP_website_schema.Basket DROP FOREIGN KEY Basket_ibfk_2; --Basket_ibfk_2 refers to adminID being a foreign key
 ALTER TABLE `Basket` DROP `AdminID`;
+
+---Field is needed for product images in the products table---
+
+ALTER TABLE `Products` ADD `Images` VARCHAR(100) NOT NULL AFTER `Gender`;

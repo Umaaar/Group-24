@@ -24,22 +24,24 @@
    
 
         {{-- Main container --}}
-        <div class="container">
+        <div class="maincontainer">
             <h1 name="h1staffLogin">Staff Login</h1>
             {{-- Form container --}}
             <div class="formContainer">
 
-                <form action="#" method="post">
+                <form action="{{asset('loginAdmin')}}" method="post">
+                {{ csrf_field() }}
+
                     {{-- Login container --}}
                     <div class="loginContainer">
-                        <h3>Email: </h3>
-                        <input type="email" name="customerEmail" id="customerEmail">
+                        <label for="email">Email: </label>
+                        <input type="email" name="email" id="email">
                     </div>
 
                     {{-- Password container --}}
                     <div class="passwordContainer">
-                        <h3>Password: </h3>
-                        <input type="password" name="customerPassword" id="customerPassword">
+                        <label for="password">Password: </label>
+                        <input type="password" name="password" id="password">
                     </div>
 
                     <div class="submitButtonContainer">

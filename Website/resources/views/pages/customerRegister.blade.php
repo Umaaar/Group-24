@@ -15,6 +15,14 @@
         * { font-family: 'Oxygen'}
     </style>
 
+    <script>
+        var passwordMatch = function() {
+            if (document.getElementById('customerPassword').value != document.getElementById('confirmPassword').value){
+                alert("Passwords do not match!");
+            }
+        }
+    </script>
+
 </head>
 <body>
     @include('assets.common.navbar')
@@ -29,40 +37,41 @@
             {{-- Form container --}}
             <div class="formContainerRegister">
 
-                <form action="#" method="post">
+                {{-- --}}
+                <form action="{{asset('register')}} " method="post">
+                {{ csrf_field() }}
 
                     {{-- Name container --}}
                     <div class="nameContainer">
                         {{-- FirstName Container --}}
                         <div class="firstNameContainer">
-                            <h3>First Name:</h3>
-                            <input type="text" name="customerFirstName" id="CustomerFirstName">
-
+                            <label for="customerFirstName">First Name: </label>
+                            <input type="text" name="customerFirstName" id="CustomerFirstName" required>
                         </div>
 
                         {{-- Surname container --}}
                         <div class="surnameContainer">
-                            <h3>Surname:</h3>
-                            <input type="text" name="customerSurname" id="customerSurname">
+                            <label for="customerSurname">Surname: </label>
+                            <input type="text" name="customerSurname" id="customerSurname" required>
                         </div>
                     </div>
 
                     {{-- Address container --}}
                     <div class="addressContainer">
-                        <h3>Address:</h3>
-                        <input type="text" name="customerAddress" id="customerAddress">
+                        <label for="customerAddress">Address:</label>
+                        <input type="text" name="customerAddress" id="customerAddress" required>
                     </div>
 
                     {{-- Postcode Container --}}
                     <div class="postcodeContainer">
-                        <h3>Postcode</h3>
-                        <input type="text" name="customerPostcode" id="customerPostcode">
+                        <label for="customerPostcode">PostCode: </label>
+                        <input type="text" name="customerPostcode" id="customerPostcode" required>
                     </div>
 
                     {{-- Gender container --}}
                     <div class="genderContainer">
-                        <h3>Gender:</h3>
-                        <select name="customerGender" id="customerGender">
+                        <label for="customerGneder">Gender:</label>
+                        <select name="customerGender" id="customerGender" required>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
@@ -70,33 +79,31 @@
 
                     {{-- Date Of Birth --}}
                     <div class="dateOfBirthContainer">
-                        <h3>Date Of Birth</h3>
-                        <input type="date" name="customerDateOfBirth" id="customerDateOfBirth">
+                        <label for="customerDateOfBirth">Date Of Birth:</label>
+                        <input type="date" name="customerDateOfBirth" id="customerDateOfBirth" required>
                     </div>
                     
                     {{-- Email container --}}
                     <div class="emailContainer">
-                        <h3>Email: </h3>
-                        <input type="email" name="customerEmail" id="customerEmail">
+                        <label for="customerEmail">Email:</label>
+                        <input type="email" name="customerEmail" id="customerEmail" required>
                     </div>
 
                     {{-- Password container --}}
                     <div class="passwordContainer">
-                        <h3>Password: </h3>
-                        <input type="password" name="customerPassword" id="customerPassword">
+                        <label for="customerPassowrd">Password:</label>
+                        <input type="password" name="customerPassword" id="customerPassword" required>
                     </div>
-
-                    
 
                     {{-- ConfirmPassword --}}
                     <div class="confirmPasswordContainer">
-                        <h3>Confirm Password</h3>
-                        <input type="password" name="confirmPassword" id="confirmPassword">
+                        <label for="confirmPsasword">Confirm Password:</label>
+                        <input type="password" name="confirmPassword" id="confirmPassword" required>
                     </div>
 
                     {{-- Submit Button Conainter --}}
                     <div class="submitButtonContainer">
-                        <button type="submit" name="btnSubmit">Register</button>
+                        <button type="submit" name="btnSubmit" onclick='passwordMatch();'>Register</button>
                     </div>
 
                 </form>
