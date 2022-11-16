@@ -22,7 +22,7 @@
       <h1 class="display-4 text-dark">Welcome</h1>
       <div class="p-lg-1 col-md-7 border-bottom border-secondary">
         <p class="text-dark">Aston Sport aims to provide only the best quality products with competitive prices, reliable delivery times, and unmatched customer service.</p>
-        <p class="text-dark"><u>Be sure to check out our extensive product line below:</u></p>
+        <p class="text-dark"><u>Be sure to check out our extensive product line below!</u></p>
       </div>
       <p><a class="btn btn-lg btn-primary mt-4" href="/products">View products...</a></p>
     </div>
