@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 15, 2022 at 02:52 PM
+-- Generation Time: Nov 16, 2022 at 10:58 AM
 -- Server version: 8.0.31-0ubuntu0.20.04.1
 -- PHP Version: 8.0.25
 
@@ -20,6 +20,17 @@ SET time_zone = "+00:00";
 --
 -- Database: `u_210103351_TP_website_schema`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Admin Basket View`
+--
+
+CREATE TABLE `Admin Basket View` (
+  `AdminID` int NOT NULL,
+  `BasketID` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
 
@@ -42,8 +53,7 @@ CREATE TABLE `Admins` (
 
 CREATE TABLE `Basket` (
   `BasketID` int NOT NULL,
-  `UserID` int NOT NULL,
-  `AdminID` int NOT NULL
+  `UserID` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
@@ -94,7 +104,8 @@ CREATE TABLE `Products` (
   `Price` int NOT NULL,
   `Stock` int NOT NULL DEFAULT '0',
   `Description` varchar(535) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `Gender` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL
+  `Gender` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `Images` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
@@ -107,8 +118,8 @@ CREATE TABLE `Users` (
   `UserID` int NOT NULL,
   `FirstName` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `Surname` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `Address` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `PostCode` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `Address` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `PostCode` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `Gender` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `DateOfBirth` date NOT NULL,
   `Email` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -118,6 +129,13 @@ CREATE TABLE `Users` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `Admin Basket View`
+--
+ALTER TABLE `Admin Basket View`
+  ADD PRIMARY KEY (`AdminID`,`BasketID`),
+  ADD KEY `BasketID` (`BasketID`);
 
 --
 -- Indexes for table `Admins`
@@ -130,8 +148,7 @@ ALTER TABLE `Admins`
 --
 ALTER TABLE `Basket`
   ADD PRIMARY KEY (`BasketID`),
-  ADD KEY `UserID` (`UserID`),
-  ADD KEY `AdminID` (`AdminID`);
+  ADD KEY `UserID` (`UserID`);
 
 --
 -- Indexes for table `Basket Contents`
@@ -204,11 +221,17 @@ ALTER TABLE `Users`
 --
 
 --
+-- Constraints for table `Admin Basket View`
+--
+ALTER TABLE `Admin Basket View`
+  ADD CONSTRAINT `Admin Basket View_ibfk_1` FOREIGN KEY (`AdminID`) REFERENCES `Admins` (`AdminID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `Admin Basket View_ibfk_2` FOREIGN KEY (`BasketID`) REFERENCES `Basket` (`BasketID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
 -- Constraints for table `Basket`
 --
 ALTER TABLE `Basket`
-  ADD CONSTRAINT `Basket_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `Users` (`UserID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `Basket_ibfk_2` FOREIGN KEY (`AdminID`) REFERENCES `Admins` (`AdminID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `Basket_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `Users` (`UserID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `Basket Contents`

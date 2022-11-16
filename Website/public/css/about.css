@@ -1,5 +1,5 @@
 p {margin: 0 auto}
-.box {display: flex;
+.boxa {display: flex;
     position:absolute;
     width: 70%;
     height: 50%;
@@ -9,7 +9,7 @@ align-items: center;
 background-color: black;
 font-family: Arial, Helvetica, sans-serif;
 border-style: solid}
-.container {
+.boxb {
   display: flex; 
   justify-content:center;
 }
