@@ -12,7 +12,7 @@
   
 </head>
 
-
+<html>
 <body>
 
   <!-- Import header -->
@@ -31,7 +31,6 @@
 </div>
 </div>
 
-</html>
   <!-- Import footer -->
   @include('assets.common.footer')
 
