@@ -110,3 +110,19 @@ ALTER TABLE `Basket` ADD FOREIGN KEY (`AdminID`) REFERENCES `Admins`(`AdminID`) 
 
 ALTER TABLE `Users` CHANGE `Address` `Address` VARCHAR(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL;
 ALTER TABLE `Users` CHANGE `PostCode` `PostCode` VARCHAR(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL;
+
+---A many to many relationship between admins and basket tables exists which needs to be corrected---
+
+--Composite table for stopping m2m relationship
+CREATE TABLE `u_210103351_TP_website_schema`.`Admin Basket View` 
+    ( `AdminID` INT NOT NULL , 
+    `BasketID` INT NOT NULL , 
+    PRIMARY KEY (`AdminID`, `BasketID`)) ENGINE = InnoDB;
+
+--Adding in relations to other tables
+ALTER TABLE `Admin Basket View` ADD FOREIGN KEY (`AdminID`) REFERENCES `Admins`(`AdminID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `Admin Basket View` ADD FOREIGN KEY (`BasketID`) REFERENCES `Basket`(`BasketID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--Removing the connection between admins and basket
+ALTER TABLE u_210103351_TP_website_schema.Basket DROP FOREIGN KEY Basket_ibfk_2; --Basket_ibfk_2 refers to adminID being a foreign key
+ALTER TABLE `Basket` DROP `AdminID`;
