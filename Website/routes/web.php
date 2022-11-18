@@ -56,6 +56,10 @@ Route::get('/basket', function () {
   return view('pages.basket');
 });
 
+Route::get('/checkout', function () {
+  return view('pages.checkout');
+});
+
 // Login & Register (NAVBAR)//
 
 Route::get('/login', function () {
