@@ -6,15 +6,29 @@
 
 <head>
   <title>@yield('title')</title>
+
+ 
+
 </head>
 
 <body>
-  <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h1 class="display-6">Basket</h1>
-  </div>
 
     <!-- Insert basket view body here -->
+    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-6">Basket</h1>
+    </div>
 
+ 
+
+
+
+
+                      
+    
+
+
+                  
+         
     <!-- Import footer -->
     @include('assets.common.footer')
 
