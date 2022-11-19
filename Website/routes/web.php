@@ -70,6 +70,7 @@ Route::get('/register', function () {
   return view('pages.customerRegister');
 });
 
+
 //////////////////////////////
 
 
