@@ -47,7 +47,6 @@
             <input type="text" class="form-control" placeholder="Post code">
           </div>
         </div>
-
         <div class="col-md-12">
           <button type="submit" class="btn btn-primary">Place your order</button>
         </div>
@@ -55,7 +54,7 @@
       <div>
       </section>
 
-      
+
 
   
 
