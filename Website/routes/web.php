@@ -48,6 +48,12 @@ Route::get('/products', function () {
   return view('pages.products');
 });
 
+Route::get('/preview', function () {
+  return view('pages.productPreview');
+});
+
+
+
 Route::get('/about', function () {
   return view('pages.about');
 });
