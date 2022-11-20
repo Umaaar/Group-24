@@ -40,9 +40,29 @@ class RegisterController extends Controller
             $email = $request['customerEmail'];
             $password = Hash::make($request['customerPassword']);
 
-            DB::table('users')->insert(
-                ['FirstName' => $firstName , 'Surname' => $surname, 'Address' => $address,'PostCode' => $postcode, 'Gender' => $gender, 'DateOfBirth' => $DateOfBirth, 'Email' => $email, 'Password' => $password
+            session(['firstname' => $firstName]);
+            session(['surname' => $surname]);
+            session(['address' => $address]);
+            session(['postcode' => $postcode]);
+            session(['gender' => $gender]);
+            session(['dateofbirth' => $DateOfBirth]);
+            
+
+            
+
+            users::create([
+                'FirstName' => $firstName,
+                'Surname' => $surname,
+                'Address' => $address,
+                'PostCode' => $postcode,
+                'Gender' => $gender,
+                'DateOfBirth' =>$DateOfBirth,
+                'Email' => $email,
+                'Password' => $password,
             ]);
+
+            
+           
 
 
 
