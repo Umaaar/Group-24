@@ -51,9 +51,16 @@ Route::get('/products', function () {
 Route::get('/about', function () {
   return view('pages.about');
 });
-/////////////////////
-// Login & Register//
-////////////////////
+
+Route::get('/basket', function () {
+  return view('pages.basket');
+});
+
+Route::get('/checkout', function () {
+  return view('pages.checkout');
+});
+
+// Login & Register (NAVBAR)//
 
 Route::get('/login', function () {
   return view('pages.customerLogin');
@@ -62,6 +69,10 @@ Route::get('/login', function () {
 Route::get('/register', function () {
   return view('pages.customerRegister');
 });
+
+
+//////////////////////////////
+
 
 Route::post('register',[RegisterController::class, 'register']);
 

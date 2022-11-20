@@ -8,7 +8,7 @@
 
 <title>@yield('title')</title>
 <link rel="stylesheet" type="text/css" href="/css/about.css">
-  <title> About Us</title>
+  
   
 </head>
 
@@ -23,16 +23,17 @@
   </div> -->
 
   <!-- Insert About body here -->
-   
-    <div class="boxb">
-    <div class="boxa">
-<h1> About Us</h1>
+ <div class="coontainer-about-us">  
+  <div class="container-sub-about"> <img src="C:\xampp\htdocs\github\Group-24\Website\logo.png" alt=""></div>
+  <div class="container-sub-about">
+  <h1> About Us</h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
 </div>
-</div>
+  </div>
 
+<div class="container-2">
   <!-- Import footer -->
   @include('assets.common.footer')
-
+  </div>
 </body>
 </html>

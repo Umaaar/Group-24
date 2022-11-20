@@ -13,3 +13,19 @@ border-style: solid}
   display: flex; 
   justify-content:center;
 }
+
+.coontainer-about-us{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+  background-color: black;
+  color: white;
+  margin-top: 200px;
+  margin-bottom: 200px;
+  padding: 30px 50px;
+}
