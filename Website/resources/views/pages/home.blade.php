@@ -15,16 +15,89 @@
 @include('assets.common.navbar')
 
 <body>
-  <div class="jumbotron my-0 bg-light">
-    <div class="container">
-      <h1 class="display-4 text-dark">Welcome</h1>
-      <div class="p-lg-1 col-md-7 border-bottom border-secondary">
-        <p class="text-dark">Aston Sport aims to provide only the best quality products with competitive prices, reliable delivery times, and unmatched customer service.</p>
-        <p class="text-dark"><u>Be sure to check out our extensive product line below!</u></p>
+  <div id="demo" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1"></li>
+      <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+      <div class="carousel-item active mx-auto d-block">
+        <img src="{{URL::asset('aston_sport_clear.png')}}" class="mx-auto d-block" alt="">
       </div>
-      <p><a class="btn btn-lg btn-primary mt-4" href="/products">View products...</a></p>
+      <div class="carousel-item">
+        <img src="{{URL::asset('aston_sport.png')}}"class="mx-auto d-block" alt="">
+      </div>
+      <div class="carousel-item">
+        <img src="{{URL::asset('aston_sport_clear.png')}}"class="mx-auto d-block" alt="">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+
+  <div class="p-3 p-md-5 text-white bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-5">Welcome</h1>
+      <p class="display-6 my-3">Test</p>
     </div>
   </div>
+
+  <div class="py-5 album">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <div class="card-body">
+              <img class="img-custom mx-auto d-block" src="{{URL::asset('aston_sport_clear.png')}}" width="300" height="200">
+              <p class="text-center"><b>Hoodies</b></p>
+                <button type="button" class="btn btn-sm btn-outline-secondary mx-auto d-block">View all products</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <div class="card-body">
+              <img class="img-custom mx-auto d-block" src="{{URL::asset('aston_sport_clear.png')}}" width="300" height="200">
+              <p class="text-center"><b>Trousers</b></p>
+                <button type="button" class="btn btn-sm btn-outline-secondary mx-auto d-block">View all products</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <div class="card-body">
+              <img class="img-custom mx-auto d-block" src="{{URL::asset('aston_sport_clear.png')}}" width="300" height="200">
+              <p class="text-center"><b>Sports Gear</b></p>
+              <button type="button" class="btn btn-sm btn-outline-secondary mx-auto d-block">View all products</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="jumbotron border my-0 bg-light">
+        <div class="container">
+          <div class="p-lg-1 col-md-7 mx-auto">       <!-- border-bottom border-secondary -->
+            <p class="lead text-dark text-center">Aston Sport aims to provide only the best quality products with competitive prices, reliable delivery times, and unmatched customer service.</p>
+            <p class="text-dark text-center">Be sure to check out our extensive product line below!</p>
+          </div>
+            <button type="button" class="btn btn-lg btn-outline-secondary mx-auto d-block">Learn more...</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
