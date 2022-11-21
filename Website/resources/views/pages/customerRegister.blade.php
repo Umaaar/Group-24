@@ -81,7 +81,7 @@
                         <label for="dateOfBirth">Date Of Birth:</label>
                         <input type="date" name="dateOfBirth" id="dateOfBirth" value="{{ old('dateOfBirth') }}" required>
                     </div>
-                    
+
                     {{-- Email container --}}
                     <div class="emailContainer">
                         <label for="email">Email:</label>
@@ -91,13 +91,13 @@
                     {{-- Password container --}}
                     <div class="passwordContainer">
                         <label for="password">Password:</label>
-                        <input type="password" name="password" id="password" required>
+                        <input placeholder="Min length: 8" type="password" name="password" id="password" required>
                     </div>
 
                     {{-- ConfirmPassword --}}
                     <div class="confirmPasswordContainer">
                         <label for="confirmPsasword">Confirm Password:</label>
-                        <input type="password" name="confirmPassword" id="confirmPassword" required>
+                        <input placeholder="Min length: 8" type="password" name="confirmPassword" id="confirmPassword" required>
                     </div>
 
                     {{-- Submit Button Conainter --}}
@@ -108,7 +108,7 @@
                 </form>
 
             </div>
-        
+
     </div>
 
     @include('assets.common.footer')

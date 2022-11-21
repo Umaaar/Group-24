@@ -22,7 +22,7 @@ class RegisterController extends Controller
                 'gender' => 'required|string|max:10',
                 'dateOfBirth' => 'required|date|before_or_equal:2006/12/30',
                 'email' => 'required|email|string|unique:users|max:100',
-                'password' => 'required|max:100|min:8',
+                'password' => 'required|min:8|max:128||regex:/^[a-zA-Z]+$/u',
                 'confirmPassword' => 'required|same:password|max:100',
             ]);
 
@@ -32,10 +32,10 @@ class RegisterController extends Controller
             session(['postcode' => $validated['postCode']]);
             session(['gender' => $validated['gender']]);
             session(['dateofbirth' =>$validated['dateOfBirth']]);
-            
-            
 
-            
+
+
+
 
             users::create([
                 'firstName' => $validated['firstName'],
@@ -48,8 +48,8 @@ class RegisterController extends Controller
                 'password' => Hash::make($validated['password']),
             ]);
 
-            
-           
+
+
 
 
 
