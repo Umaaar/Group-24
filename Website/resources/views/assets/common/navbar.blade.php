@@ -28,7 +28,7 @@
           <a class="nav-link" href="/profile">PROFILE</a>
         </li>
     </ul>
-      @if(!Auth::check())
+      @if(!(Auth::check() || Auth::guard('webadmins')->check()))
       <a type="btn" class="p4-auto text-black btn btn-primary btn-sm mr-2" href="/login">Login</a>
       <a type="btn" class="p4-auto text-black btn btn-light btn-sm mr-2" href="/register">Register</a>
       @else
