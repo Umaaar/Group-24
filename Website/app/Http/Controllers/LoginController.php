@@ -17,15 +17,11 @@ class LoginController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-        
+
         if(Auth::attempt($credentials)) {
-
              return redirect('/');
-
-        }
-
-        else{
-            return redirect('/register');
+        }else{
+            return back()->withErrors(['error' => 'The email or password were incorrect!']);
         }
 
        
