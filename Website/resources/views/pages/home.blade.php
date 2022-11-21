@@ -9,7 +9,7 @@
 
 <!-- Import navbar -->
 @include('assets.common.navbar')
-<?php 
+<?php
  $name = "";
 if(Auth::check()){
   $name = Auth::user()->firstName;
@@ -50,12 +50,15 @@ if(Auth::check()){
     </div>
   </div>
 
-    <div class="border-left border-secondary bg-dark mx-auto w-50 px-3 py-3"> <!-- col-md-3 -->
-      <h1 class="display-5 text-light">Welcome <?php echo $name ?></h1>
+  <div class="d-flex">
+    <div class="border-left border-secondary bg-dark mx-auto w-50 px-5 w-100"> <!-- col-md-3 -->
+      <h1 class="display-5 text-light py-2">Welcome <?php echo $name ?></h1>
       <!-- <p class="display-6 my-3 text-light">Test</p> -->
       <p class="font-weight-normal text-light">A modern, innovative, and affordable clothing retailer with an emphasis on sustainability and ethical sourcing.</p>
       <a class="btn btn-secondary d-block" href="/about">Find out more...</a>
     </div>
+  </div>
+
   </div>
 
   <div class="p-lg-5 col-md-5 mx-auto my-2 py-0">
