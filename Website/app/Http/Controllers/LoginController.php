@@ -12,7 +12,6 @@ class LoginController extends Controller
 {
     protected function login(Request $request)
     {
-        
         $validated = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
@@ -22,21 +21,23 @@ class LoginController extends Controller
             
             $user = DB::table('users')->where('email',$validated['email'])->first();
 
-            session(['firstname' => $user->firstName]);
+            session(['firstName' => $user->firstName]);
             session(['surname' => $user->surname]);
             session(['address' => $user->address]);
-            session(['postcode' => $user->postCode]);
+            session(['postCode' => $user->postCode]);
             session(['gender' => $user->gender]);
-            session(['dateofbirth' =>$user->dateOfBirth]);
+            session(['dateOfBirth' =>$user->dateOfBirth]);
 
 
             return redirect('/');
         }else{
             return back()->withErrors(['error' => 'The email or password are incorrect!']);
         }
+    }
 
-       
-        
-
+    public function logOut(){
+        Auth::logout();
+        session()->flush();
+        return redirect('/');
     }
 }

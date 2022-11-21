@@ -9,7 +9,12 @@
 
 <!-- Import navbar -->
 @include('assets.common.navbar')
-
+<?php 
+ $name = "";
+if(Auth::check()){
+  $name = Auth::user()->firstName;
+}
+?>
 <body>
 
 <div class="d-flex justify-content-between">
@@ -46,7 +51,7 @@
   </div>
 
     <div class="border-left border-secondary bg-dark mx-auto w-50 px-3 py-3"> <!-- col-md-3 -->
-      <h1 class="display-5 text-light">Welcome</h1>
+      <h1 class="display-5 text-light">Welcome <?php echo $name ?></h1>
       <!-- <p class="display-6 my-3 text-light">Test</p> -->
       <p class="font-weight-normal text-light">A modern, innovative, and affordable clothing retailer with an emphasis on sustainability and ethical sourcing.</p>
       <a class="btn btn-secondary d-block" href="/about">Find out more...</a>

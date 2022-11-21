@@ -79,3 +79,5 @@ Route::post('register',[RegisterController::class, 'register']);
 Route::post('login',[LoginController::class, 'login']);
 
 Route::post('loginAdmin',[AdminLoginController::class, 'login']);
+
+Route::any('logOut',[LoginController::class, 'logOut']);
