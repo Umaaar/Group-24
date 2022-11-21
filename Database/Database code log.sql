@@ -181,3 +181,15 @@ ALTER TABLE `Users` CHANGE `UserID` `userID` INT NOT NULL AUTO_INCREMENT,
     CHANGE `DateOfBirth` `dateOfBirth` DATE NOT NULL, 
     CHANGE `Email` `email` VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL, 
     CHANGE `Password` `password` VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL;
+
+--21/11/22--
+---Creating an Order table---
+CREATE TABLE `u_210103351_TP_website_schema`.`Orders` 
+    (`orderID` INT NOT NULL AUTO_INCREMENT , 
+    `date` DATE NOT NULL , 
+    `status` VARCHAR(50) NOT NULL , 
+    PRIMARY KEY (`orderID`)) ENGINE = InnoDB;
+
+--Adding relationship (12m) with basket contents
+ALTER TABLE `Basket Contents` ADD `orderID` INT NOT NULL AFTER `totalPrice`;
+ALTER TABLE `Basket Contents` ADD FOREIGN KEY (`orderID`) REFERENCES `Orders`(`orderID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
