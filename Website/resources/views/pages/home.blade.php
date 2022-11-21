@@ -33,7 +33,7 @@ if(Auth::check()){
             <img src="{{URL::asset('aston_sport_clear.png')}}" class="mx-auto d-block" alt="">
           </div>
           <div class="carousel-item">
-            <img src="{{URL::asset('aston_sport.png')}}"class="mx-auto d-block" alt="">
+            <img src="{{URL::asset('Second Slide Show Image')}}"class="mx-auto d-block" alt="">
           </div>
           <div class="carousel-item">
             <img src="{{URL::asset('aston_sport_clear.png')}}"class="mx-auto d-block" alt="">
@@ -54,7 +54,7 @@ if(Auth::check()){
     <div class="border-left border-secondary bg-dark mx-auto w-50 px-5 w-100"> <!-- col-md-3 -->
       <h1 class="display-5 text-light py-2">Welcome <?php echo $name ?></h1>
       <!-- <p class="display-6 my-3 text-light">Test</p> -->
-      <p class="font-weight-normal text-light">A modern, innovative, and affordable clothing retailer with an emphasis on sustainability and ethical sourcing.</p>
+      <p class="font-weight-normal text-light">A modern, innovative, and affordable clothing retailer perfect for students on a budget. We place a big emphasis on sustainability and ethical sourcing.</p>
       <a class="btn btn-secondary d-block" href="/about">Find out more...</a>
     </div>
   </div>
