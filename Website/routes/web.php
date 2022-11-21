@@ -32,8 +32,6 @@ Route::get('/checkout', [PageController::class, 'checkout']);
 
 Route::get('/', [PageController::class, 'home']);
 
-Route::get('/products', [ProductsController::class, 'products']);
-
 Route::get('/login',[PageController::class, 'customerLogin']);
 
 Route::get('/loginAdmin',[PageController::class,'adminLogin']);
@@ -44,8 +42,12 @@ Route::get('/', function () {
   return view('pages.home');
 });
 
-Route::get('/products', function () {
-  return view('pages.products');
+Route::get('/men', function () {
+  return view('pages.products-men');
+});
+
+Route::get('/women', function () {
+  return view('pages.products-women');
 });
 
 Route::get('/about', function () {

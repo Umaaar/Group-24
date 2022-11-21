@@ -33,7 +33,7 @@ if(Auth::check()){
             <img src="{{URL::asset('aston_sport_clear.png')}}" class="mx-auto d-block" alt="">
           </div>
           <div class="carousel-item">
-            <img src="{{URL::asset('aston_sport_clear.png')}}"class="mx-auto d-block" alt="">
+            <img src="{{URL::asset('aston_sport.png')}}"class="mx-auto d-block" alt="">
           </div>
           <div class="carousel-item">
             <img src="{{URL::asset('aston_sport_clear.png')}}"class="mx-auto d-block" alt="">
@@ -117,7 +117,7 @@ if(Auth::check()){
         <img class="w-25" src="{{URL::asset('aston_sport_clear.png')}}">
       </div>
       <div class="carousel-item d-flex justify-content-center">
-        <img class="w-25" src="{{URL::asset('aston_sport_clear.png')}}">
+        <img class="w-25" src="{{URL::asset('aston_sport.png')}}">
       </div>
       <div class="carousel-item d-flex justify-content-center">
         <img class="w-25" src="{{URL::asset('aston_sport_clear.png')}}">
