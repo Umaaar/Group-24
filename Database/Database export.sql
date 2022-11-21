@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 16, 2022 at 10:18 PM
+-- Generation Time: Nov 21, 2022 at 01:25 PM
 -- Server version: 8.0.31-0ubuntu0.20.04.1
 -- PHP Version: 8.1.12
 
@@ -66,7 +66,8 @@ CREATE TABLE `Basket Contents` (
   `basketID` int NOT NULL,
   `productID` int NOT NULL,
   `quantity` int NOT NULL,
-  `totalPrice` int NOT NULL
+  `totalPrice` int NOT NULL,
+  `orderID` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
@@ -78,6 +79,18 @@ CREATE TABLE `Basket Contents` (
 CREATE TABLE `Categories` (
   `categoryID` int NOT NULL,
   `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Orders`
+--
+
+CREATE TABLE `Orders` (
+  `orderID` int NOT NULL,
+  `date` date NOT NULL,
+  `status` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
@@ -155,13 +168,20 @@ ALTER TABLE `Basket`
 --
 ALTER TABLE `Basket Contents`
   ADD PRIMARY KEY (`basketID`,`productID`),
-  ADD KEY `ProductID` (`productID`);
+  ADD KEY `ProductID` (`productID`),
+  ADD KEY `orderID` (`orderID`);
 
 --
 -- Indexes for table `Categories`
 --
 ALTER TABLE `Categories`
   ADD PRIMARY KEY (`categoryID`);
+
+--
+-- Indexes for table `Orders`
+--
+ALTER TABLE `Orders`
+  ADD PRIMARY KEY (`orderID`);
 
 --
 -- Indexes for table `Product Categories`
@@ -205,6 +225,12 @@ ALTER TABLE `Categories`
   MODIFY `categoryID` int NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `Orders`
+--
+ALTER TABLE `Orders`
+  MODIFY `orderID` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `Products`
 --
 ALTER TABLE `Products`
@@ -238,7 +264,8 @@ ALTER TABLE `Basket`
 --
 ALTER TABLE `Basket Contents`
   ADD CONSTRAINT `Basket Contents_ibfk_1` FOREIGN KEY (`basketID`) REFERENCES `Basket` (`basketID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `Basket Contents_ibfk_2` FOREIGN KEY (`productID`) REFERENCES `Products` (`productID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `Basket Contents_ibfk_2` FOREIGN KEY (`productID`) REFERENCES `Products` (`productID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `Basket Contents_ibfk_3` FOREIGN KEY (`orderID`) REFERENCES `Orders` (`orderID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `Product Categories`
