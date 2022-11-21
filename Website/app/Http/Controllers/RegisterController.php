@@ -6,59 +6,46 @@ use Illuminate\Http\Request;
 use App\Models\users;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Validator;
 
 class RegisterController extends Controller
 {
+
+
     protected function register(Request $request){
-        try{
-            $firstName = $request['customerFirstName'];
-            $firstName = htmlspecialchars($firstName);
-            $firstName = trim($firstName);
 
+            $validated = $request->validate([
+                'firstName' => 'required|string|max:50',
+                'surname' => 'required|string|max:50',
+                'address' => 'required|max:50',
+                'postCode' => 'required|max:10',
+                'gender' => 'required|string|max:6',
+                'dateOfBirth' => 'required|max:10',
+                'email' => 'required|email|unique:users|max:30',
+                'password' => 'required',
+                'confirmPassword' => 'required|same:password',
+            ]);
 
-            $surname = $request['customerSurname'];
-            $surname = htmlspecialchars($surname);
-            $surname = trim($surname);
-
-
-            $address = $request['customerAddress'];
-            $address = strval($address);
-            $address = htmlspecialchars($address);
-            $address = trim($address);
-
-            $postcode = $request['customerPostcode'];
-            $postcode = htmlspecialchars($postcode);
-            $postcode = trim($postcode);
-
-            $gender = $request['customerGender'];
-            $gender = htmlspecialchars($gender);
-            $gender = trim($gender);
-
-            $DateOfBirth = htmlspecialchars($request['customerDateOfBirth']);
-
-
-            $email = $request['customerEmail'];
-            $password = Hash::make($request['customerPassword']);
-
-            session(['firstname' => $firstName]);
-            session(['surname' => $surname]);
-            session(['address' => $address]);
-            session(['postcode' => $postcode]);
-            session(['gender' => $gender]);
-            session(['dateofbirth' => $DateOfBirth]);
+            session(['firstname' => $validated['firstName']]);
+            session(['surname' => $validated['surname']]);
+            session(['address' => $validated['address']]);
+            session(['postcode' => $validated['postCode']]);
+            session(['gender' => $validated['gender']]);
+            session(['dateofbirth' =>$validated['dateOfBirth']]);
+            
             
 
             
 
             users::create([
-                'FirstName' => $firstName,
-                'Surname' => $surname,
-                'Address' => $address,
-                'PostCode' => $postcode,
-                'Gender' => $gender,
-                'DateOfBirth' =>$DateOfBirth,
-                'Email' => $email,
-                'Password' => $password,
+                'firstName' => $validated['firstName'],
+                'surname' => $validated['surname'],
+                'address' => $validated['address'],
+                'postCode' => $validated['postCode'],
+                'gender' => $validated['gender'],
+                'dateOfBirth' =>$validated['dateOfBirth'],
+                'email' => $validated['email'],
+                'password' => Hash::make($validated['password']),
             ]);
 
             
@@ -67,10 +54,6 @@ class RegisterController extends Controller
 
 
             return redirect('/login');
-
-        } catch(exception $e){
-            echo "It seems there was a problem while trying to create your account " . $e;
-        }
 
        }
 }
