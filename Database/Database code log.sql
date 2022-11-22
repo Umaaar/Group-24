@@ -193,3 +193,23 @@ CREATE TABLE `u_210103351_TP_website_schema`.`Orders`
 --Adding relationship (12m) with basket contents
 ALTER TABLE `Basket Contents` ADD `orderID` INT NOT NULL AFTER `totalPrice`;
 ALTER TABLE `Basket Contents` ADD FOREIGN KEY (`orderID`) REFERENCES `Orders`(`orderID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--22/11/22--
+---Renaming tables to have lower case letters---
+RENAME TABLE `u_210103351_TP_website_schema`.`Admin Basket View` TO `u_210103351_TP_website_schema`.`admin basket view`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Admins` TO `u_210103351_TP_website_schema`.`admins`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Basket` TO `u_210103351_TP_website_schema`.`basket`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Basket Contents` TO `u_210103351_TP_website_schema`.`basket contents`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Categories` TO `u_210103351_TP_website_schema`.`categories`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Orders` TO `u_210103351_TP_website_schema`.`orders`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Product Categories` TO `u_210103351_TP_website_schema`.`product categories`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Products` TO `u_210103351_TP_website_schema`.`products`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Users` TO `u_210103351_TP_website_schema`.`users`;
