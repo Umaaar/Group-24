@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 <!-- Import main -->
 @include('assets.main')
 
@@ -6,6 +13,8 @@
 
 <head>
   <title>@yield('title')</title>
+  <link rel="stylesheet" href="{{asset('/css/checkout.css')}}">
+
 </head>
 
 <body>
@@ -14,45 +23,57 @@
     <h1 class="display-6">Checkout</h1>
   </div>
     <!-- Insert checkout page here-->
-    <section>
-    <div class= "containter">
-      <div class="row">
-        <div class="col-md-6">
-          <div class ="form-group">
-            <label for="">First Name</label>
-            <input type="text" class="form-control" placeholder="First name">
+    
+   <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="card">
+          <div class="card-body">
+            <h6>Basic details</h6>
+            <hr>
+            <div class="row checkout form">
+              <div class="col-md-6">
+               <label for ="">First Name</label>
+               <input type ="text" class= "form-control" placeholder="Enter Your First Name">
+              </div>
+              <div class="col-md-6">
+                <label for ="">Last Name</label>
+                <input type ="text" class= "form-control" placeholder="Enter Your Last Name">
+               </div>
+               <div class="col-md-6 mt-3">
+                <label for ="">Email</label>
+                <input type ="text" class= "form-control" placeholder="Enter Your Email">
+               </div>
+               <div class="col-md-6 mt-3">
+                <label for ="">Address</label>
+                <input type ="text" class= "form-control" placeholder="Enter Your Address">
+               </div>
+               <div class="col-md-6 mt-3">
+               <label for ="">Post Code</label>
+               <input type ="text" class= "form-control" placeholder="Enter Your Post Code">
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class ="form-group">
-            <label for="">Second Name</label>
-            <input type="text" class="form-control" placeholder="Second name">
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class ="form-group">
-            <label for="">Email</label>
-            <input type="text" class="form-control" placeholder="Email">
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class ="form-group">
-            <label for="">Address</label>
-            <input type="text" class="form-control" placeholder="Address">
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class ="form-group">
-            <label for="">Post Code</label>
-            <input type="text" class="form-control" placeholder="Post code">
-          </div>
-        </div>
-        <div class="col-md-12">
-          <button type="submit" class="btn btn-primary">Place your order</button>
-        </div>
-      </div>
-      <div>
-      </section>
+      </div> 
+<div class="col-md-5">
+  <div class="card">
+    <div class="card-body">
+     <h6> Order Summary</h6>
+      <hr>
+<table class="table">
+  <tbody>
+
+  </tbody>
+</table>
+<hr>
+<button class="btn btn-primary">Place Order</button>
+    </div>
+    </div>
+</div>
+    </div>
+   </div>
+     
 
 
 
