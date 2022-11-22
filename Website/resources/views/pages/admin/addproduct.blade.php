@@ -33,7 +33,7 @@
 
     <div class="col-lg-10 pt-4 px-4">
       <div class="mb-4">
-        <h3><b>Edit Product</b></h3>
+        <h3><b>Add Product</b></h3>
       </div>
       <div class="row">
         <div class="col-md-4 order-md-2">
