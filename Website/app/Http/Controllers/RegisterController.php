@@ -17,13 +17,13 @@ class RegisterController extends Controller
             $validated = $request->validate([
                 'firstName' => 'required|string|max:50',
                 'surname' => 'required|string|max:50',
-                'address' => 'required|max:50',
-                'postCode' => 'required|max:10',
-                'gender' => 'required|string|max:6',
-                'dateOfBirth' => 'required|max:10',
-                'email' => 'required|email|unique:users|max:30',
-                'password' => 'required',
-                'confirmPassword' => 'required|same:password',
+                'address' => 'required|string|max:50',
+                'postCode' => 'required|string|max:10',
+                'gender' => 'required|string|max:10',
+                'dateOfBirth' => 'required|date|before_or_equal:2006/12/30',
+                'email' => 'required|email|string|unique:users|max:100',
+                'password' => 'required|min:8|max:128||regex:/^[a-zA-Z]+$/u',
+                'confirmPassword' => 'required|same:password|max:100',
             ]);
 
             session(['firstname' => $validated['firstName']]);
@@ -32,10 +32,10 @@ class RegisterController extends Controller
             session(['postcode' => $validated['postCode']]);
             session(['gender' => $validated['gender']]);
             session(['dateofbirth' =>$validated['dateOfBirth']]);
-            
-            
 
-            
+
+
+
 
             users::create([
                 'firstName' => $validated['firstName'],
@@ -48,8 +48,8 @@ class RegisterController extends Controller
                 'password' => Hash::make($validated['password']),
             ]);
 
-            
-           
+
+
 
 
 
