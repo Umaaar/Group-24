@@ -1,18 +1,19 @@
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- Import main -->
-   @include('assets.main')
+  <!-- Import main -->
+  <link rel="stylesheet" href="/Website/public/css/about.css">
+  @include('assets.main')
 
-<title>@yield('title')</title>
-<link rel="stylesheet" type="text/css" href="/css/about.css">
-  
-  
+  <title>@yield('title')</title>
+  <link rel="stylesheet" type="text/css" href="/css/about.css">
+
+
 </head>
 
 <html>
+
 <body>
 
   <!-- Import header -->
@@ -23,17 +24,29 @@
   </div> -->
 
   <!-- Insert About body here -->
- <div class="coontainer-about-us">  
-  <div class="container-sub-about"> <img src="C:\xampp\htdocs\github\Group-24\Website\logo.png" alt=""></div>
-  <div class="container-sub-about">
-  <h1> About Us</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-</div>
+  <div class="coontainer-about-us">
+    <div class="container-sub-about">
+    <img src="{{ asset('\Website\resources\views\pages\logo.jpg') }}" alt="description of myimage" style="width:4%;">
+      <h1> About Us</h1>
+    </div>
+
+
+    <div class="container-sub-about">
+     
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur.
+      </p>
+    </div>
   </div>
 
-<div class="container-2">
-  <!-- Import footer -->
-  @include('assets.common.footer')
+
+  <div class="container-2">
+    <!-- Import footer -->
+    @include('assets.common.footer')
   </div>
 </body>
+
 </html>
