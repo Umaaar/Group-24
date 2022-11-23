@@ -1,8 +1,4 @@
 <head>
-  <style>
-    .carousel-control-prev-icon { background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important; }
-    .carousel-control-next-icon { background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important; }
-  </style>
   <link rel="stylesheet" href="{{asset('/css/home.css')}}">
 
   <title>@yield('title')</title>
@@ -13,47 +9,65 @@
 
 <!-- Import navbar -->
 @include('assets.common.navbar')
-
+<?php
+ $name = "";
+if(Auth::check()){
+  $name = Auth::user()->firstName;
+}
+?>
 <body>
-  <div id="demo" class="carousel slide" data-ride="carousel">
 
-    <!-- Indicators -->
-    <ul class="carousel-indicators">
-      <li data-target="#demo" data-slide-to="0" class="active"></li>
-      <li data-target="#demo" data-slide-to="1"></li>
-      <li data-target="#demo" data-slide-to="2"></li>
-    </ul>
-
-    <!-- The slideshow -->
-    <div class="carousel-inner">
-      <div class="carousel-item active mx-auto d-block">
-        <img src="{{URL::asset('aston_sport_clear.png')}}" class="mx-auto d-block" alt="">
+<div class="d-flex justify-content-between">
+  <div class="w-100 mx-auto">
+    <div class="mx-auto bg-dark">
+      <div id="demo" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active mx-auto d-block">
+            <img src="{{URL::asset('aston_sport_clear.png')}}" class="mx-auto d-block" alt="">
+          </div>
+          <div class="carousel-item">
+            <img src="{{URL::asset('Second_Slide_Show_Image.png')}}"class="mx-auto d-block" alt="">
+          </div>
+          <div class="carousel-item">
+            <img src="{{URL::asset('aston_sport_clear.png')}}"class="mx-auto d-block" alt="">
+          </div>
+        </div>
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
       </div>
-      <div class="carousel-item">
-        <img src="{{URL::asset('aston_sport.png')}}"class="mx-auto d-block" alt="">
-      </div>
-      <div class="carousel-item">
-        <img src="{{URL::asset('aston_sport_clear.png')}}"class="mx-auto d-block" alt="">
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#demo" data-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </a>
-  </div>
-
-  <div class="p-3 p-md-5 text-white bg-dark">
-    <div class="col-md-6 px-0">
-      <h1 class="display-5">Welcome</h1>
-      <p class="display-6 my-3">Test</p>
     </div>
   </div>
 
-  <div class="py-5 album">
+  <div class="d-flex">
+    <div class="border-left border-secondary bg-dark mx-auto w-50 px-5 w-100"> <!-- col-md-3 -->
+      <h1 class="display-5 text-light py-2">Welcome <?php echo $name ?></h1>
+      <!-- <p class="display-6 my-3 text-light">Test</p> -->
+      <p class="font-weight-normal text-light">A modern, innovative, and affordable clothing retailer perfect for students on a budget. We place a big emphasis on sustainability and ethical sourcing.</p>
+      <a class="btn btn-secondary d-block" href="/about">Find out more...</a>
+    </div>
+  </div>
+
+  </div>
+
+  <div class="p-lg-5 col-md-5 mx-auto my-2 py-0">
+    <div class="text-center">
+      <h2>Recommended Items</h2>
+    </div>
+  </div>
+
+  <div class="pb-5 album">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
@@ -97,15 +111,13 @@
     </div>
   </div>
 
-
-
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item d-flex justify-content-center">
         <img class="w-25" src="{{URL::asset('aston_sport_clear.png')}}">
       </div>
       <div class="carousel-item d-flex justify-content-center">
-        <img class="w-25" src="{{URL::asset('aston_sport_clear.png')}}">
+        <img class="w-25" src="{{URL::asset('aston_sport.png')}}">
       </div>
       <div class="carousel-item d-flex justify-content-center">
         <img class="w-25" src="{{URL::asset('aston_sport_clear.png')}}">

@@ -12,24 +12,32 @@ class LoginController extends Controller
 {
     protected function login(Request $request)
     {
-        
-        $credentials = $request->validate([
+        $validated = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-        
-        if(Auth::attempt($credentials)) {
 
-             return redirect('/');
+        if(Auth::attempt($validated)) {
+            
+            $user = DB::table('users')->where('email',$validated['email'])->first();
 
+            session(['firstName' => $user->firstName]);
+            session(['surname' => $user->surname]);
+            session(['address' => $user->address]);
+            session(['postCode' => $user->postCode]);
+            session(['gender' => $user->gender]);
+            session(['dateOfBirth' =>$user->dateOfBirth]);
+
+
+            return redirect('/');
+        }else{
+            return back()->withErrors(['error' => 'The email or password are incorrect!']);
         }
+    }
 
-        else{
-            return redirect('/register');
-        }
-
-       
-        
-
+    public function logOut(){
+        Auth::logout();
+        session()->flush();
+        return redirect('/');
     }
 }

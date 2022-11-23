@@ -12,17 +12,19 @@ class AdminLoginController extends Controller
     protected function login(Request $request)
     {
         
-        $credentials = $request->validate([
+        $validated = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
         
-        if(Auth::guard('webadmins')->attempt($credentials)) {
+        if(Auth::guard('webadmins')->attempt($validated)) {
 
+            $user = DB::table('admins')->where('email',$validated['email'])->first();
+            session(['name' => $user->name]);
              return redirect('/admin');
 
         }else{
-            return redirect('/register');
+            return back()->withErrors(['error' => 'The email or password are incorrect!']);
         }
     }
        

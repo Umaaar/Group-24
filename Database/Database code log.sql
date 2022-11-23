@@ -181,3 +181,48 @@ ALTER TABLE `Users` CHANGE `UserID` `userID` INT NOT NULL AUTO_INCREMENT,
     CHANGE `DateOfBirth` `dateOfBirth` DATE NOT NULL, 
     CHANGE `Email` `email` VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL, 
     CHANGE `Password` `password` VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL;
+
+--21/11/22--
+---Creating an Order table---
+CREATE TABLE `u_210103351_TP_website_schema`.`Orders` 
+    (`orderID` INT NOT NULL AUTO_INCREMENT , 
+    `date` DATE NOT NULL , 
+    `status` VARCHAR(50) NOT NULL , 
+    PRIMARY KEY (`orderID`)) ENGINE = InnoDB;
+
+--Adding relationship (12m) with basket contents
+ALTER TABLE `Basket Contents` ADD `orderID` INT NOT NULL AFTER `totalPrice`;
+ALTER TABLE `Basket Contents` ADD FOREIGN KEY (`orderID`) REFERENCES `Orders`(`orderID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--22/11/22--
+---Renaming tables to have lower case letters---
+RENAME TABLE `u_210103351_TP_website_schema`.`Admin Basket View` TO `u_210103351_TP_website_schema`.`admin basket view`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Admins` TO `u_210103351_TP_website_schema`.`admins`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Basket` TO `u_210103351_TP_website_schema`.`basket`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Basket Contents` TO `u_210103351_TP_website_schema`.`basket contents`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Categories` TO `u_210103351_TP_website_schema`.`categories`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Orders` TO `u_210103351_TP_website_schema`.`orders`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Product Categories` TO `u_210103351_TP_website_schema`.`product categories`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Products` TO `u_210103351_TP_website_schema`.`products`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Users` TO `u_210103351_TP_website_schema`.`users`;
+
+--23/11/22--
+---Adding default values to particular fields---
+ALTER TABLE `basket contents` CHANGE `quantity` `quantity` INT NOT NULL DEFAULT '0', 
+    CHANGE `totalPrice` `totalPrice` INT NOT NULL DEFAULT '0';
+
+ALTER TABLE `orders` CHANGE `status` `status` VARCHAR(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci 
+    NOT NULL DEFAULT 'Ongoing';
+
+ALTER TABLE `products` CHANGE `size` `size` INT NOT NULL DEFAULT '1', 
+    CHANGE `price` `price` INT NOT NULL DEFAULT '0', 
+    CHANGE `description` `description` VARCHAR(535) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci 
+        NOT NULL DEFAULT 'No description given.';
