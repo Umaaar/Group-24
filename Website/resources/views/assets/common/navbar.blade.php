@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{asset('/css/navbar.css')}}">
 
   <nav class="navbar navbar-expand-lg navbar-dark border-dark border-bottom">
-    <a href="#" class="px-4 navbar-brand">
+    <a href="/" class="px-4 navbar-brand">
       <img src="{{URL::asset('aston_sport.png')}}" width="170" height="75">
     </a>
 
