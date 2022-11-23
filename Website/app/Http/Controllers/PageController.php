@@ -30,4 +30,9 @@ class PageController extends Controller
   public function register(){
     return view('pages.customerRegister');
   }
+  public function preview() {
+		return view('pages.productPreview');
+}
+
+
 }

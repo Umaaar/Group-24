@@ -29,3 +29,20 @@ border-style: solid}
   margin-bottom: 200px;
   padding: 30px 50px;
 }
+.container-sub-about{
+  background-color: black;
+
+}
+.container-sub-about img{
+  filter: invert(100%);
+  position: absolute;
+ margin-top:0px ;
+ margin-left: -350px;
+
+ 
+}
+.container-sub-about h1{
+  padding-bottom: 20px;
+
+ 
+}
