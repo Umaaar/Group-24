@@ -26,6 +26,17 @@
         </ul>
     </div>
     @endif
+
+    @if (null !== session('message'))
+    <div class="alert alert-danger">
+        <ul>
+                <li>{{ session('message') }}</li>
+        </ul>
+    </div>
+    @endif
+    <?php
+    session()->forget('message');
+    ?>
     
     @include('assets.common.navbar')
 

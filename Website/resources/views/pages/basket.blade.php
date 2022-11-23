@@ -11,6 +11,10 @@
 
 </head>
 
+<?php $total = 0; 
+$decoded = json_decode(json_encode($basket), true)
+?>
+
 <body>
 
     <!-- Insert basket view body here -->
@@ -26,11 +30,10 @@
         </tr>
       </thead>
       <tbody>
-        <?php $total = 0; ?>
-        @foreach ($basket as $item)
-        <?php $total += $item['totalPrice'] * $item['quantity']; ?>
+        @foreach ($decoded as $item)
+        <?php $total += $item['totalPrice'] * $item['quantity']?>
         <tr>
-         
+          <td>{{$item['name']}}</td>
           <td>${{ $item['totalPrice'] }}</td>
           <td>{{ $item['quantity'] }}</td>
         </tr>

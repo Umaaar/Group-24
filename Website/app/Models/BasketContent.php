@@ -5,8 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BasketContent extends Model
+class BasketContents extends Model
 {
     use HasFactory;
-    protected $table = 'basket-contents';
+
+    protected $fillable = [
+        'basketID',
+        'productID',
+        'quantity',
+        'totalPrice',
+        'orderID'
+    ];
 }
