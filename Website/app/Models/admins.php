@@ -12,15 +12,19 @@ class admins extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public $timestamps = false;
+    protected $primaryKey = 'adminID';
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'Name',
-        'Email',
-        'Password',
+        'adminID',
+        'name',
+        'email',
+        'password',
     ];
 
     /**

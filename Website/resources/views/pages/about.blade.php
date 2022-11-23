@@ -24,6 +24,7 @@
   </div> -->
 
   <!-- Insert About body here -->
+<<<<<<< HEAD
   <div class="coontainer-about-us">
     <div class="container-sub-about">
     <img src="{{ asset('\Website\resources\views\pages\logo.jpg') }}" alt="description of myimage" style="width:4%;">
@@ -40,6 +41,14 @@
         pariatur.
       </p>
     </div>
+=======
+ <div class="coontainer-about-us">  
+  <div class="container-sub-about"> <img src="C:\xampp\htdocs\github\Group-24\Website\logo.png" alt=""></div>
+  <div class="container-sub-about">
+  <h1> About Us</h1>
+<p> AstonDirect is an e-commerce platform made by students for students. We sell great quality sports clothing at affordable prices perfect for all students on a tight budget. Our modern look reflects our emphasis on being ethical and sustainable durin development of our products. We are proud to be able to provide such a service and hope all you guys are as excited about AstonDirect as we are.</p>
+</div>
+>>>>>>> 429e11782fd2e13ee0ea5ee54eeee8b8e5d0fc00
   </div>
 
 

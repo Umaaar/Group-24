@@ -130,3 +130,86 @@ ALTER TABLE `Basket` DROP `AdminID`;
 ---Field is needed for product images in the products table---
 
 ALTER TABLE `Products` ADD `Images` VARCHAR(100) NOT NULL AFTER `Gender`;
+
+---Changing all field names to not have capital letters at the start as it causes problems in laravel---
+
+--Changing Admin Basket View table
+ALTER TABLE `Admin Basket View` CHANGE `AdminID` `adminID` INT NOT NULL;
+ALTER TABLE `Admin Basket View` CHANGE `BasketID` `basketID` INT NOT NULL;
+
+--Changing Admins table
+ALTER TABLE `Admins` CHANGE `AdminID` `adminID` INT NOT NULL AUTO_INCREMENT;
+ALTER TABLE `Admins` CHANGE `Name` `name` VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL, 
+    CHANGE `Email` `email` VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL, 
+    CHANGE `Password` `password` VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL;
+
+--Changing Basket table
+ALTER TABLE `Basket` CHANGE `BasketID` `basketID` INT NOT NULL AUTO_INCREMENT, 
+    CHANGE `UserID` `userID` INT NOT NULL;
+
+--Changing Basket Contents table
+ALTER TABLE `Basket Contents` CHANGE `BasketID` `basketID` INT NOT NULL, 
+    CHANGE `ProductID` `productID` INT NOT NULL, 
+    CHANGE `Quantity` `quantity` INT NOT NULL, 
+    CHANGE `TotalPrice` `totalPrice` INT NOT NULL;
+
+--Changing Categories table
+ALTER TABLE `Categories` CHANGE `CategoryID` `categoryID` INT NOT NULL AUTO_INCREMENT, 
+    CHANGE `Name` `name` VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL;
+
+--Changing Product Categories table
+ALTER TABLE `Product Categories` CHANGE `ProductID` `productID` INT NOT NULL, 
+    CHANGE `CategoryID` `categoryID` INT NOT NULL;
+
+--Changing Products table
+ALTER TABLE `Products` CHANGE `ProductID` `productID` INT NOT NULL AUTO_INCREMENT, 
+    CHANGE `Name` `name` VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL, 
+    CHANGE `Size` `size` INT NOT NULL, 
+    CHANGE `Price` `price` INT NOT NULL, 
+    CHANGE `Stock` `stock` INT NOT NULL DEFAULT '0', 
+    CHANGE `Description` `description` VARCHAR(535) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NULL DEFAULT NULL, 
+    CHANGE `Gender` `gender` VARCHAR(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL, 
+    CHANGE `Images` `images` VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL;
+
+--Changing Users table
+ALTER TABLE `Users` CHANGE `UserID` `userID` INT NOT NULL AUTO_INCREMENT, 
+    CHANGE `FirstName` `firstName` VARCHAR(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL, 
+    CHANGE `Surname` `surname` VARCHAR(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL, 
+    CHANGE `Address` `address` VARCHAR(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL, 
+    CHANGE `PostCode` `postCode` VARCHAR(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL, 
+    CHANGE `Gender` `gender` VARCHAR(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL, 
+    CHANGE `DateOfBirth` `dateOfBirth` DATE NOT NULL, 
+    CHANGE `Email` `email` VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL, 
+    CHANGE `Password` `password` VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL;
+
+--21/11/22--
+---Creating an Order table---
+CREATE TABLE `u_210103351_TP_website_schema`.`Orders` 
+    (`orderID` INT NOT NULL AUTO_INCREMENT , 
+    `date` DATE NOT NULL , 
+    `status` VARCHAR(50) NOT NULL , 
+    PRIMARY KEY (`orderID`)) ENGINE = InnoDB;
+
+--Adding relationship (12m) with basket contents
+ALTER TABLE `Basket Contents` ADD `orderID` INT NOT NULL AFTER `totalPrice`;
+ALTER TABLE `Basket Contents` ADD FOREIGN KEY (`orderID`) REFERENCES `Orders`(`orderID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--22/11/22--
+---Renaming tables to have lower case letters---
+RENAME TABLE `u_210103351_TP_website_schema`.`Admin Basket View` TO `u_210103351_TP_website_schema`.`admin basket view`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Admins` TO `u_210103351_TP_website_schema`.`admins`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Basket` TO `u_210103351_TP_website_schema`.`basket`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Basket Contents` TO `u_210103351_TP_website_schema`.`basket contents`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Categories` TO `u_210103351_TP_website_schema`.`categories`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Orders` TO `u_210103351_TP_website_schema`.`orders`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Product Categories` TO `u_210103351_TP_website_schema`.`product categories`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Products` TO `u_210103351_TP_website_schema`.`products`;
+
+RENAME TABLE `u_210103351_TP_website_schema`.`Users` TO `u_210103351_TP_website_schema`.`users`;

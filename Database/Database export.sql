@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.4-dev+20220418.7005844990
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Nov 16, 2022 at 10:58 AM
+-- Host: localhost
+-- Generation Time: Nov 22, 2022 at 08:21 PM
 -- Server version: 8.0.31-0ubuntu0.20.04.1
--- PHP Version: 8.0.25
+-- PHP Version: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,106 +24,119 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Admin Basket View`
+-- Table structure for table `admin basket view`
 --
 
-CREATE TABLE `Admin Basket View` (
-  `AdminID` int NOT NULL,
-  `BasketID` int NOT NULL
+CREATE TABLE `admin basket view` (
+  `adminID` int NOT NULL,
+  `basketID` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Admins`
+-- Table structure for table `admins`
 --
 
-CREATE TABLE `Admins` (
-  `AdminID` int NOT NULL,
-  `Name` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `Email` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `Password` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL
+CREATE TABLE `admins` (
+  `adminID` int NOT NULL,
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `password` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Basket`
+-- Table structure for table `basket`
 --
 
-CREATE TABLE `Basket` (
-  `BasketID` int NOT NULL,
-  `UserID` int NOT NULL
+CREATE TABLE `basket` (
+  `basketID` int NOT NULL,
+  `userID` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Basket Contents`
+-- Table structure for table `basket contents`
 --
 
-CREATE TABLE `Basket Contents` (
-  `BasketID` int NOT NULL,
-  `ProductID` int NOT NULL,
-  `Quantity` int NOT NULL,
-  `TotalPrice` int NOT NULL
+CREATE TABLE `basket contents` (
+  `basketID` int NOT NULL,
+  `productID` int NOT NULL,
+  `quantity` int NOT NULL,
+  `totalPrice` int NOT NULL,
+  `orderID` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Categories`
+-- Table structure for table `categories`
 --
 
-CREATE TABLE `Categories` (
-  `CategoryID` int NOT NULL,
-  `Name` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL
+CREATE TABLE `categories` (
+  `categoryID` int NOT NULL,
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Product Categories`
+-- Table structure for table `orders`
 --
 
-CREATE TABLE `Product Categories` (
-  `ProductID` int NOT NULL,
-  `CategoryID` int NOT NULL
+CREATE TABLE `orders` (
+  `orderID` int NOT NULL,
+  `date` date NOT NULL,
+  `status` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Products`
+-- Table structure for table `product categories`
 --
 
-CREATE TABLE `Products` (
-  `ProductID` int NOT NULL,
-  `Name` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `Size` int NOT NULL,
-  `Price` int NOT NULL,
-  `Stock` int NOT NULL DEFAULT '0',
-  `Description` varchar(535) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-  `Gender` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `Images` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL
+CREATE TABLE `product categories` (
+  `productID` int NOT NULL,
+  `categoryID` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Users`
+-- Table structure for table `products`
 --
 
-CREATE TABLE `Users` (
-  `UserID` int NOT NULL,
-  `FirstName` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `Surname` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `Address` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `PostCode` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `Gender` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `DateOfBirth` date NOT NULL,
-  `Email` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `Password` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL
+CREATE TABLE `products` (
+  `productID` int NOT NULL,
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `size` int NOT NULL,
+  `price` int NOT NULL,
+  `stock` int NOT NULL DEFAULT '0',
+  `description` varchar(535) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `gender` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `images` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `userID` int NOT NULL,
+  `firstName` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `surname` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `address` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `postCode` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `gender` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `dateOfBirth` date NOT NULL,
+  `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `password` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
@@ -131,121 +144,135 @@ CREATE TABLE `Users` (
 --
 
 --
--- Indexes for table `Admin Basket View`
+-- Indexes for table `admin basket view`
 --
-ALTER TABLE `Admin Basket View`
-  ADD PRIMARY KEY (`AdminID`,`BasketID`),
-  ADD KEY `BasketID` (`BasketID`);
+ALTER TABLE `admin basket view`
+  ADD PRIMARY KEY (`adminID`,`basketID`),
+  ADD KEY `BasketID` (`basketID`);
 
 --
--- Indexes for table `Admins`
+-- Indexes for table `admins`
 --
-ALTER TABLE `Admins`
-  ADD PRIMARY KEY (`AdminID`);
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`adminID`);
 
 --
--- Indexes for table `Basket`
+-- Indexes for table `basket`
 --
-ALTER TABLE `Basket`
-  ADD PRIMARY KEY (`BasketID`),
-  ADD KEY `UserID` (`UserID`);
+ALTER TABLE `basket`
+  ADD PRIMARY KEY (`basketID`),
+  ADD KEY `UserID` (`userID`);
 
 --
--- Indexes for table `Basket Contents`
+-- Indexes for table `basket contents`
 --
-ALTER TABLE `Basket Contents`
-  ADD PRIMARY KEY (`BasketID`,`ProductID`),
-  ADD KEY `ProductID` (`ProductID`);
+ALTER TABLE `basket contents`
+  ADD PRIMARY KEY (`basketID`,`productID`),
+  ADD KEY `ProductID` (`productID`),
+  ADD KEY `orderID` (`orderID`);
 
 --
--- Indexes for table `Categories`
+-- Indexes for table `categories`
 --
-ALTER TABLE `Categories`
-  ADD PRIMARY KEY (`CategoryID`);
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`categoryID`);
 
 --
--- Indexes for table `Product Categories`
+-- Indexes for table `orders`
 --
-ALTER TABLE `Product Categories`
-  ADD PRIMARY KEY (`ProductID`,`CategoryID`),
-  ADD KEY `CategoryID` (`CategoryID`);
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`orderID`);
 
 --
--- Indexes for table `Products`
+-- Indexes for table `product categories`
 --
-ALTER TABLE `Products`
-  ADD PRIMARY KEY (`ProductID`);
+ALTER TABLE `product categories`
+  ADD PRIMARY KEY (`productID`,`categoryID`),
+  ADD KEY `CategoryID` (`categoryID`);
 
 --
--- Indexes for table `Users`
+-- Indexes for table `products`
 --
-ALTER TABLE `Users`
-  ADD PRIMARY KEY (`UserID`);
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`productID`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`userID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `Admins`
+-- AUTO_INCREMENT for table `admins`
 --
-ALTER TABLE `Admins`
-  MODIFY `AdminID` int NOT NULL AUTO_INCREMENT;
+ALTER TABLE `admins`
+  MODIFY `adminID` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `Basket`
+-- AUTO_INCREMENT for table `basket`
 --
-ALTER TABLE `Basket`
-  MODIFY `BasketID` int NOT NULL AUTO_INCREMENT;
+ALTER TABLE `basket`
+  MODIFY `basketID` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `Categories`
+-- AUTO_INCREMENT for table `categories`
 --
-ALTER TABLE `Categories`
-  MODIFY `CategoryID` int NOT NULL AUTO_INCREMENT;
+ALTER TABLE `categories`
+  MODIFY `categoryID` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `Products`
+-- AUTO_INCREMENT for table `orders`
 --
-ALTER TABLE `Products`
-  MODIFY `ProductID` int NOT NULL AUTO_INCREMENT;
+ALTER TABLE `orders`
+  MODIFY `orderID` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `Users`
+-- AUTO_INCREMENT for table `products`
 --
-ALTER TABLE `Users`
-  MODIFY `UserID` int NOT NULL AUTO_INCREMENT;
+ALTER TABLE `products`
+  MODIFY `productID` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `userID` int NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `Admin Basket View`
+-- Constraints for table `admin basket view`
 --
-ALTER TABLE `Admin Basket View`
-  ADD CONSTRAINT `Admin Basket View_ibfk_1` FOREIGN KEY (`AdminID`) REFERENCES `Admins` (`AdminID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `Admin Basket View_ibfk_2` FOREIGN KEY (`BasketID`) REFERENCES `Basket` (`BasketID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `admin basket view`
+  ADD CONSTRAINT `admin basket view_ibfk_1` FOREIGN KEY (`adminID`) REFERENCES `admins` (`adminID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `admin basket view_ibfk_2` FOREIGN KEY (`basketID`) REFERENCES `basket` (`basketID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Constraints for table `Basket`
+-- Constraints for table `basket`
 --
-ALTER TABLE `Basket`
-  ADD CONSTRAINT `Basket_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `Users` (`UserID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `basket`
+  ADD CONSTRAINT `basket_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Constraints for table `Basket Contents`
+-- Constraints for table `basket contents`
 --
-ALTER TABLE `Basket Contents`
-  ADD CONSTRAINT `Basket Contents_ibfk_1` FOREIGN KEY (`BasketID`) REFERENCES `Basket` (`BasketID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `Basket Contents_ibfk_2` FOREIGN KEY (`ProductID`) REFERENCES `Products` (`ProductID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `basket contents`
+  ADD CONSTRAINT `basket contents_ibfk_1` FOREIGN KEY (`basketID`) REFERENCES `basket` (`basketID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `basket contents_ibfk_2` FOREIGN KEY (`productID`) REFERENCES `products` (`productID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `basket contents_ibfk_3` FOREIGN KEY (`orderID`) REFERENCES `orders` (`orderID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
--- Constraints for table `Product Categories`
+-- Constraints for table `product categories`
 --
-ALTER TABLE `Product Categories`
-  ADD CONSTRAINT `Product Categories_ibfk_1` FOREIGN KEY (`ProductID`) REFERENCES `Products` (`ProductID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `Product Categories_ibfk_2` FOREIGN KEY (`CategoryID`) REFERENCES `Categories` (`CategoryID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `product categories`
+  ADD CONSTRAINT `product categories_ibfk_1` FOREIGN KEY (`productID`) REFERENCES `products` (`productID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `product categories_ibfk_2` FOREIGN KEY (`categoryID`) REFERENCES `categories` (`categoryID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
