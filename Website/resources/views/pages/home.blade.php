@@ -117,7 +117,7 @@ if(Auth::check()){
         <img class="w-25" src="{{URL::asset('aston_sport_clear.png')}}">
       </div>
       <div class="carousel-item d-flex justify-content-center">
-        <img class="w-25" src="{{URL::asset('aston_sport.png')}}">
+        <img class="w-25" src="{{URL::asset('aston_sport_clear.png')}}">
       </div>
       <div class="carousel-item d-flex justify-content-center">
         <img class="w-25" src="{{URL::asset('aston_sport_clear.png')}}">
