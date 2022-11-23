@@ -56,6 +56,12 @@ Route::get('/', function () {
 // });
 
 
+Route::get('/preview', function () {
+  return view('pages.productPreview');
+});
+
+
+
 Route::get('/about', function () {
   return view('pages.about');
 });
