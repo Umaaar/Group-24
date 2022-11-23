@@ -33,7 +33,7 @@ if(Auth::check()){
             <img src="{{URL::asset('aston_sport_clear.png')}}" class="mx-auto d-block" alt="">
           </div>
           <div class="carousel-item">
-            <img src="{{URL::asset('Second Slide Show Image')}}"class="mx-auto d-block" alt="">
+            <img src="{{URL::asset('Second_Slide_Show_Image.png')}}"class="mx-auto d-block" alt="">
           </div>
           <div class="carousel-item">
             <img src="{{URL::asset('aston_sport_clear.png')}}"class="mx-auto d-block" alt="">
