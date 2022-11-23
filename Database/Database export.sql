@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 23, 2022 at 09:22 AM
+-- Generation Time: Nov 23, 2022 at 10:22 AM
 -- Server version: 8.0.31-0ubuntu0.20.04.1
 -- PHP Version: 8.1.12
 
@@ -90,7 +90,7 @@ CREATE TABLE `categories` (
 CREATE TABLE `orders` (
   `orderID` int NOT NULL,
   `date` date NOT NULL,
-  `status` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'Ongoing'
+  `status` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'Ongoing'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
@@ -113,7 +113,7 @@ CREATE TABLE `product categories` (
 CREATE TABLE `products` (
   `productID` int NOT NULL,
   `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `size` int NOT NULL DEFAULT '1',
+  `size` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'S',
   `price` int NOT NULL DEFAULT '0',
   `stock` int NOT NULL DEFAULT '0',
   `description` varchar(535) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'No description given.',
