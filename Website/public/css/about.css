@@ -1,0 +1,48 @@
+p {margin: 0 auto}
+.boxa {display: flex;
+    position:absolute;
+    width: 70%;
+    height: 50%;
+  justify-content: center;
+align-items: center;
+    color:white;
+background-color: black;
+font-family: Arial, Helvetica, sans-serif;
+border-style: solid}
+.boxb {
+  display: flex; 
+  justify-content:center;
+}
+
+.coontainer-about-us{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+  background-color: black;
+  color: white;
+  margin-top: 200px;
+  margin-bottom: 200px;
+  padding: 30px 50px;
+}
+.container-sub-about{
+  background-color: black;
+
+}
+.container-sub-about img{
+  filter: invert(100%);
+  position: absolute;
+ margin-top:0px ;
+ margin-left: -350px;
+
+ 
+}
+.container-sub-about h1{
+  padding-bottom: 20px;
+
+ 
+}

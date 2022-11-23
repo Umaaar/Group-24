@@ -14,55 +14,63 @@
 
         * { font-family: 'Oxygen'}
     </style>
-
 </head>
 <body>
+
+
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
     @include('assets.common.navbar')
 
-   
-
-   
-
         {{-- Main container --}}
-        <div class="container">
+        <div class="maincontainer">
             <h1 name ="h1customerRegister">Register</h1>
             {{-- Form container --}}
             <div class="formContainerRegister">
 
-                <form action="#" method="post">
+                {{-- --}}
+                <form action="{{asset('register')}} " method="post">
+                {{ csrf_field() }}
 
                     {{-- Name container --}}
                     <div class="nameContainer">
                         {{-- FirstName Container --}}
                         <div class="firstNameContainer">
-                            <h3>First Name:</h3>
-                            <input type="text" name="customerFirstName" id="CustomerFirstName">
-
+                            <label for="firstName">First Name: </label>
+                            <input type="text" name="firstName" id="firstName" value="{{ old('firstName') }}" required>
                         </div>
 
                         {{-- Surname container --}}
                         <div class="surnameContainer">
-                            <h3>Surname:</h3>
-                            <input type="text" name="customerSurname" id="customerSurname">
+                            <label for="surname">Surname: </label>
+                            <input type="text" name="surname" id="surname" value="{{ old('surname') }}" required>
                         </div>
                     </div>
 
                     {{-- Address container --}}
                     <div class="addressContainer">
-                        <h3>Address:</h3>
-                        <input type="text" name="customerAddress" id="customerAddress">
+                        <label for="address">Address:</label>
+                        <input type="text" name="address" id="address" value="{{ old('address') }}" required>
                     </div>
 
                     {{-- Postcode Container --}}
                     <div class="postcodeContainer">
-                        <h3>Postcode</h3>
-                        <input type="text" name="customerPostcode" id="customerPostcode">
+                        <label for="postCode">PostCode: </label>
+                        <input type="text" name="postCode" id="postCode" value="{{ old('postCode') }}" required>
                     </div>
 
                     {{-- Gender container --}}
                     <div class="genderContainer">
-                        <h3>Gender:</h3>
-                        <select name="customerGender" id="customerGender">
+                        <label for="gender">Gender:</label>
+                        <select name="gender" id="gender" value="{{ old('gender') }}" required>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
@@ -70,28 +78,26 @@
 
                     {{-- Date Of Birth --}}
                     <div class="dateOfBirthContainer">
-                        <h3>Date Of Birth</h3>
-                        <input type="date" name="customerDateOfBirth" id="customerDateOfBirth">
+                        <label for="dateOfBirth">Date Of Birth:</label>
+                        <input type="date" name="dateOfBirth" id="dateOfBirth" value="{{ old('dateOfBirth') }}" required>
                     </div>
-                    
+
                     {{-- Email container --}}
                     <div class="emailContainer">
-                        <h3>Email: </h3>
-                        <input type="email" name="customerEmail" id="customerEmail">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" value="{{ old('email') }}" required>
                     </div>
 
                     {{-- Password container --}}
                     <div class="passwordContainer">
-                        <h3>Password: </h3>
-                        <input type="password" name="customerPassword" id="customerPassword">
+                        <label for="password">Password:</label>
+                        <input placeholder="Min length: 8" type="password" name="password" id="password" required>
                     </div>
-
-                    
 
                     {{-- ConfirmPassword --}}
                     <div class="confirmPasswordContainer">
-                        <h3>Confirm Password</h3>
-                        <input type="password" name="confirmPassword" id="confirmPassword">
+                        <label for="confirmPsasword">Confirm Password:</label>
+                        <input placeholder="Min length: 8" type="password" name="confirmPassword" id="confirmPassword" required>
                     </div>
 
                     {{-- Submit Button Conainter --}}
@@ -102,7 +108,7 @@
                 </form>
 
             </div>
-        
+
     </div>
 
     @include('assets.common.footer')

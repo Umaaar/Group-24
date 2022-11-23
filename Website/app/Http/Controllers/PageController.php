@@ -18,9 +18,6 @@ class PageController extends Controller
   public function home() {
     return view('pages.home');
   }
-  public function products() {
-    return view('pages.products');
-  }
   public function account() {
     return view('pages.account');
   }
@@ -33,4 +30,9 @@ class PageController extends Controller
   public function register(){
     return view('pages.customerRegister');
   }
+  public function preview() {
+		return view('pages.productPreview');
+}
+
+
 }
