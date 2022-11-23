@@ -29,15 +29,11 @@
     <div class="container-sub-about">
     <img src="{{ asset('\Website\resources\views\pages\logo.jpg') }}" alt="description of myimage" style="width:4%;">
       <h1> About Us</h1>
-    </div>
-
-
-    <div class="container-sub-about">
-     
 
       <p>AstonDirect is an e-commerce platform for students. We sell great quality sports clothing at affordable prices perfect for all students on a tight budget. Our modern look reflects our emphasis on being ethical and sustainable durin development of our products. We are proud to be able to provide such a service and hope all you guys are as excited about AstonDirect as we are.
       </p>
     </div>
+</div>
 
 
 
