@@ -213,3 +213,20 @@ RENAME TABLE `u_210103351_TP_website_schema`.`Product Categories` TO `u_21010335
 RENAME TABLE `u_210103351_TP_website_schema`.`Products` TO `u_210103351_TP_website_schema`.`products`;
 
 RENAME TABLE `u_210103351_TP_website_schema`.`Users` TO `u_210103351_TP_website_schema`.`users`;
+
+--23/11/22--
+---Adding default values to particular fields---
+ALTER TABLE `basket contents` CHANGE `quantity` `quantity` INT NOT NULL DEFAULT '0', 
+    CHANGE `totalPrice` `totalPrice` INT NOT NULL DEFAULT '0';
+
+ALTER TABLE `orders` CHANGE `status` `status` VARCHAR(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci 
+    NOT NULL DEFAULT 'Ongoing';
+
+ALTER TABLE `products` CHANGE `size` `size` INT NOT NULL DEFAULT '1', 
+    CHANGE `price` `price` INT NOT NULL DEFAULT '0', 
+    CHANGE `description` `description` VARCHAR(535) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci 
+        NOT NULL DEFAULT 'No description given.';
+
+---Correcting size field in products table---
+--The default means that the size is small (S=small)
+ALTER TABLE `products` CHANGE `size` `size` VARCHAR(10) NOT NULL DEFAULT 'S';
