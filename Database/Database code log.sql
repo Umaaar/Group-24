@@ -233,3 +233,7 @@ ALTER TABLE `products` CHANGE `size` `size` VARCHAR(10) NOT NULL DEFAULT 'S';
 
 --Changing the varchar size from 10 to 5
 ALTER TABLE `products` CHANGE `size` `size` VARCHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'S';
+
+---Shortening the max length of status in the orders table---
+ALTER TABLE `orders` CHANGE `status` `status` VARCHAR(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci 
+    NOT NULL DEFAULT 'Ongoing';
