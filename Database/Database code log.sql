@@ -226,3 +226,7 @@ ALTER TABLE `products` CHANGE `size` `size` INT NOT NULL DEFAULT '1',
     CHANGE `price` `price` INT NOT NULL DEFAULT '0', 
     CHANGE `description` `description` VARCHAR(535) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci 
         NOT NULL DEFAULT 'No description given.';
+
+---Correcting size field in products table---
+--The default means that the size is small (S=small)
+ALTER TABLE `products` CHANGE `size` `size` VARCHAR(10) NOT NULL DEFAULT 'S';
