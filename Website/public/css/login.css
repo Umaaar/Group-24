@@ -1,5 +1,5 @@
 /* Main container */
-.container{
+.maincontainer{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,17 +7,18 @@
     height: auto;
     margin: auto;
     margin-top: 10%;
+    margin-bottom: 30px;
     padding: 0%;
 
 }
 
-.container>h1{
+.maincontainer>h1{
     width: 100px;
     padding: 0%;
     
 }
 
-.container>a{
+.maincontainer>a{
     width: 150px;
     padding: 0%;
     color: #38b6ff;
@@ -33,7 +34,7 @@ h1[name="h1staffLogin"]{
     padding: 0;
     margin: 0;
     width: 300px;
-    height: auto;
+    height: 100%;
     border: 0.5px;
     border-style: solid;
     border-color: gray;

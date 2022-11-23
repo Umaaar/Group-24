@@ -11,7 +11,7 @@
 </head>
 
 <!-- Import page header -->
-@include('assets.common.header')
+@include('assets.products.header')
 
 <!-- Import product cards header -->
 @include('assets.products.grid')
