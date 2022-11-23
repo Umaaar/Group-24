@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BasketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,9 +67,7 @@ Route::get('/about', function () {
   return view('pages.about');
 });
 
-Route::get('/basket', function () {
-  return view('pages.basket');
-});
+
 
 Route::get('/checkout', function () {
   return view('pages.checkout');
@@ -147,3 +146,5 @@ Route::post('login',[LoginController::class, 'login']);
 Route::post('loginAdmin',[AdminLoginController::class, 'login']);
 
 Route::any('logOut',[LoginController::class, 'logOut']);
+
+Route::get('/basket', [BasketController::class, 'index']);
