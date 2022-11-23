@@ -9,6 +9,9 @@ use App\Models\Product;
 class ProductController extends Controller
 {
 
+
+	########################## ADMIN START ##########################
+
 	public function display_products() {
       $all = Product::all();
       return view('pages.admin.products', ['products' => $all]);
@@ -31,6 +34,36 @@ class ProductController extends Controller
 		$products->save();
 		return redirect('products')->with('status', "Added new product");
 	}
+	########################## ADMIN END ##########################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	########################## USER START ##########################
+
+	
+
+
+
+
+
+
+
+
+
+	########################## USER END ##########################
 
 // 	public function products_men() {
 // 		$products = Products::all();
