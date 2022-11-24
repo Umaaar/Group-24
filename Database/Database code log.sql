@@ -237,3 +237,18 @@ ALTER TABLE `products` CHANGE `size` `size` VARCHAR(5) CHARACTER SET utf8mb4 COL
 ---Shortening the max length of status in the orders table---
 ALTER TABLE `orders` CHANGE `status` `status` VARCHAR(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci 
     NOT NULL DEFAULT 'Ongoing';
+
+--24/11/22--
+---Changing the names of foreign keys and composite keys in the database---
+--Composite will have CK on the end and foreign will have FK on the end
+ALTER TABLE `admin basket view` CHANGE `adminID` `adminCK` INT NOT NULL, 
+    CHANGE `basketID` `basketCK` INT NOT NULL;
+
+ALTER TABLE `basket` CHANGE `userID` `userFK` INT NOT NULL;
+
+ALTER TABLE `basket contents` CHANGE `basketID` `basketCK` INT NOT NULL, 
+    CHANGE `productID` `productCK` INT NOT NULL, 
+    CHANGE `orderID` `orderFK` INT NOT NULL;
+
+ALTER TABLE `product categories` CHANGE `productID` `productCK` INT NOT NULL, 
+    CHANGE `categoryID` `categoryCK` INT NOT NULL;
