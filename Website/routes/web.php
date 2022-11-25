@@ -111,14 +111,21 @@ Route::get('/admin/customers', [UserController::class, 'display']);
 Route::get('/admin/products', [ProductController::class, 'display_products']);
 
 
-Route::get('/admin/addproduct', [ProductController::class, 'add']);
-Route::post('add-product', [ProductController::class, 'add']);
+// Route::get('/admin/addproduct', [ProductController::class, 'add']);
+// Route::post('add-product', [ProductController::class, 'add']);
+
+
+Route::get('display_addproduct',[ProductController::class, 'display_addproduct_page']);
+
+
+Route::post('insert-product', [ProductController::class, 'insert']);
 
 Route::get('/admin/editproduct', [ProductController::class, 'edit']);
 
 Route::get('/admin/addproduct', function () {
   return view('pages.admin.addproduct');
 });
+
 Route::get('/admin/editproduct', function () {
   return view('pages.admin.editproduct');
 });
@@ -139,11 +146,6 @@ Route::get('/profile/orders', function () {
 });
 
 ############# USER PROFILE SIDENAV LINKS END #############
-
-
-
-
-
 
 Route::post('register',[RegisterController::class, 'register']);
 
