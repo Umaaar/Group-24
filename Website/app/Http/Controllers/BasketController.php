@@ -11,9 +11,9 @@ class BasketController extends Controller
     
     public function index(){
         
-        $basket = DB::table('basket contents')
+        $basket = DB::table('basket-contents')
                     ->join('products', 'productIDFK', "=", "productID")
-                    ->select('basket contents.*', 'products.name')
+                    ->select('basket-contents.*', 'products.name')
                     ->get();
 
          return view('pages.basket') -> with('basket', $basket);
