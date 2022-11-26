@@ -46,16 +46,17 @@ Aston Direct Sport Clothing is a e-commerce platform where high quality sports w
 7. `php artisan key:generate`
 8. `php artisan serve`
 9. Open `http://127.0.0.1:8000` in your browser
-
+    
+---
 
 ### Authors
 
-- Sukhpal Shergill
-- Luc Sanders
-- Bogdan Saftiuc
-- Mohammad Saeed
-- Badr Rifi
-- Fatima Rabia
-- Rehan Hussain
-- Husna Salihah
+-  Sukhpal Shergill - [@sukhpal0525](https://github.com/sukhpal0525)
+- Luc Sanders - [@Mexican-Toast](https://github.com/Mexican-Toast)
+- Bogdan Saftiuc - [@BogdanSaf](https://github.com/BogdanSaf)
+- Mohammad Saeed - [@Umaaar](https://github.com/Umaaar)
+- Badr Rifi - [@RifiBadr](https://github.com/RifiBadr)
+- Fatima Rabia - [@rabiafatima1](https://github.com/rabiafatima1)
+- Rehan Hussain - [@for-i-in-rehan](https://github.com/for-i-in-rehan)
+- Husna Salihah - [@Hu3na](https://github.com/Hu3na)
 
