@@ -256,3 +256,6 @@ ALTER TABLE `product categories` CHANGE `productID` `productCK` INT NOT NULL,
 --26/11/22--
 ---Setting images in products to have null values---
 ALTER TABLE `products` CHANGE `images` `images` VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NULL;
+
+---Getting rid of all capitals in the product table---
+ALTER TABLE `products` CHANGE `productID` `productid` INT NOT NULL AUTO_INCREMENT;
