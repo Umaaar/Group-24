@@ -1,6 +1,15 @@
 <head>
   <link rel="stylesheet" href="{{asset('/css/home.css')}}">
 
+<style>
+#menu-container {
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+</style>
+
   <title>@yield('title')</title>
 </head>
 
@@ -45,13 +54,13 @@ if(Auth::check()){
   </div>
 
   <div class="d-flex">
-    <div class="border-left border-secondary bg-dark w-50 px-5 w-100"> <!-- col-md-3 -->
+    <div class="border-left border-secondary bg-dark px-5 w-100"> <!-- col-md-3 -->
       <h1 class="display-5 text-light py-2">Welcome <?php echo $name ?></h1>
       <!-- <p class="display-6 my-3 text-light">Test</p> -->
-      <p class="font-weight-normal text-light">A modern, innovative, and affordable clothing retailer perfect for students on a budget. We place a big emphasis on sustainability and ethical sourcing.</p>
+      <p class="font-weight-normal text-light">A modern, innovative, and affordable clothing retailer perfect for students on a budget.</p>
       <p class="font-weight-normal text-light">Register and login to begin ordering and access your past orders via the user profile dashboard.</p>
-      <p class="font-weight-normal text-light">Alternatively, browse our products pages using the navigation bar above.</p>
-      <a class="btn btn-secondary d-block mt-4" href="/about">Find out more...</a>
+      <!-- <p class="font-weight-normal text-light">Alternatively, browse our products pages using the navigation bar above.</p> -->
+      <a class="btn btn-secondary d-block " href="/about">Find out more...</a>
     </div>
   </div>
   </div>
