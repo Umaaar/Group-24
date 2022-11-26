@@ -16,9 +16,17 @@ class ProductController extends Controller
 
 	public function products_men() { 
 		$all = Product::all();
-		return view('pages.products-men', ['products' => $all]); 
+		return view('pages.products.men.products', ['products' => $all]); 
 	}
-	public function products_women() { return view('pages.products-women'); }
+
+	public function detail($id){
+
+		$data = Product::find($id);
+		return view('pages.products.men.preview',['product' => $data]);
+
+	}
+	public function products_women() {
+		 return view('pages.products-women'); }
 
 	public function display_addproduct_page() {
 		return view('pages.admin.addproduct');
@@ -35,7 +43,7 @@ class ProductController extends Controller
 		// 	$products->image = $filename;
 		// }
 
-		$products->productID = $request->input('productID');
+		$products->id = $request->input('id');
 		$products->name = $request->input('name');
 		$products->size = $request->input('size');
 		$products->price = $request->input('price');

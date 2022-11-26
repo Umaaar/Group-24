@@ -57,9 +57,7 @@ Route::get('/', function () {
 // });
 
 
-Route::get('/preview', function () {
-  return view('pages.productPreview');
-});
+Route::get('products/men/preview/{id}', [ProductController::class, 'detail']);
 
 
 
