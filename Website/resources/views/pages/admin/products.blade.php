@@ -66,7 +66,6 @@
               </tr>
               @endforeach
 
-
               <tr>
                 <td>2</td>
                 <td></td>

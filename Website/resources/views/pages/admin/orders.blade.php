@@ -54,11 +54,11 @@
             </thead>
             <tbody>
 
-              @foreach($orders as $item)
+              @foreach($orders as $order)
               <tr>
-                <td> {{ $item['orderID'] }} </td>
-                <td> {{ $item['date'] }} </td>
-                <td> {{ $item['status'] }} </td>
+                <td> {{ $order['orderID'] }} </td>
+                <td> {{ $order['date'] }} </td>
+                <td> {{ $order['status'] }} </td>
                 <th></th>
                 <th></th>
                 <th></th>
