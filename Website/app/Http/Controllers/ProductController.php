@@ -24,6 +24,15 @@ class ProductController extends Controller
 	public function insert(Request $request) {
 		$products = new Product();
 
+		// i ($request->hasFile('images')) {
+		$request = request();
+		$images = $request->file('images');
+		$images->move('images', $images->getClientOriginalName());
+		$imageName = $images->getClientOriginalName();
+
+
+
+
 		// if ($request->hasFile('images')) {
 		// 	$file = $request->file('images');
 		// 	$ext = $file->getClientOriginalExtension();

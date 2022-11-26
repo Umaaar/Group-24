@@ -2,12 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BasketController;
+use Illuminate\Support\Carbon;
 
 /*
 |--------------------------------------------------------------------------
@@ -129,6 +131,12 @@ Route::get('/admin/addproduct', function () {
 Route::get('/admin/editproduct', function () {
   return view('pages.admin.editproduct');
 });
+
+// Route::get('/admin/orders',[OrderController::class, 'index']);
+Route::controller(App\Http\Controllers\OrderController::class)->group(function () {
+  Route::get('admin/orders', 'index');
+});
+
 //Route::get('list', [UserController::class,'display']);
 ///////////////////////////////////////////////////
 ///////////////////////////////////////////////////
