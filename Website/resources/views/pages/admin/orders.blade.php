@@ -42,28 +42,32 @@
             <thead>
               <tr class="text-dark">
                 <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Address</th>
-                <th>Postcode</th>
-                <th>Gender</th>
-                <th>Date of Birth</th>
-                <th>Email</th>
-                <th>Password</th>
+                <th>Date Ordered</th>
+                <th>Status</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
+
+              @foreach($orders as $item)
               <tr>
-                <td>1</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td> {{ $item['orderID'] }} </td>
+                <td> {{ $item['date'] }} </td>
+                <td> {{ $item['status'] }} </td>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
               </tr>
+              @endforeach
+
               <tr>
                 <td>2</td>
                 <td></td>
