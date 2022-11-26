@@ -72,8 +72,8 @@ Route::get('/about', function () {
 Route::get('/checkout', function () {
   return view('pages.checkout');
 });
-
-// Login & Register (NAVBAR)//
+///////////////////////////////////////////////////
+// Login & Register (NAVBAR)///////////////////////
 ///////////////////////////////////////////////////
 Route::get('/login', function () {
   return view('pages.customerLogin');
@@ -98,30 +98,29 @@ Route::get('/register', function () {
 Route::get('/admin', function () {
   return view('pages.admin.home');
 });
-
 Route::get('/admin/orders', function () {
   return view('pages.admin.orders');
 });
-
 Route::get('/admin/products', function () {
   return view('pages.admin.products');
 });
-
 // Route::get('/admin/customers', function () {
 //   return view('pages.admin.customers');
 // });
-
-
 Route::get('/admin/customers', [UserController::class, 'display']);
 Route::get('/admin/products', [ProductController::class, 'display_products']);
 
 
-Route::get('/admin/addproduct', [ProductController::class, 'add']);
-Route::post('add-product', [ProductController::class, 'add']);
-
- Route::get('/admin/editproduct', [ProductController::class, 'edit']);
+// Route::get('/admin/addproduct', [ProductController::class, 'add']);
+// Route::post('add-product', [ProductController::class, 'add']);
 
 
+Route::get('display_addproduct',[ProductController::class, 'display_addproduct_page']);
+
+
+Route::post('insert-product', [ProductController::class, 'insert']);
+
+Route::get('/admin/editproduct', [ProductController::class, 'edit']);
 
 Route::get('/admin/addproduct', function () {
   return view('pages.admin.addproduct');
@@ -130,14 +129,23 @@ Route::get('/admin/addproduct', function () {
 Route::get('/admin/editproduct', function () {
   return view('pages.admin.editproduct');
 });
-
 //Route::get('list', [UserController::class,'display']);
-
 ///////////////////////////////////////////////////
 ///////////////////////////////////////////////////
 ///////////////////////////////////////////////////
 
 
+############# USER PROFILE SIDENAV LINKS START #############
+
+Route::get('/profile', function () {
+  return view('pages.user.profile');
+});
+
+Route::get('/profile/orders', function () {
+  return view('pages.user.orders');
+});
+
+############# USER PROFILE SIDENAV LINKS END #############
 
 Route::post('register',[RegisterController::class, 'register']);
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 23, 2022 at 10:22 AM
+-- Generation Time: Nov 24, 2022 at 10:18 PM
 -- Server version: 8.0.31-0ubuntu0.20.04.1
 -- PHP Version: 8.1.12
 
@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin basket view` (
-  `adminID` int NOT NULL,
-  `basketID` int NOT NULL
+  `adminCK` int NOT NULL,
+  `basketCK` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
@@ -53,7 +53,7 @@ CREATE TABLE `admins` (
 
 CREATE TABLE `basket` (
   `basketID` int NOT NULL,
-  `userID` int NOT NULL
+  `userFK` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
@@ -63,11 +63,11 @@ CREATE TABLE `basket` (
 --
 
 CREATE TABLE `basket contents` (
-  `basketID` int NOT NULL,
-  `productID` int NOT NULL,
+  `basketCK` int NOT NULL,
+  `productCK` int NOT NULL,
   `quantity` int NOT NULL DEFAULT '0',
   `totalPrice` int NOT NULL DEFAULT '0',
-  `orderID` int NOT NULL
+  `orderFK` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
@@ -100,8 +100,8 @@ CREATE TABLE `orders` (
 --
 
 CREATE TABLE `product categories` (
-  `productID` int NOT NULL,
-  `categoryID` int NOT NULL
+  `productCK` int NOT NULL,
+  `categoryCK` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
@@ -147,8 +147,8 @@ CREATE TABLE `users` (
 -- Indexes for table `admin basket view`
 --
 ALTER TABLE `admin basket view`
-  ADD PRIMARY KEY (`adminID`,`basketID`),
-  ADD KEY `BasketID` (`basketID`);
+  ADD PRIMARY KEY (`adminCK`,`basketCK`),
+  ADD KEY `BasketID` (`basketCK`);
 
 --
 -- Indexes for table `admins`
@@ -161,15 +161,15 @@ ALTER TABLE `admins`
 --
 ALTER TABLE `basket`
   ADD PRIMARY KEY (`basketID`),
-  ADD KEY `UserID` (`userID`);
+  ADD KEY `UserID` (`userFK`);
 
 --
 -- Indexes for table `basket contents`
 --
 ALTER TABLE `basket contents`
-  ADD PRIMARY KEY (`basketID`,`productID`),
-  ADD KEY `ProductID` (`productID`),
-  ADD KEY `orderID` (`orderID`);
+  ADD PRIMARY KEY (`basketCK`,`productCK`),
+  ADD KEY `ProductID` (`productCK`),
+  ADD KEY `orderID` (`orderFK`);
 
 --
 -- Indexes for table `categories`
@@ -187,8 +187,8 @@ ALTER TABLE `orders`
 -- Indexes for table `product categories`
 --
 ALTER TABLE `product categories`
-  ADD PRIMARY KEY (`productID`,`categoryID`),
-  ADD KEY `CategoryID` (`categoryID`);
+  ADD PRIMARY KEY (`productCK`,`categoryCK`),
+  ADD KEY `CategoryID` (`categoryCK`);
 
 --
 -- Indexes for table `products`
@@ -250,29 +250,29 @@ ALTER TABLE `users`
 -- Constraints for table `admin basket view`
 --
 ALTER TABLE `admin basket view`
-  ADD CONSTRAINT `admin basket view_ibfk_1` FOREIGN KEY (`adminID`) REFERENCES `admins` (`adminID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `admin basket view_ibfk_2` FOREIGN KEY (`basketID`) REFERENCES `basket` (`basketID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `admin basket view_ibfk_1` FOREIGN KEY (`adminCK`) REFERENCES `admins` (`adminID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `admin basket view_ibfk_2` FOREIGN KEY (`basketCK`) REFERENCES `basket` (`basketID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `basket`
 --
 ALTER TABLE `basket`
-  ADD CONSTRAINT `basket_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `basket_ibfk_1` FOREIGN KEY (`userFK`) REFERENCES `users` (`userID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `basket contents`
 --
 ALTER TABLE `basket contents`
-  ADD CONSTRAINT `basket contents_ibfk_1` FOREIGN KEY (`basketID`) REFERENCES `basket` (`basketID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `basket contents_ibfk_2` FOREIGN KEY (`productID`) REFERENCES `products` (`productID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `basket contents_ibfk_3` FOREIGN KEY (`orderID`) REFERENCES `orders` (`orderID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `basket contents_ibfk_1` FOREIGN KEY (`basketCK`) REFERENCES `basket` (`basketID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `basket contents_ibfk_2` FOREIGN KEY (`productCK`) REFERENCES `products` (`productID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `basket contents_ibfk_3` FOREIGN KEY (`orderFK`) REFERENCES `orders` (`orderID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `product categories`
 --
 ALTER TABLE `product categories`
-  ADD CONSTRAINT `product categories_ibfk_1` FOREIGN KEY (`productID`) REFERENCES `products` (`productID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `product categories_ibfk_2` FOREIGN KEY (`categoryID`) REFERENCES `categories` (`categoryID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `product categories_ibfk_1` FOREIGN KEY (`productCK`) REFERENCES `products` (`productID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `product categories_ibfk_2` FOREIGN KEY (`categoryCK`) REFERENCES `categories` (`categoryID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
