@@ -252,3 +252,7 @@ ALTER TABLE `basket contents` CHANGE `basketID` `basketCK` INT NOT NULL,
 
 ALTER TABLE `product categories` CHANGE `productID` `productCK` INT NOT NULL, 
     CHANGE `categoryID` `categoryCK` INT NOT NULL;
+
+--26/11/22--
+---Setting images in products to have null values---
+ALTER TABLE `products` CHANGE `images` `images` VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NULL;
