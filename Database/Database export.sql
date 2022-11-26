@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 26, 2022 at 05:16 PM
+-- Generation Time: Nov 26, 2022 at 06:07 PM
 -- Server version: 8.0.31-0ubuntu0.20.04.1
 -- PHP Version: 8.1.12
 
@@ -111,7 +111,7 @@ CREATE TABLE `product categories` (
 --
 
 CREATE TABLE `products` (
-  `productID` int NOT NULL,
+  `productid` int NOT NULL,
   `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `size` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'S',
   `price` int NOT NULL DEFAULT '0',
@@ -194,7 +194,7 @@ ALTER TABLE `product categories`
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`productID`);
+  ADD PRIMARY KEY (`productid`);
 
 --
 -- Indexes for table `users`
@@ -234,7 +234,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `productID` int NOT NULL AUTO_INCREMENT;
+  MODIFY `productid` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -264,14 +264,14 @@ ALTER TABLE `basket`
 --
 ALTER TABLE `basket contents`
   ADD CONSTRAINT `basket contents_ibfk_1` FOREIGN KEY (`basketCK`) REFERENCES `basket` (`basketID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `basket contents_ibfk_2` FOREIGN KEY (`productCK`) REFERENCES `products` (`productID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `basket contents_ibfk_2` FOREIGN KEY (`productCK`) REFERENCES `products` (`productid`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `basket contents_ibfk_3` FOREIGN KEY (`orderFK`) REFERENCES `orders` (`orderID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `product categories`
 --
 ALTER TABLE `product categories`
-  ADD CONSTRAINT `product categories_ibfk_1` FOREIGN KEY (`productCK`) REFERENCES `products` (`productID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `product categories_ibfk_1` FOREIGN KEY (`productCK`) REFERENCES `products` (`productid`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   ADD CONSTRAINT `product categories_ibfk_2` FOREIGN KEY (`categoryCK`) REFERENCES `categories` (`categoryID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
