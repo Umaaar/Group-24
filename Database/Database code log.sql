@@ -259,3 +259,25 @@ ALTER TABLE `products` CHANGE `images` `images` VARCHAR(100) CHARACTER SET utf8m
 
 ---Getting rid of all capitals in the product table---
 ALTER TABLE `products` CHANGE `productID` `productid` INT NOT NULL AUTO_INCREMENT;
+
+---Removal of all capital letters as it keeps on causing issues---
+ALTER TABLE `admin basket view` CHANGE `adminCK` `adminck` INT NOT NULL, 
+    CHANGE `basketCK` `basketck` INT NOT NULL;
+
+ALTER TABLE `admins` CHANGE `adminID` `adminid` INT NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `basket` CHANGE `basketID` `basketid` INT NOT NULL AUTO_INCREMENT, 
+    CHANGE `userFK` `userfk` INT NOT NULL;
+
+ALTER TABLE `basket contents` CHANGE `basketCK` `basketck` INT NOT NULL, 
+    CHANGE `productCK` `productck` INT NOT NULL, 
+    CHANGE `orderFK` `orderfk` INT NOT NULL;
+
+ALTER TABLE `categories` CHANGE `categoryID` `categoryid` INT NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `orders` CHANGE `orderID` `orderid` INT NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `product categories` CHANGE `productCK` `productck` INT NOT NULL, 
+    CHANGE `categoryCK` `categoryck` INT NOT NULL;
+
+ALTER TABLE `users` CHANGE `userID` `userid` INT NOT NULL AUTO_INCREMENT;
