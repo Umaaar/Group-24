@@ -10,7 +10,7 @@ class UserController extends Controller
 
     ########################## ADMIN START ##########################
 
-    public function display() {
+    public function display_orders() {
       $all = User::all();
       return view('pages.admin.customers', ['customers' => $all]);
     }
