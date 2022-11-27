@@ -53,8 +53,19 @@
               </tr>
             </thead>
             <tbody>
-
-
+            @foreach($orders as $order)
+              <tr>
+                <td> {{ $order['orderID'] }} </td>
+                <td> {{ $order['date'] }} </td>
+                <td> {{ $order['status'] }} </td>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+              @endforeach
 
               <tr>
                 <td>2</td>
