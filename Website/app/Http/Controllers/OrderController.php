@@ -8,7 +8,7 @@ use App\Models\Order;
 
 class OrderController extends Controller
 {
-    public function index() {
+    public function diplay_orders() {
       $all = Order::all();
       return view('pages.admin.orders', ['orders' => $all]);
     }
