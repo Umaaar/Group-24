@@ -7,3 +7,42 @@
 
 display: flex;
 }
+
+.contactus_col1{
+    width: 500px;
+    height: 700px;  
+    padding: 30px;
+    border: 10px solid#38b6ff ;
+    color: white;
+    background-color: black;
+    border-radius: 25px;
+    margin-left: 25px;
+}
+
+.contactus_col2{
+    width: 660px;
+    height: 700px;  
+    padding: 30px;
+    border: 10px solid#38b6ff ;
+    color: white;
+    background-color: black;
+    box-sizing: border-box;
+    margin-left: 10px;
+    padding-top: 20px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    
+   
+    
+}
+.contactus_col3{
+    width: 460px;
+    height: 700px;  
+    padding: 30px;
+    border: 10px solid#38b6ff ;
+    color: white;
+    background-color: black;
+    border-radius: 25px;
+    margin-left: 10px;
+
+}
