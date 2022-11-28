@@ -130,8 +130,8 @@ Route::post('insert-product', [ProductController::class, 'insert']);
 Route::get('/admin/editproduct', [ProductController::class, 'edit'])->middleware('auth:webadmins');;
 
 Route::get('/admin/addproduct', function () {
-  return view('pages.admin.addproduct')->middleware('auth:webadmins');;
-});
+  return view('pages.admin.addproduct');
+})->middleware('auth:webadmins');
 
 Route::get('/admin/editproduct', function () {
   return view('pages.admin.editproduct');

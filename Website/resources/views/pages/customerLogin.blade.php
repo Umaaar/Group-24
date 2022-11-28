@@ -19,7 +19,7 @@
 <body>
 
     @if (null !== session('message'))
-    <div class="alert alert-danger">
+    <div class="alert alert-danger border-0 m-auto">
         <h5>{{session('message')}}</h5>
     </div>
     @endif

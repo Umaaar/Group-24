@@ -1,10 +1,9 @@
 .container-contact-us{
     width:100%;
-    float:left;
-
+    
 
 }
 .contactus_col1 .contactus_col2 .contactus_col3{
-width:33%;
-float: left;
+
+display: flex;
 }

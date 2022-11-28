@@ -13,7 +13,7 @@ class admins extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     public $timestamps = false;
-    protected $primaryKey = 'adminID';
+    protected $primaryKey = 'adminid';
 
     /**
      * The attributes that are mass assignable.
@@ -21,7 +21,7 @@ class admins extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'adminID',
+        'adminid',
         'name',
         'email',
         'password',

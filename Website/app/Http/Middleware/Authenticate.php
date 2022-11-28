@@ -16,7 +16,7 @@ class Authenticate extends Middleware
     {
         if (! $request->expectsJson()) {
             
-            session(['message' => 'You must be logged in to access the previous page']);
+            session(['message' => 'You must be logged in to access the that page']);
             return url('/login');
         }
     }
