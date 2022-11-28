@@ -30,7 +30,7 @@ Route::get('/about', [PageController::class, 'about']);
 
 Route::get('/account', [PageController::class, 'account']);
 
-Route::get('/admin', [PageController::class, 'admin']);
+Route::get('/admin', [PageController::class, 'admin'])->middleware('auth:admins');
 
 Route::get('/checkout', [PageController::class, 'checkout']);
 
@@ -97,18 +97,20 @@ Route::get('/register', function () {
 
 Route::get('/admin', function () {
   return view('pages.admin.home');
-});
+})->middleware('auth:webadmins');
+
 Route::get('/admin/orders', function () {
   return view('pages.admin.orders');
-});
+})->middleware('auth:webadmins');;
+
 Route::get('/admin/products', function () {
   return view('pages.admin.products');
-});
+})->middleware('auth:webadmins');;
 // Route::get('/admin/customers', function () {
 //   return view('pages.admin.customers');
 // });
-Route::get('/admin/customers', [UserController::class, 'display']);
-Route::get('/admin/products', [ProductController::class, 'display_products']);
+Route::get('/admin/customers', [UserController::class, 'display'])->middleware('auth:webadmins');;
+Route::get('/admin/products', [ProductController::class, 'display_products'])->middleware('auth:webadmins');;
 
 
 // Route::get('/admin/addproduct', [ProductController::class, 'add']);
@@ -120,10 +122,10 @@ Route::get('display_addproduct',[ProductController::class, 'display_addproduct_p
 
 Route::post('insert-product', [ProductController::class, 'insert']);
 
-Route::get('/admin/editproduct', [ProductController::class, 'edit']);
+Route::get('/admin/editproduct', [ProductController::class, 'edit'])->middleware('auth:webadmins');;
 
 Route::get('/admin/addproduct', function () {
-  return view('pages.admin.addproduct');
+  return view('pages.admin.addproduct')->middleware('auth:webadmins');;
 });
 
 Route::get('/admin/editproduct', function () {
@@ -149,7 +151,7 @@ Route::get('/profile', function () {
 
 Route::get('/profile/orders', function () {
   return view('pages.user.orders');
-});
+})->middleware('auth');
 
 ############# USER PROFILE SIDENAV LINKS END #############
 
@@ -166,5 +168,3 @@ Route::get('/basket', [BasketController::class, 'index']);
 Route::any('/orders',[OrderController::class, 'display_user_orders']);
 
 Route::any('/checkout',[BasketController::class, 'getInfo']);
-
-Route::any('/placeOrder',[OrderController::class, 'createOrder']);

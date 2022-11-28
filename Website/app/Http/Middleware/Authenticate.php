@@ -15,8 +15,8 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
         if (! $request->expectsJson()) {
-
-            session(['message' => 'Please log in']);
+            
+            session(['message' => 'You must be logged in to access the previous page']);
             return url('/login');
         }
     }

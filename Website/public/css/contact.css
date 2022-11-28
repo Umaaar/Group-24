@@ -1,13 +1,10 @@
 .container-contact-us{
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    margin: auto;
-}
+    width:100%;
+    float:left;
 
-.column{
-   float: left;
-   width:40%;
-   padding:20px;
-   height:100px;
+
+}
+.contactus_col1 .contactus_col2 .contactus_col3{
+width:33%;
+float: left;
 }

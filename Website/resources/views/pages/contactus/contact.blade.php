@@ -13,37 +13,40 @@
 </head>
 
 <html>
+
 <body>
 
   <!-- Import header -->
   @include('assets.common.navbar')
+
   
 
   <!-- Insert ContactUs body here -->
-  <div class = "container-contact-us">
+  <div class = "container_contact_us">
 <h1> Contact Us </h1>
 <!-- Links to the social media pages -->
 
-  <div class="row">
-    <div class="column">
-<div class= "links">
-  <h2>Contact Information</h2>
-  </div>
+  <div class= "contactus_col1">
+    <p><a href="https://www.instagram.com/?hl=en"> Instagram </a></p>
+    <p><a href="https://twitter.com/i/flow/login"> Twitter </a></p>
+    <p><a href="https://en-gb.facebook.com/login.php"> Facebook </a></p>
+    <p><a href="https://www.youtube.com/"> Youtube </a></p>
+
+   
 </div>
 
-      <div class="column">
-    <div class= "contactf">
-      <h2>Conact Form</h2>
+    <div class= "contactus_col2">
+        <a href="mailto: astondirect@outlook.com"> Send Query </a>
 </div>
-    
-    
-    <div class="column">
-  <div class= "location">
-    <h2>Location</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9718.325760104139!2d-1.8882478!3d52.4867138!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9a670ba18e08a084!2sAston%20University!5e0!3m2!1sen!2suk!4v1669637789854!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-  </div>
+
+  <div class= "contactus_col3">
+<h1>Rabia pagal hy </h1>
 </div>
+</div>
+
+
+
+
 
 
   <div class="container-2">
