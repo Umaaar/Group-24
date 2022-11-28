@@ -12,19 +12,22 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav m-auto">
-        <li class="nav-item active px-4">
+        <li class="nav-item active px-4 linksetup linkhover">
           <a class="nav-link" href="/">HOME</a>
         </li>
-        <li class="nav-item active px-4">
+        <li class="nav-item active px-4 linksetup linkhover">
           <a class="nav-link" href="/men">MEN</a>
         </li>
-        <li class="nav-item active px-4">
+        <li class="nav-item active px-4 linksetup linkhover">
           <a class="nav-link" href="/women">WOMEN</a>
         </li>
-        <li class="nav-item active px-4">
+        <li class="nav-item active px-4 linksetup linkhover">
           <a class="nav-link" href="/about">ABOUT</a>
         </li>
-        <li class="nav-item active px-4">
+        <li class="nav-item active px-4 linksetup linkhover">
+          <a class="nav-link" href="/contact">CONTACT US</a>
+        </li>
+        <li class="nav-item active px-4 linksetup linkhover">
           <a class="nav-link" href="/profile">PROFILE</a>
         </li>
     </ul>
