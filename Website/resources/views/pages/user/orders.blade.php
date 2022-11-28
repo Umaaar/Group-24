@@ -31,12 +31,30 @@
                 <th>Product Name</th>
                 <th>Size</th>
                 <th>Price (£)</th>
-                <th>Stock</th>
-                <th>Description</th>
-                <th>Gender</th>
+               
               </tr>
             </thead>
             <tbody>
+           <?php
+            $decoded = json_decode(json_encode($orders), true);
+            if($decoded !== null)
+          {
+            foreach ($decoded as $order) {
+              ?>
+              <tr>
+                <td> <?= $order['orderck']; ?> </td>
+                <td> <?= $order['name']; ?> </td>
+                <td> <?= $order['size']; ?> </td>
+                <td> <?= $order['price']; ?> </td>
+            </tr>
+            <?php
+            }
+
+          } else {
+
+            echo "You haven't made any orders!";
+          }
+          ?>
               <tr>
                 <td>1</td>
                 <td></td>
@@ -172,7 +190,10 @@
                 <td></td>
                 <td></td>
               </tr>
+        
+          
             </tbody>
+           
           </table>
         </div>
       </div>
