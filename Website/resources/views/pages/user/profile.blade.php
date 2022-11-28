@@ -14,7 +14,7 @@
         <ul class="nav nav-pills flex-column mb-auto">
           <a href="/profile" class="nav-link text-white active">Home</a>
           <li>
-            <a href="/profile/orders" class="nav-link text-white">My Orders</a>
+            <a href="{{ asset('/orders') }}" class="nav-link text-white">My Orders</a>
           </li>
         </ul>
       </div>
