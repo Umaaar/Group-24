@@ -28,6 +28,8 @@ Route::get('/user/{name}/{id}', function($name, $id) {
 
 Route::get('/about', [PageController::class, 'about']);
 
+Route::get('/contact', [PageController::class, 'contac']);
+
 Route::get('/account', [PageController::class, 'account']);
 
 Route::get('/admin', [PageController::class, 'admin']);
@@ -69,6 +71,9 @@ Route::get('/about', function () {
   return view('pages.about');
 });
 
+Route::get('/contact', function () {
+  return view('pages.contactus.contact');
+});
 
 
 Route::get('/checkout', function () {
