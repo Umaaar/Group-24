@@ -53,7 +53,7 @@ $decoded = json_decode(json_encode($basket), true)
     </span>
       </div>
       <div class="col-sm-4">
-        <a href="/checkout" class="btn btn-primary">Checkout</a>
+        <a href="{{ asset('/checkout') }}" class="btn btn-primary">Checkout</a>
       </div>
     </div>
 

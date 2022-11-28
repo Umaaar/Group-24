@@ -63,10 +63,31 @@
       <hr>
 <table class="table">
   <tbody>
+    <?php
+      $decoded = json_decode(json_encode($basketInfo), true);
+      $total = 0;
+    ?>
 
+    @foreach ($decoded as $item)
+    <?php $total += $item['totalPrice'] * $item['quantity']?>
+    <tr>
+      <td>{{$item['name']}}</td>
+      <td>{{$item['totalPrice']}}</td>
+      <td>{{$item['quantity']}}</td>
+    </tr>
+    @endforeach
   </tbody>
 </table>
 <hr>
+<div class="row">
+  <div class="col-md-4">
+    <h6>Subtotal</h6>
+  </div>
+  <div class="col-md-4">
+    <h6>${{$total}}</h6>
+  </div>
+  </div>
+
 <button class="btn btn-primary">Place Order</button>
     </div>
     </div>

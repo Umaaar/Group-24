@@ -23,5 +23,16 @@ class BasketController extends Controller
     }
 
 
+    public function getInfo(){
+        $basketInfo = DB::table('basket-contents')
+                    ->join('baskets', 'basketck', "=", "basketID")
+                    ->join('products', 'productIDFK', "=", "id")
+                    ->select('basket-contents.*', 'products.name')
+                    ->get();
+
+         return view('pages.checkout') -> with('basketInfo', $basketInfo);
+    }
+
+
     
 }
