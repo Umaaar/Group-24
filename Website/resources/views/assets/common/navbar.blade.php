@@ -25,6 +25,9 @@
           <a class="nav-link" href="/about">ABOUT</a>
         </li>
         <li class="nav-item active px-4 linksetup linkhover">
+          <a class="nav-link" href="/contact">CONTACT US</a>
+        </li>
+        <li class="nav-item active px-4 linksetup linkhover">
           <a class="nav-link" href="/profile">PROFILE</a>
         </li>
     </ul>
