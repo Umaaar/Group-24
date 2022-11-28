@@ -26,17 +26,20 @@
 <h1> Contact Us </h1>
 <!-- Links to the social media pages -->
 
+    <div class= row>
   <div class= "contactus_col1">
+<div class="column" >
     <p><a href="https://www.instagram.com/?hl=en"> Instagram </a></p>
     <p><a href="https://twitter.com/i/flow/login"> Twitter </a></p>
     <p><a href="https://en-gb.facebook.com/login.php"> Facebook </a></p>
     <p><a href="https://www.youtube.com/"> Youtube </a></p>
     <p><a href="mailto: astondirect@outlook.com"> Send Query</a></p>
-
+    </div>
    
 </div>
 
     <div class= "contactus_col2">
+    <div class="column" >
         <form>
             <label for="name"> Name: </label><br>
             <input type="text" id="name" name="name" placeholder="Name"><br>
@@ -55,12 +58,14 @@
         <input type="submit" value="Submit">
 </form>
 </div>
+</div>
 
   <div class= "contactus_col3">
-
+  <div class="column">
 </div>
 </div>
-
+</div>
+<div>
 
 
 
