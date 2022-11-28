@@ -19,7 +19,7 @@
         </ul>
       </div>
 
-      <div class="col-lg-10 pt-4 px-4">
+      <div class="col-10 pt-4 px-4">
         <div class="d-flex">
           <h3><b>Home</b></h3>
         </div>

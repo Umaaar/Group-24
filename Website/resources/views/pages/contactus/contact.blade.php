@@ -22,10 +22,22 @@
   
 
   <!-- Insert ContactUs body here -->
+  <div class = "container-contact-us">
+<h1> Contact Us </h1>
+<!-- Links to the social media pages -->
+  <div class= "links">
+
+</div>
+
+    <div class= "contactf">
+</div>
 
   <div class= "location">
-    
+
 </div>
+</div>
+
+
 
 
 
