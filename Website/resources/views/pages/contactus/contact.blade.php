@@ -22,18 +22,25 @@
   
 
   <!-- Insert ContactUs body here -->
-  <div class = "container-contact-us">
+  <div class = "container_contact_us">
 <h1> Contact Us </h1>
 <!-- Links to the social media pages -->
-  <div class= "links">
 
+  <div class= "contactus_col1">
+    <p><a href="https://www.instagram.com/?hl=en"> Instagram </a></p>
+    <p><a href="https://twitter.com/i/flow/login"> Twitter </a></p>
+    <p><a href="https://en-gb.facebook.com/login.php"> Facebook </a></p>
+    <p><a href="https://www.youtube.com/"> Youtube </a></p>
+
+   
 </div>
 
-    <div class= "contactf">
+    <div class= "contactus_col2">
+        <a href="mailto: astondirect@outlook.com"> Send Query </a>
 </div>
 
-  <div class= "location">
-
+  <div class= "contactus_col3">
+<h1>Rabia pagal hy </h1>
 </div>
 </div>
 
