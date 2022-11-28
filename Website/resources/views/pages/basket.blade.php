@@ -35,7 +35,7 @@ $decoded = json_decode(json_encode($basket), true)
         <?php $total += $item['totalPrice'] * $item['quantity']?>
         <tr>
           <td>{{$item['name']}}</td>
-          <td>£{{ $item['totalPrice'] }}</td>
+          <td>${{ $item['totalPrice'] }}</td>
           <td>{{ $item['quantity'] }}</td>
           <td>
             <button type="button" class="btn btn-primary">+</button>
@@ -49,7 +49,7 @@ $decoded = json_decode(json_encode($basket), true)
     <div class="row">
       <div class="col-sm-4 alert alert-primary">
     <span>
-        <strong>Total: £{{ $total}}</strong>
+        <strong>Total: ${{ $total}}</strong>
     </span>
       </div>
       <div class="col-sm-4">

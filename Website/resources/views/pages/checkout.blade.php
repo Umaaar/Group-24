@@ -84,7 +84,7 @@
     <h6>Subtotal</h6>
   </div>
   <div class="col-md-4">
-    <h6>£{{$total}}</h6>
+    <h6>${{$total}}</h6>
   </div>
   </div>
 
