@@ -34,23 +34,23 @@
             <div class="row checkout form">
               <div class="col-md-6">
                <label for ="">First Name</label>
-               <input type ="text" class= "form-control" placeholder="Enter Your First Name">
+               <input type ="text" class= "form-control" placeholder="Enter Your First Name" value="{{ Auth::user()->firstName }}">
               </div>
               <div class="col-md-6">
                 <label for ="">Last Name</label>
-                <input type ="text" class= "form-control" placeholder="Enter Your Last Name">
+                <input type ="text" class= "form-control" placeholder="Enter Your Last Name" value="{{ Auth::user()->surname}}">
                </div>
                <div class="col-md-6 mt-3">
                 <label for ="">Email</label>
-                <input type ="text" class= "form-control" placeholder="Enter Your Email">
+                <input type ="text" class= "form-control" placeholder="Enter Your Email" value="{{ Auth::user()->email}}">
                </div>
                <div class="col-md-6 mt-3">
                 <label for ="">Address</label>
-                <input type ="text" class= "form-control" placeholder="Enter Your Address">
+                <input type ="text" class= "form-control" placeholder="Enter Your Address"value="{{ Auth::user()->address}}">
                </div>
                <div class="col-md-6 mt-3">
                <label for ="">Post Code</label>
-               <input type ="text" class= "form-control" placeholder="Enter Your Post Code">
+               <input type ="text" class= "form-control" placeholder="Enter Your Post Code" value="{{ Auth::user()->postCode}}">
               </div>
             </div>
           </div>
