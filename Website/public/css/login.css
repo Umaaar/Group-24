@@ -88,15 +88,20 @@ h1[name="h1staffLogin"]{
     height: 12%;
     margin: 20px;
     margin-top: 0px;
+    border-radius: 10px;
+    background-color: #38b6ff;
+    transition: background 0.5s ease-in-out;
 }  
 
 .submitButtonContainer>button{
     width: 100%;
     border-radius: 10px;
     height: 40px;
-    background-color: #38b6ff;
+    background-color: rgba(0, 0, 0, 0); /*background of the button is transparent*/
 }
 
-
+.submitButtonContainer:hover {
+    background: #007BFF;
+}
 
 
