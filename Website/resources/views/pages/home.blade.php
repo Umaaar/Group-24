@@ -1,6 +1,15 @@
 <head>
   <link rel="stylesheet" href="{{asset('/css/home.css')}}">
 
+<style>
+#menu-container {
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+</style>
+
   <title>@yield('title')</title>
 </head>
 
@@ -20,45 +29,40 @@ if(Auth::check()){
 <div class="d-flex justify-content-between">
   <div class="w-100 mx-auto">
     <div class="mx-auto bg-dark">
-      <div id="demo" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ul class="carousel-indicators">
-          <li data-target="#demo" data-slide-to="0" class="active"></li>
-          <li data-target="#demo" data-slide-to="1"></li>
-          <li data-target="#demo" data-slide-to="2"></li>
-        </ul>
-        <!-- The slideshow -->
+      <div id="test" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active mx-auto d-block">
-            <img src="{{URL::asset('aston_sport_clear.png')}}" class="mx-auto d-block" alt="">
+          <div class="carousel-item active">
+            <img class="d-block w-50 mx-auto" src="{{URL::asset('aston_sport_clear.png')}}" alt="First slide">
           </div>
           <div class="carousel-item">
-            <img src="{{URL::asset('Second_Slide_Show_Image.png')}}"class="mx-auto d-block" alt="">
+            <img class="d-block w-50 mx-auto" src="{{URL::asset('aston_sport.png')}}" alt="Second slide">
           </div>
           <div class="carousel-item">
-            <img src="{{URL::asset('aston_sport_clear.png')}}"class="mx-auto d-block" alt="">
+            <img class="d-block w-50 mx-auto" src="{{URL::asset('aston_sport_clear.png')}}" alt="Third slide">
           </div>
         </div>
-        <!-- Left and right controls -->
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <a class="carousel-control-prev" href="#test" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon"></span>
+          <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next">
+        <a class="carousel-control-next" href="#test" role="button" data-slide="next">
           <span class="carousel-control-next-icon"></span>
+          <span class="sr-only">Next</span>
         </a>
       </div>
     </div>
   </div>
 
   <div class="d-flex">
-    <div class="border-left border-secondary bg-dark mx-auto w-50 px-5 w-100"> <!-- col-md-3 -->
+    <div class="border-left border-secondary bg-dark px-5 w-100"> <!-- col-md-3 -->
       <h1 class="display-5 text-light py-2">Welcome <?php echo $name ?></h1>
       <!-- <p class="display-6 my-3 text-light">Test</p> -->
-      <p class="font-weight-normal text-light">A modern, innovative, and affordable clothing retailer perfect for students on a budget. We place a big emphasis on sustainability and ethical sourcing.</p>
-      <a class="btn btn-secondary d-block" href="/about">Find out more...</a>
+      <p class="font-weight-normal text-light">A modern, innovative, and affordable clothing retailer perfect for students on a budget.</p>
+      <p class="font-weight-normal text-light">Register and login to begin ordering and access your past orders via the user profile dashboard.</p>
+      <!-- <p class="font-weight-normal text-light">Alternatively, browse our products pages using the navigation bar above.</p> -->
+      <a class="btn btn-secondary d-block " href="/about">Find out more...</a>
     </div>
   </div>
-
   </div>
 
   <div class="p-lg-5 col-md-5 mx-auto my-2 py-0">
@@ -111,26 +115,7 @@ if(Auth::check()){
     </div>
   </div>
 
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item d-flex justify-content-center">
-        <img class="w-25" src="{{URL::asset('aston_sport_clear.png')}}">
-      </div>
-      <div class="carousel-item d-flex justify-content-center">
-        <img class="w-25" src="{{URL::asset('aston_sport.png')}}">
-      </div>
-      <div class="carousel-item d-flex justify-content-center">
-        <img class="w-25" src="{{URL::asset('aston_sport_clear.png')}}">
-      </div>
-    </div>
-
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </a>
-  </div>
+  <img class="img-custom mx-auto d-block" src="{{URL::asset('Second_Slide_Show_Image.jpg')}}" width="500" height="350">
 
   <div class="col-md-4 p-lg-5 mx-auto my-1">
     <p class="lead font-weight-normal text-dark">A modern, innovative, and affordable clothing retailer with an emphasis on sustainability and ethical sourcing.</p>

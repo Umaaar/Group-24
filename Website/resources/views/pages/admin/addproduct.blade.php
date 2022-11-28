@@ -46,12 +46,12 @@
               </li>
             </li>
 
-            <form>  <!-- list-group-item -->
-              <div class=" d-flex">
-                <label for="addImage"></label>
-                <input type="file" class="form-control-file btn-sm btn-secondary" id="addImage">
+            <form action="{{ url('insert-product') }}" method="POST" enctype="multipart/form-data">
+              @csrf
+              <!-- list-group-item -->
+              <div class="mx-auto">
+                <input type="file" class="form-control-file btn-sm btn-secondary" id="images" name="images">
               </div>
-            </form>
           </ul>
         </div>
 
@@ -60,45 +60,43 @@
         </li> -->
 
         <div class="col-md-8">
-          <form action="{{ url('add-product') }}" method="POST" enctype="multipart/form-data">
-            @csrf
             <div class="row">
               <div class="col-md-6">
                 <label for="productID">ID</label>
-                <input type="text muted" class="form-control" id="productID" placeholder="#" value="" disabled>
+                <input type="text muted" class="form-control" name="productID" placeholder="#" value="" disabled>
               </div>
               <div class="col-md-6 mb-4">
                 <label for="name">Product Name</label>
-                <input type="text" class="form-control" id="name" placeholder="" value="">
+                <input type="text" class="form-control" name="name" placeholder="" value="">
               </div>
               <div class="col-md-6 mb-4">
                 <label for="size">Size</label>
-                <input type="number" class="form-control" id="size" placeholder="" value="">
+                <input type="number" class="form-control" name="size" placeholder="" value="">
               </div>
 
               <div class="col-md-6 mb-4">
                <label for="price">Price (£)</label>
-               <input type="number" class="form-control" id="price" placeholder="£" value="">
+               <input type="decimal" class="form-control" name="price" placeholder="£" value="">
               </div>
             </div>
 
             <div class="mb-4">
               <label for="stock">Stock</label>
-              <input type="number" class="form-control" id="stock">
+              <input type="number" class="form-control" name="stock">
             </div>
               <div class="form-group">
                 <label for="description">Description</label>
-                <textarea class="form-control" id="description" rows="7"></textarea>
+                <textarea class="form-control" name="description" rows="7"></textarea>
               </div>
               <label for="gender">Gender</label>
-              <select class="custom-select" id="gender" required>
-                <option value=""Select gender:</option>
+              <select class="custom-select" name="gender" wire:model="gender" required>
+                <option value="">Select gender:</option>
                 <option>Male</option>
                 <option>Female</option>
               </select>
 
             <div class="my-4">
-              <button class="btn btn-success btn-mg mx-auto d-block" type="submit" for="submit" id="submit">Add Product</button>
+              <button class="btn btn-success btn-mg mx-auto d-block" type="submit" for="submit" name="submit" id="submit">Add Product</button>
             </div>
             @csrf
           </form>

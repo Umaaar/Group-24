@@ -230,3 +230,54 @@ ALTER TABLE `products` CHANGE `size` `size` INT NOT NULL DEFAULT '1',
 ---Correcting size field in products table---
 --The default means that the size is small (S=small)
 ALTER TABLE `products` CHANGE `size` `size` VARCHAR(10) NOT NULL DEFAULT 'S';
+
+--Changing the varchar size from 10 to 5
+ALTER TABLE `products` CHANGE `size` `size` VARCHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'S';
+
+---Shortening the max length of status in the orders table---
+ALTER TABLE `orders` CHANGE `status` `status` VARCHAR(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci 
+    NOT NULL DEFAULT 'Ongoing';
+
+--24/11/22--
+---Changing the names of foreign keys and composite keys in the database---
+--Composite will have CK on the end and foreign will have FK on the end
+ALTER TABLE `admin basket view` CHANGE `adminID` `adminCK` INT NOT NULL, 
+    CHANGE `basketID` `basketCK` INT NOT NULL;
+
+ALTER TABLE `basket` CHANGE `userID` `userFK` INT NOT NULL;
+
+ALTER TABLE `basket contents` CHANGE `basketID` `basketCK` INT NOT NULL, 
+    CHANGE `productID` `productCK` INT NOT NULL, 
+    CHANGE `orderID` `orderFK` INT NOT NULL;
+
+ALTER TABLE `product categories` CHANGE `productID` `productCK` INT NOT NULL, 
+    CHANGE `categoryID` `categoryCK` INT NOT NULL;
+
+--26/11/22--
+---Setting images in products to have null values---
+ALTER TABLE `products` CHANGE `images` `images` VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NULL;
+
+---Getting rid of all capitals in the product table---
+ALTER TABLE `products` CHANGE `productID` `productid` INT NOT NULL AUTO_INCREMENT;
+
+---Removal of all capital letters as it keeps on causing issues---
+ALTER TABLE `admin basket view` CHANGE `adminCK` `adminck` INT NOT NULL, 
+    CHANGE `basketCK` `basketck` INT NOT NULL;
+
+ALTER TABLE `admins` CHANGE `adminID` `adminid` INT NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `basket` CHANGE `basketID` `basketid` INT NOT NULL AUTO_INCREMENT, 
+    CHANGE `userFK` `userfk` INT NOT NULL;
+
+ALTER TABLE `basket contents` CHANGE `basketCK` `basketck` INT NOT NULL, 
+    CHANGE `productCK` `productck` INT NOT NULL, 
+    CHANGE `orderFK` `orderfk` INT NOT NULL;
+
+ALTER TABLE `categories` CHANGE `categoryID` `categoryid` INT NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `orders` CHANGE `orderID` `orderid` INT NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `product categories` CHANGE `productCK` `productck` INT NOT NULL, 
+    CHANGE `categoryCK` `categoryck` INT NOT NULL;
+
+ALTER TABLE `users` CHANGE `userID` `userid` INT NOT NULL AUTO_INCREMENT;

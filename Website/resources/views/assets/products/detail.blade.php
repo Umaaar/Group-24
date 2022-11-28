@@ -6,8 +6,8 @@
             <img class ="img-fluid w-100" src="{{URL::asset('black.png')}}" alt="">
         </div>
         <div class ="col-lg-6 col-md-12 col-12">
-            <h3 class="pt-3 font-weight-bold">Men's Black Hoodie</h3>
-            <h4 class="pb-4 text-muted">£40</h6>
+            <h3 class="pt-3 font-weight-bold">{{$product['name']}}</h3>
+            <h4 class="pb-4 text-muted">£{{$product['price']}}</h6>
             
                 <form class="form">
                     <select class="custom-select mb-3">
@@ -37,7 +37,8 @@
             
             <button class="btn btn-primary">Add to Cart</button>
             <h4 class="mt-5 mb-3">Product Details</h4>
-            <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit corporis cum ullam alias laudantium quas error! Vitae adipisci placeat reiciendis est illo corporis neque ut itaque, voluptatem quas accusantium vero.
+            <span>
+                {{$product['description']}}
             </span>
         </div>
         

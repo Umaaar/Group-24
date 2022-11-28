@@ -18,7 +18,7 @@
             <a href="/admin/customers" class="nav-link text-white">Customer List</a>
           </li>
         </ul>
-          <ul class="nav nav-pills flex-column ">
+          <ul class="nav nav-pills flex-column">
           <li>
             <div class="border-top border-secondary">
               <a href="/admin/addproduct" class="nav-link text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-pencil mx-1" viewBox="0 0 16 16">
@@ -65,7 +65,6 @@
                 <td> {{ $product['images'] }} </td>
               </tr>
               @endforeach
-
 
               <tr>
                 <td>2</td>
