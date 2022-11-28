@@ -18,15 +18,3 @@
   margin-right: 150px;
   height: 50px;
 }
-
-/*CSS here makes the links to the different pages more interactive*/
-li {
-  border-radius: 25px;
-  transition: background 0.5s ease-in-out;
-  margin-left: 2px;
-  margin-right: 2px;
-}
-
-li:hover {
-  background: #007BFF;
-}

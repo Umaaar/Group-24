@@ -87,7 +87,8 @@
     <h6>£{{$total}}</h6>
   </div>
   </div>
-<a href="{{ asset('/placeOrder') }}"><button class="btn btn-primary">Place Order</button></a>
+
+<button class="btn btn-primary">Place Order</button>
     </div>
     </div>
 </div>
