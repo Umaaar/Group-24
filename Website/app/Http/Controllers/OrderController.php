@@ -16,13 +16,13 @@ class OrderController extends Controller
     }
 
     public function display_user_orders() {
-      $ordersTemp = DB::table('basket contents')
-                        ->join('products', 'productck', '=', 'productID')
-                        ->join('orders', 'orderck', '=', 'orderID')
-                        ->where('basketck', '=', Auth::id())
-                        ->get();
+      $ordersTemp = DB::table('basket contents') //get the basket content table
+                        ->join('products', 'productck', '=', 'productID')// join products table
+                        ->join('orders', 'orderck', '=', 'orderID')// join orders table
+                        ->where('basketck', '=', Auth::id())//find data where basketck= user id
+                        ->get(); //gets everything that matches
                         
-      // $order = Order:: where (user_id= '$userid') #how to display the order of a certain authenticated user?
+     
       return view('pages.user.orders', ['orders' => $ordersTemp] );
     }
 }
