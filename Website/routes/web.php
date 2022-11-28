@@ -145,7 +145,7 @@ Route::controller(App\Http\Controllers\OrderController::class)->group(function (
 
 Route::get('/profile', function () {
   return view('pages.user.profile');
-});
+})->middleware('auth');
 
 Route::get('/profile/orders', function () {
   return view('pages.user.orders');
