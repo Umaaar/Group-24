@@ -1,10 +1,9 @@
 ![alt text](https://github.com/Umaaar/Group-24//blob//main/Website/public/aston_sport_clear.png?raw=true)
 
----
 
 ## Description 
 
-Aston Direct Sport Clothing is a e-commerce platform where high quality sports wear can be bought by users, build using Laravel as our PHP framework. Frontend is built using HTML, CSS, javascript and bootstrap as the CSS framework. Backend functionality is implemented using SQL and Eloquent models for the database and PHP for the interactive design
+Aston Direct Sport Clothing is a e-commerce platform where high quality sports wear can be bought by users, built using Laravel as our PHP framework. Frontend is built using HTML, CSS, javascript and bootstrap as the CSS framework. Backend functionality is implemented using SQL and Eloquent models for the database and PHP for the interactive design
 
 ## Features
 
@@ -47,6 +46,18 @@ Aston Direct Sport Clothing is a e-commerce platform where high quality sports w
 8. `php artisan serve`
 9. Open `http://127.0.0.1:8000` in your browser
     
+---
+
+Log in: 
+
+![alt text](https://github.com/Umaaar/Group-24//blob//main/Website/public/log%20in.png?raw=true)
+
+---
+
+Register:
+
+![alt text](https://github.com/Umaaar/Group-24//blob//main/Website/public/register.png?raw=true)
+
 ---
 
 ### Authors

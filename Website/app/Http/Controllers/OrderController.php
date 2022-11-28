@@ -25,4 +25,16 @@ class OrderController extends Controller
       // $order = Order:: where (user_id= '$userid') #how to display the order of a certain authenticated user?
       return view('pages.user.orders', ['orders' => $ordersTemp] );
     }
+    
+
+    public function createOrder(){
+      $currentDate = Carbon::now();
+      Order::create([
+      'date' => $currentDate,
+      'status' => "ongoing",
+      ]);
+
+      return redirect('/');
+      
+    }
 }
