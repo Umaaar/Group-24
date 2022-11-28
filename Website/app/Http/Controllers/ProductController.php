@@ -2,9 +2,15 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\BasketContent;
+use App\Models\BasketContents;
+use App\Cart;
+
+use Session;
 
 class ProductController extends Controller
 {
@@ -64,4 +70,8 @@ class ProductController extends Controller
 		$products->save();
 		return redirect('/admin/addproduct')->with('alert', "Added new product");
 	}
+
+
+
+
 }

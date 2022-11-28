@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\BasketContent;
+use App\Models\BasketContents;
+use App\Models\Product;
+use App\BasketOps;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
@@ -18,6 +21,7 @@ class BasketController extends Controller
 
          return view('pages.basket') -> with('basket', $basket);
     }
+
 
     
 }

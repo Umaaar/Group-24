@@ -21,12 +21,13 @@ $decoded = json_decode(json_encode($basket), true)
     <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-6">Basket</h1>
     </div>
-    <table class="table">
-      <thead class="thead-dark">
+    <table class="table table-bordered">
+      <thead class="thead-primary">
         <tr>
           <th scope="col">Product</th>
           <th scope="col">Price</th>
           <th scope="col">Qty</th>
+          <th scope="col">Ops</th>
         </tr>
       </thead>
       <tbody>
@@ -36,14 +37,27 @@ $decoded = json_decode(json_encode($basket), true)
           <td>{{$item['name']}}</td>
           <td>${{ $item['totalPrice'] }}</td>
           <td>{{ $item['quantity'] }}</td>
+          <td>
+            <button type="button" class="btn btn-primary">+</button>
+            <button type="button" class="btn btn-danger">-</button>
         </tr>
         @endforeach
       </tbody>
     </table>
+   
     
-    <p>
+    <div class="row">
+      <div class="col-sm-4 alert alert-primary">
+    <span>
         <strong>Total: ${{ $total}}</strong>
-    </p>
+    </span>
+      </div>
+      <div class="col-sm-4">
+        <a href="/checkout" class="btn btn-primary">Checkout</a>
+      </div>
+    </div>
+
+
     
 
 

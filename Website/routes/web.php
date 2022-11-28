@@ -59,6 +59,8 @@ Route::get('/', function () {
 // });
 
 
+
+
 Route::get('products/men/preview/{id}', [ProductController::class, 'detail']);
 
 
@@ -83,8 +85,6 @@ Route::get('/register', function () {
   return view('pages.customerRegister');
 });
 ///////////////////////////////////////////////////
-
-
 
 
 
