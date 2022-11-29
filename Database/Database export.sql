@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2022 at 02:50 PM
+-- Generation Time: Nov 29, 2022 at 03:33 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -70,12 +70,13 @@ CREATE TABLE `basket` (
 --
 
 CREATE TABLE `basket_contents` (
+  `basketcontentsid` int(11) NOT NULL,
   `basketck` int(11) NOT NULL,
   `productck` int(11) NOT NULL,
+  `orderfk` int(11) DEFAULT NULL,
   `quantity` int(11) NOT NULL DEFAULT 0,
-  `totalPrice` int(11) NOT NULL DEFAULT 0,
-  `orderfk` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+  `totalprice` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -181,8 +182,9 @@ ALTER TABLE `basket`
 -- Indexes for table `basket_contents`
 --
 ALTER TABLE `basket_contents`
-  ADD PRIMARY KEY (`basketck`,`productck`),
-  ADD KEY `basketck_2` (`basketck`,`productck`),
+  ADD PRIMARY KEY (`basketcontentsid`),
+  ADD KEY `basketck` (`basketck`),
+  ADD KEY `productck` (`productck`),
   ADD KEY `orderfk` (`orderfk`);
 
 --
@@ -233,6 +235,12 @@ ALTER TABLE `basket`
   MODIFY `basketid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `basket_contents`
+--
+ALTER TABLE `basket_contents`
+  MODIFY `basketcontentsid` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
@@ -277,7 +285,9 @@ ALTER TABLE `basket`
 -- Constraints for table `basket_contents`
 --
 ALTER TABLE `basket_contents`
-  ADD CONSTRAINT `basket_contents_ibfk_1` FOREIGN KEY (`basketck`) REFERENCES `basket` (`basketid`);
+  ADD CONSTRAINT `basket_contents_ibfk_1` FOREIGN KEY (`basketck`) REFERENCES `basket` (`basketid`),
+  ADD CONSTRAINT `basket_contents_ibfk_2` FOREIGN KEY (`productck`) REFERENCES `products` (`id`),
+  ADD CONSTRAINT `basket_contents_ibfk_3` FOREIGN KEY (`orderfk`) REFERENCES `orders` (`orderid`);
 
 --
 -- Constraints for table `product_categories`
