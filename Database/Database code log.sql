@@ -281,3 +281,25 @@ ALTER TABLE `product categories` CHANGE `productCK` `productck` INT NOT NULL,
     CHANGE `categoryCK` `categoryck` INT NOT NULL;
 
 ALTER TABLE `users` CHANGE `userID` `userid` INT NOT NULL AUTO_INCREMENT;
+
+--29/11/22--
+---Removing all spaces from table names---
+RENAME TABLE `laravel`.`admin basket view` TO `laravel`.`admin_basket_view`;
+
+RENAME TABLE `laravel`.`basket contents` TO `laravel`.`basket_contents`;
+
+RENAME TABLE `laravel`.`product categories` TO `laravel`.`product_categories`;
+
+---Removing restraints on composite keys that makes it unique---
+ALTER TABLE `admin_basket_view` ADD INDEX(`adminck`, `basketck`);
+--removing useless code
+ALTER TABLE `admin_basket_view` DROP INDEX `BasketID`;
+ALTER TABLE `admin_basket_view` DROP INDEX `adminck`;
+
+ALTER TABLE `basket_contents` ADD INDEX(`basketck`, `productck`);
+ALTER TABLE `basket_contents` DROP INDEX `basketck`;
+ALTER TABLE `basket_contents` DROP INDEX `ProductID`;
+ALTER TABLE `basket_contents` DROP INDEX `orderID`;
+
+ALTER TABLE `product_categories` ADD INDEX(`productck`, `categoryck`);
+ALTER TABLE `product_categories` DROP INDEX `CategoryID`;

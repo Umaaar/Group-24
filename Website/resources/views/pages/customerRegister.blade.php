@@ -22,7 +22,13 @@
     <div class="border-0 m-auto p-0">
         <ul class="border-0 m-auto p-0">
             @foreach ($errors->all() as $error)
-                <li class="list-group-item list-group-item-danger border-0 mp-0">{{ $error }}</li>
+
+                @if (Str::contains($error, ['2006']))
+                    <li class="list-group-item list-group-item-danger border-0 mp-0">You need to be at least 16 years old to make an account</li>
+                @else
+                    <li class="list-group-item list-group-item-danger border-0 mp-0">{{ $error }}</li>
+                @endif
+
             @endforeach
         </ul>
     </div>

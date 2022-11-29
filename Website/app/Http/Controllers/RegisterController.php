@@ -7,6 +7,7 @@ use App\Models\users;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Validator;
+use Carbon\Carbon;
 
 class RegisterController extends Controller
 {
@@ -14,13 +15,16 @@ class RegisterController extends Controller
 
     protected function register(Request $request){
 
+            $date = new Carbon();
+            $mustBeAge = $date->subYears(16)->format('Y-m-d');
+
             $validated = $request->validate([
                 'firstName' => 'required|string|max:50',
                 'surname' => 'required|string|max:50',
                 'address' => 'required|string|max:50',
                 'postCode' => 'required|string|max:10',
                 'gender' => 'required|string|max:10',
-                'dateOfBirth' => 'required|date|before_or_equal:2006/12/30',
+                'dateOfBirth' => 'required|date|before_or_equal: '. $mustBeAge,
                 'email' => 'required|email|string|unique:users|max:100',
                 'password' => 'required|min:8|max:100',
                 'confirmPassword' => 'required|same:password|max:100',
