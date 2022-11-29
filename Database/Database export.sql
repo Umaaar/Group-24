@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2022 at 02:24 PM
+-- Generation Time: Nov 29, 2022 at 02:50 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -74,7 +74,7 @@ CREATE TABLE `basket_contents` (
   `productck` int(11) NOT NULL,
   `quantity` int(11) NOT NULL DEFAULT 0,
   `totalPrice` int(11) NOT NULL DEFAULT 0,
-  `orderfk` int(11) NOT NULL
+  `orderfk` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
@@ -107,7 +107,7 @@ CREATE TABLE `orders` (
 --
 
 CREATE TABLE `products` (
-  `productid` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `size` varchar(5) NOT NULL DEFAULT 'S',
   `price` int(11) NOT NULL DEFAULT 0,
@@ -182,7 +182,8 @@ ALTER TABLE `basket`
 --
 ALTER TABLE `basket_contents`
   ADD PRIMARY KEY (`basketck`,`productck`),
-  ADD KEY `basketck_2` (`basketck`,`productck`);
+  ADD KEY `basketck_2` (`basketck`,`productck`),
+  ADD KEY `orderfk` (`orderfk`);
 
 --
 -- Indexes for table `categories`
@@ -200,7 +201,7 @@ ALTER TABLE `orders`
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`productid`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `product_categories`
@@ -247,7 +248,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `productid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -276,15 +277,13 @@ ALTER TABLE `basket`
 -- Constraints for table `basket_contents`
 --
 ALTER TABLE `basket_contents`
-  ADD CONSTRAINT `basket_contents_ibfk_1` FOREIGN KEY (`basketck`) REFERENCES `basket` (`basketid`),
-  ADD CONSTRAINT `basket_contents_ibfk_2` FOREIGN KEY (`productck`) REFERENCES `products` (`productid`),
-  ADD CONSTRAINT `basket_contents_ibfk_3` FOREIGN KEY (`orderfk`) REFERENCES `orders` (`orderid`);
+  ADD CONSTRAINT `basket_contents_ibfk_1` FOREIGN KEY (`basketck`) REFERENCES `basket` (`basketid`);
 
 --
 -- Constraints for table `product_categories`
 --
 ALTER TABLE `product_categories`
-  ADD CONSTRAINT `product_categories_ibfk_1` FOREIGN KEY (`productck`) REFERENCES `products` (`productid`),
+  ADD CONSTRAINT `product_categories_ibfk_1` FOREIGN KEY (`productck`) REFERENCES `products` (`id`),
   ADD CONSTRAINT `product_categories_ibfk_2` FOREIGN KEY (`categoryck`) REFERENCES `categories` (`categoryid`);
 COMMIT;
 
