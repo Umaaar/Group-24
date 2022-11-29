@@ -68,20 +68,7 @@
               </tr>
               @endforeach
 
-
-
-            <tr>
-                <td>1</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
+              <!-- <tr>
                 <td>2</td>
                 <td></td>
                 <td></td>
@@ -234,7 +221,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-              </tr> 
+              </tr> -->
             </tbody>
           </table>
         </div>

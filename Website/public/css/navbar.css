@@ -27,6 +27,7 @@ li.linksetup {
   margin-right: 2px;
 }
 
+/*Needs to be a seperate class to fade in and out*/
 li.linkhover:hover {
   background: #007BFF;
 }
