@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 <!-- Import main -->
 @include('assets.main')
 
