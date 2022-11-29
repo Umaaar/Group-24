@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2022 at 03:33 PM
+-- Generation Time: Nov 29, 2022 at 10:48 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -48,9 +48,10 @@ INSERT INTO `admins` (`adminid`, `name`, `email`, `password`) VALUES
 --
 
 CREATE TABLE `admin_basket_view` (
+  `adminbasketviewid` int(11) NOT NULL,
   `adminck` int(11) NOT NULL,
   `basketck` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -125,9 +126,10 @@ CREATE TABLE `products` (
 --
 
 CREATE TABLE `product_categories` (
+  `productcategoriesid` int(11) NOT NULL,
   `productck` int(11) NOT NULL,
   `categoryck` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -168,8 +170,9 @@ ALTER TABLE `admins`
 -- Indexes for table `admin_basket_view`
 --
 ALTER TABLE `admin_basket_view`
-  ADD PRIMARY KEY (`adminck`,`basketck`),
-  ADD KEY `adminck_2` (`adminck`,`basketck`);
+  ADD PRIMARY KEY (`adminbasketviewid`),
+  ADD KEY `adminck` (`adminck`),
+  ADD KEY `basketck` (`basketck`);
 
 --
 -- Indexes for table `basket`
@@ -209,8 +212,9 @@ ALTER TABLE `products`
 -- Indexes for table `product_categories`
 --
 ALTER TABLE `product_categories`
-  ADD PRIMARY KEY (`productck`,`categoryck`),
-  ADD KEY `productck` (`productck`,`categoryck`);
+  ADD PRIMARY KEY (`productcategoriesid`),
+  ADD KEY `productck` (`productck`),
+  ADD KEY `categoryck` (`categoryck`);
 
 --
 -- Indexes for table `users`
@@ -227,6 +231,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `admins`
   MODIFY `adminid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `admin_basket_view`
+--
+ALTER TABLE `admin_basket_view`
+  MODIFY `adminbasketviewid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `basket`
@@ -257,6 +267,12 @@ ALTER TABLE `orders`
 --
 ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `product_categories`
+--
+ALTER TABLE `product_categories`
+  MODIFY `productcategoriesid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`

@@ -329,3 +329,22 @@ CREATE TABLE `laravel`.`basket_contents`
 ALTER TABLE `basket_contents` ADD FOREIGN KEY (`basketck`) REFERENCES `basket`(`basketid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `basket_contents` ADD FOREIGN KEY (`productck`) REFERENCES `products`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `basket_contents` ADD FOREIGN KEY (`orderfk`) REFERENCES `orders`(`orderid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+---Doing the same for the other 2 composite key tables---
+DROP TABLE `laravel`.`admin_basket_view`
+CREATE TABLE `laravel`.`admin_basket_view` 
+    (`adminbasketviewid` INT NOT NULL AUTO_INCREMENT , 
+    `adminck` INT NOT NULL , 
+    `basketck` INT NOT NULL , 
+    PRIMARY KEY (`adminbasketviewid`)) ENGINE = InnoDB;
+ALTER TABLE `admin_basket_view` ADD FOREIGN KEY (`adminck`) REFERENCES `admins`(`adminid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `admin_basket_view` ADD FOREIGN KEY (`basketck`) REFERENCES `basket`(`basketid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+DROP TABLE `laravel`.`product_categories`
+CREATE TABLE `laravel`.`product_categories` 
+    (`productcategoriesid` INT NOT NULL AUTO_INCREMENT , 
+    `productck` INT NOT NULL , 
+    `categoryck` INT NOT NULL , 
+    PRIMARY KEY (`productcategoriesid`)) ENGINE = InnoDB;
+ALTER TABLE `product_categories` ADD FOREIGN KEY (`productck`) REFERENCES `products`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `product_categories` ADD FOREIGN KEY (`categoryck`) REFERENCES `categories`(`categoryid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
