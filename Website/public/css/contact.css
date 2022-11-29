@@ -13,12 +13,13 @@
 
 .contactus_col1 {
     width: auto;
-    height: auto;
+    height: 600px;
     margin: 20px;
     border-style: solid;
     border-color:black;
     border-radius: 12px;
-} 
+}
+
 .contactus_col2 {
 
 width: 500px;
@@ -43,9 +44,10 @@ border-radius: 12px;
 .logos{
     display:block;
     /*padding: 40px;*/
-    height: 20 px;
-    width:20px;
+    /*height: 20 px;*/
+    /*width:20px;*/
     max-width: 100%;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
