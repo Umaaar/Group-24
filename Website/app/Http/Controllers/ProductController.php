@@ -14,15 +14,21 @@ use Session;
 
 class ProductController extends Controller
 {
-	
+
+	public $path;
+
+	public function __construct() {
+    $this->path = public_path('/images/');
+	}
+
 	public function display_products() {
 		$all = Product::all();
       return view('pages.admin.products', ['products' => $all]);
 	}
 
-	public function products_men() { 
+	public function products_men() {
 		$all = Product::all();
-		return view('pages.products.men.products', ['products' => $all]); 
+		return view('pages.products.men.products', ['products' => $all]);
 	}
 
 	public function detail($id){
@@ -41,22 +47,10 @@ class ProductController extends Controller
 	public function insert(Request $request) {
 		$products = new Product();
 
-		// i ($request->hasFile('images')) {
 		$request = request();
 		$images = $request->file('images');
-		$images->move('images', $images->getClientOriginalName());
+		$result = $images->move($this->path, $images->getClientOriginalName());
 		$imageName = $images->getClientOriginalName();
-
-
-
-
-		// if ($request->hasFile('images')) {
-		// 	$file = $request->file('images');
-		// 	$ext = $file->getClientOriginalExtension();
-		// 	$filename = time() . '.' . $ext;
-		// 	$filename->move('productImages/', $filename);
-		// 	$products->image = $filename;
-		// }
 
 		$products->id = $request->input('id');
 		$products->name = $request->input('name');
@@ -65,13 +59,15 @@ class ProductController extends Controller
 		$products->stock = $request->input('stock');
 		$products->description = $request->input('description');
 		$products->gender = $request->input('gender');
-		$products->images = $request->input('images');
+		$products->images = $imageName;
 
 		$products->save();
 		return redirect('/admin/addproduct')->with('alert', "Added new product");
 	}
 
+	public function search() {
 
+	}
 
 
 }
