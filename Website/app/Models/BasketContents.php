@@ -9,8 +9,10 @@ class BasketContents extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    protected $primaryKey = 'basketcontentsid';
 
     protected $fillable = [
+        'basketcontentsid',
         'basketck',
         'productck',
         'quantity',

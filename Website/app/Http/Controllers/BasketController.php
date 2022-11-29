@@ -34,6 +34,15 @@ class BasketController extends Controller
          return view('pages.checkout') -> with('basketInfo', $basketInfo);
     }
 
+    public function removeFromBasket(Request $request){
+        $basketID = $request->input('basketcontentsid');
+        $basket = BasketContents::where('basketcontentsid', $basketID)->first();
+        $basket->delete();
+        return redirect()->back();
+        
+
+    }
+
 
     
 }

@@ -35,12 +35,14 @@ $decoded = json_decode(json_encode($basket), true)
         @foreach ($decoded as $item)
         <?php $total += $item['totalprice'] * $item['quantity']?>
         <tr>
+        <form action="removeFromBasket" method="POST">
+          @csrf
           <td>{{$item['name']}}</td>
           <td>${{ $item['totalprice'] }}</td>
           <td>{{ $item['quantity'] }}</td>
-          <td>
-            <button type="button" class="btn btn-primary">+</button>
-            <button type="button" class="btn btn-danger">-</button>
+          <td><button type="submit" class="btn btn-danger">Remove</button></td>
+          <input type="hidden" name="basketcontentsid" value="{{$item['basketcontentsid']}}">
+        </form>
         </tr>
         @endforeach
       </tbody>
