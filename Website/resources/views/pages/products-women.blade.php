@@ -26,7 +26,7 @@
             </a>
             <p><b>{{ $product->name }}</b></p>
               <p class="small text-left text-muted">£ {{ $product->price }} </p>
-              <button type="button" class="btn btn-sm btn-outline-secondary mx-auto d-block">Add to basket</button>
+              <form action="{{ asset('addToBasket') }}" method="post">@csrf<input type="hidden" value="{{ $product['id']}}" name="id"><button type="submit" class="btn btn-sm btn-outline-secondary mx-auto d-block">Add to basket</button></form>
           </div>
         </div>
       </div>
