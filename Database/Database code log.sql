@@ -309,3 +309,23 @@ ALTER TABLE `products` CHANGE `productid` `id` INT(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `basket_contents` CHANGE `orderfk` `orderfk` INT(11) NULL;
 ALTER TABLE `basket_contents` ADD INDEX(`orderfk`); --accidently removed this
+
+---New setup for composite keys, new field to uniquely identfy the row and what would be the compsite key will have primary keys removed---
+ALTER TABLE `basket_contents` DROP PRIMARY KEY;
+ALTER TABLE `basket_contents` ADD `basketcontentsid` INT NOT NULL AUTO_INCREMENT AFTER `orderfk`, ADD PRIMARY KEY (`basketcontentsid`);
+--readding the foreign keys
+ALTER TABLE `basket_contents` DROP INDEX `basketck_2`;
+ALTER TABLE laravel.basket_contents DROP FOREIGN KEY basket_contents_ibfk_1;
+--Error in the way of adding foreign keys so remaking the table
+DROP TABLE `laravel`.`basket_contents`
+CREATE TABLE `laravel`.`basket_contents` 
+    (`basketcontentsid` INT NOT NULL AUTO_INCREMENT , 
+    `basketck` INT NOT NULL , `productck` INT NOT NULL , 
+    `orderfk` INT NULL , `quantity` INT NOT NULL DEFAULT '0' , 
+    `totalprice` INT NOT NULL DEFAULT '0' , 
+    PRIMARY KEY (`basketcontentsid`)) ENGINE = InnoDB;
+
+--Adding the foreign keys
+ALTER TABLE `basket_contents` ADD FOREIGN KEY (`basketck`) REFERENCES `basket`(`basketid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `basket_contents` ADD FOREIGN KEY (`productck`) REFERENCES `products`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `basket_contents` ADD FOREIGN KEY (`orderfk`) REFERENCES `orders`(`orderid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
