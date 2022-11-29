@@ -83,9 +83,10 @@ class ProductController extends Controller
 		$basket = new BasketContents();
 		$basket->basketck = $tempID;
 		$basket->productck = $productID;
+		//$basket->orderfk = 1;
 		$basket->quantity = 1;
-		$basket->totalPrice = $price;
-		$basket->orderfk = 1;
+		$basket->totalprice = $price;
+		
 		$basket->save();
 
 		return redirect()->back();

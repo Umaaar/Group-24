@@ -88,7 +88,7 @@
   </div>
   </div>
 
-<button class="btn btn-primary">Place Order</button>
+    <a href="{{ asset('placeOrder') }}"><button class="btn btn-primary">Place Order</button></a>
     </div>
     </div>
 </div>

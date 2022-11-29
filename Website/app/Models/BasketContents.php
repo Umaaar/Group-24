@@ -15,8 +15,9 @@ class BasketContents extends Model
         'basketcontentsid',
         'basketck',
         'productck',
+        'orderfk',
         'quantity',
-        'totalPrice',
-        'orderck'
+        'totalprice'
+        
     ];
 }

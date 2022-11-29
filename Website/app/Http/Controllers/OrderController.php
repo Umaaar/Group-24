@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Order;
 
+use function Termwind\render;
+
 class OrderController extends Controller
 {
     public function index() {
@@ -24,5 +26,14 @@ class OrderController extends Controller
                         
      
       return view('pages.user.orders', ['orders' => $ordersTemp] );
+    }
+
+    public function placeOrder() {
+      $order = new Order();
+      $order->orderDate = Carbon::now();
+      $order->orderStatus = 'Ongoing';
+
+      return redirect('/');
+
     }
 }
