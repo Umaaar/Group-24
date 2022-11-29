@@ -303,3 +303,9 @@ ALTER TABLE `basket_contents` DROP INDEX `orderID`;
 
 ALTER TABLE `product_categories` ADD INDEX(`productck`, `categoryck`);
 ALTER TABLE `product_categories` DROP INDEX `CategoryID`;
+
+---Changing productid to id and fixing orderfk so it isn't required---
+ALTER TABLE `products` CHANGE `productid` `id` INT(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `basket_contents` CHANGE `orderfk` `orderfk` INT(11) NULL;
+ALTER TABLE `basket_contents` ADD INDEX(`orderfk`); --accidently removed this
