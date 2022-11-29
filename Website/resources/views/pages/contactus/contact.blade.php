@@ -40,11 +40,11 @@
 
     <div class= "contactus_col2">
     <div class="column" >
-        <form>
+        <form action="connect.plade.php" method="post" class="form" id="form">
             <label for="name"> Name: </label><br>
-            <input type="text" id="name" name="name" placeholder="Name"><br>
+            <input type="text" id="firstname" name="firstname" placeholder="Name"><br>
             <label for="surname"> Surname: </label><br>
-            <input type="text" id="surname" name="surname" placeholder="Surname"><br>
+            <input type="text" id="lastname" name="lastname" placeholder="Surname"><br>
             <label for="email"> Email: </label><br>
             <input type="email" id="email" name="email" placeholder="Email"><br>
             <p><label for="product">What is your query about?</label></p>
