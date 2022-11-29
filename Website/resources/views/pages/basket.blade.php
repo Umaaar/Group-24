@@ -21,8 +21,9 @@ $decoded = json_decode(json_encode($basket), true)
     <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h1 class="display-6">Basket</h1>
     </div>
-    <table class="table table-bordered">
-      <thead class="thead-primary">
+    <div class="container-fluid d-flex mx-auto mx-4 col-lg-8">
+    <table class="table table-bordered w-1">
+      <thead class="thead-primary table-sm table_col_padding">
         <tr>
           <th scope="col">Product</th>
           <th scope="col">Price</th>
@@ -32,10 +33,10 @@ $decoded = json_decode(json_encode($basket), true)
       </thead>
       <tbody>
         @foreach ($decoded as $item)
-        <?php $total += $item['totalPrice'] * $item['quantity']?>
+        <?php $total += $item['totalprice'] * $item['quantity']?>
         <tr>
           <td>{{$item['name']}}</td>
-          <td>${{ $item['totalPrice'] }}</td>
+          <td>${{ $item['totalprice'] }}</td>
           <td>{{ $item['quantity'] }}</td>
           <td>
             <button type="button" class="btn btn-primary">+</button>
@@ -44,10 +45,10 @@ $decoded = json_decode(json_encode($basket), true)
         @endforeach
       </tbody>
     </table>
-   
+    
     
     <div class="row">
-      <div class="col-sm-4 alert alert-primary">
+      <div class="col-sm-4 alert alert-primary mx-3">
     <span>
         <strong>Total: ${{ $total}}</strong>
     </span>
@@ -56,7 +57,7 @@ $decoded = json_decode(json_encode($basket), true)
         <a href="{{ asset('/checkout') }}" class="btn btn-primary">Checkout</a>
       </div>
     </div>
-
+    </div>
 
     
 

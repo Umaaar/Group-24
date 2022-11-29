@@ -8,12 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class BasketContents extends Model
 {
     use HasFactory;
+    public $timestamps = false;
 
     protected $fillable = [
-        'basketID',
-        'productID',
+        'basketck',
+        'productck',
         'quantity',
         'totalPrice',
-        'orderID'
+        'orderck'
     ];
 }
