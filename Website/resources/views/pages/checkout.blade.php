@@ -19,12 +19,12 @@
 
 <body>
  
-  <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <div class="px-3 py-3 pt-md-2.5 pb-md-4 mx-auto text-center">
     <h1 class="display-6">Checkout</h1>
   </div>
     <!-- Insert checkout page here-->
     
-   <div class="container mt-5 p-5 pt-2">
+   <div class="container mt-2 p-3 pt-2">
     <div class="row">
       <div class="col-md-7">
         <div class="card">

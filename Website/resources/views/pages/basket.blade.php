@@ -18,12 +18,12 @@ $decoded = json_decode(json_encode($basket), true)
 <body>
 
     <!-- Insert basket view body here -->
-    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <div class="px-3 py-3 pt-md-2.5 pb-md-4 mx-auto text-center">
       <h1 class="display-6">Basket</h1>
     </div>
-    <div class="container-fluid d-flex mx-auto mx-4 col-lg-8">
-    <table class="table table-bordered w-1">
-      <thead class="thead-primary table-sm table_col_padding">
+    <div class="container-fluid d-fluid mx-auto my-4 my-auto col-lg-8">
+    <table class="table table-bordered  w-1">
+      <thead class="thead-primary  btn-primary table-sm table_col_padding">
         <tr>
           <th scope="col">Product</th>
           <th scope="col">Price</th>
@@ -37,10 +37,10 @@ $decoded = json_decode(json_encode($basket), true)
         <tr>
         <form action="removeFromBasket" method="POST">
           @csrf
-          <td>{{$item['name']}}</td>
-          <td>${{ $item['totalprice'] }}</td>
-          <td>{{ $item['quantity'] }}</td>
-          <td><button type="submit" class="btn btn-danger">Remove</button></td>
+          <td class="table-primary">{{$item['name']}}</td>
+          <td class="table-primary">${{ $item['totalprice'] }}</td>
+          <td class="table-primary">{{ $item['quantity'] }}</td>
+          <td class="table-primary"><button type="submit" class="btn btn-danger">Remove</button></td>
           <input type="hidden" name="basketcontentsid" value="{{$item['basketcontentsid']}}">
         </form>
         </tr>
