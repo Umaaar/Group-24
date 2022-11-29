@@ -53,7 +53,7 @@
 
               @foreach($customers as $customer)
               <tr>
-                <td> {{ $customer['userID'] }} </td>
+                <td> {{ $customer['userid'] }} </td>
                 <td> {{ $customer['firstName'] }} </td>
                 <td> {{ $customer['surname'] }} </td>
                 <td> {{ $customer['address'] }} </td>
