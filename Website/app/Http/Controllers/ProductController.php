@@ -6,8 +6,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
-use App\Models\BasketContent;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Models\BasketContents;
+use App\Models\BasketContent;
 use App\Cart;
 
 use Session;
@@ -73,4 +75,20 @@ class ProductController extends Controller
 	}
 
 
+	public function addToBasket(Request $request){
+
+		$productID = $request->input('id');
+		$price = DB::table('products')->where('id', $request->input('id'))->value('price');
+		$tempID = Auth::id();
+		$basket = new BasketContents();
+		$basket->basketck = $tempID;
+		$basket->productck = $productID;
+		$basket->quantity = 1;
+		$basket->totalPrice = $price;
+		$basket->orderfk = 1;
+		$basket->save();
+
+		return redirect()->back();
+		
+	}
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\BasketContent;
 use App\Models\BasketContents;
 use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 use App\BasketOps;
 use Illuminate\Support\Facades\DB;
 
@@ -14,9 +15,9 @@ class BasketController extends Controller
     
     public function index(){
         
-        $basket = DB::table('basket-contents')
-                    ->join('products', 'productIDFK', "=", "id")
-                    ->select('basket-contents.*', 'products.name')
+        $basket = DB::table('basket_contents')
+                    ->join('products', 'productck', "=", "id")
+                    ->where('basketck', '=', Auth::id())
                     ->get();
 
          return view('pages.basket') -> with('basket', $basket);
@@ -24,10 +25,10 @@ class BasketController extends Controller
 
 
     public function getInfo(){
-        $basketInfo = DB::table('basket-contents')
-                    ->join('baskets', 'basketck', "=", "basketID")
-                    ->join('products', 'productIDFK', "=", "id")
-                    ->select('basket-contents.*', 'products.name')
+        $basketInfo = DB::table('basket_contents')
+                    ->join('basket', 'basketck', "=", "basketID")
+                    ->join('products', 'productck', "=", "id")
+                    ->where('basketck', '=', Auth::id())
                     ->get();
 
          return view('pages.checkout') -> with('basketInfo', $basketInfo);

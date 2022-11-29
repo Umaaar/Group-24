@@ -69,10 +69,10 @@
     ?>
 
     @foreach ($decoded as $item)
-    <?php $total += $item['totalPrice'] * $item['quantity']?>
+    <?php $total += $item['totalprice'] * $item['quantity']?>
     <tr>
       <td>{{$item['name']}}</td>
-      <td>{{$item['totalPrice']}}</td>
+      <td>{{$item['totalprice']}}</td>
       <td>{{$item['quantity']}}</td>
     </tr>
     @endforeach
