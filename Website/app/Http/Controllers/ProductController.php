@@ -26,9 +26,9 @@ class ProductController extends Controller
       return view('pages.admin.products', ['products' => $all]);
 	}
 
-	public function products_men() {
-		$all = Product::all();
-		return view('pages.products.men.products', ['products' => $all]);
+	public function products_men() { 
+		$all = Product::where('gender', 'Male')->get();
+      return view('pages.products-men', ['products' => $all]);
 	}
 
 	public function detail($id){
