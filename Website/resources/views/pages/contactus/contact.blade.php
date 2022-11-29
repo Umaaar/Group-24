@@ -22,11 +22,12 @@
   
 
   <!-- Insert ContactUs body here -->
-  <div class = "container_contact_us">
+  <section class = "container_contact_us">
 <h1> Contact Us </h1>
+
+<section class="container">
 <!-- Links to the social media pages -->
 
-    <div class= row>
   <div class= "contactus_col1">
 <div class="column" >
     <p><a href="https://www.instagram.com/?hl=en"> Instagram </a></p>
@@ -42,9 +43,9 @@
     <div class="column" >
         <form action="connect.plade.php" method="post" class="form" id="form">
             <label for="name"> Name: </label><br>
-            <input type="text" id="firstname" name="firstname" placeholder="Name"><br>
+            <input type="text" id="name" name="name" placeholder="Name"><br>
             <label for="surname"> Surname: </label><br>
-            <input type="text" id="lastname" name="lastname" placeholder="Surname"><br>
+            <input type="text" id="surname" name="surname" placeholder="Surname"><br>
             <label for="email"> Email: </label><br>
             <input type="email" id="email" name="email" placeholder="Email"><br>
             <p><label for="product">What is your query about?</label></p>
@@ -53,16 +54,14 @@
             <input type="checkbox" id="delivery" name="delivery" value="Delivery">
             <label for="delivery">Delivery</label><br>
             <p><label for="text"> Please write your query:</label></p>
-            <textarea id="text" name="text" rows="10" cols="70" placeholder="Write your query..."></textarea><br>
+            <textarea id="text" name="text" rows="5" cols="45" placeholder="Write your query..."></textarea><br>
 
         <input type="submit" value="Submit">
 </form>
 </div>
-</div>
 
   <div class= "contactus_col3">
-  <div class="column">
-</div>
+
 </div>
 </div>
 <div>
