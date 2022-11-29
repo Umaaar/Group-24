@@ -28,23 +28,24 @@
 <section class="container">
 <!-- Links to the social media pages -->
 
-    <div class= row>
   <div class= "contactus_col1">
+<div class="column" >
     <p><a href="https://www.instagram.com/?hl=en"> Instagram </a></p>
     <p><a href="https://twitter.com/i/flow/login"> Twitter </a></p>
     <p><a href="https://en-gb.facebook.com/login.php"> Facebook </a></p>
     <p><a href="https://www.youtube.com/"> Youtube </a></p>
     <p><a href="mailto: astondirect@outlook.com"> Send Query</a></p>
-
+    </div>
    
 </div>
 
     <div class= "contactus_col2">
-        <form>
+    <div class="column" >
+        <form action="connect.plade.php" method="post" class="form" id="form">
             <label for="name"> Name: </label><br>
-            <input type="text" id="firstname" name="firstname" placeholder="Name"><br>
+            <input type="text" id="name" name="name" placeholder="Name"><br>
             <label for="surname"> Surname: </label><br>
-            <input type="text" id="lastname" name="lastname" placeholder="Surname"><br>
+            <input type="text" id="surname" name="surname" placeholder="Surname"><br>
             <label for="email"> Email: </label><br>
             <input type="email" id="email" name="email" placeholder="Email"><br>
             <p><label for="product">What is your query about?</label></p>
@@ -58,14 +59,12 @@
         <input type="submit" value="Submit">
 </form>
 </div>
-</div>
 
   <div class= "contactus_col3">
-  <div class="column">
-</div>
-</div>
-</div>
 
+</div>
+</div>
+<div>
 
 
 
