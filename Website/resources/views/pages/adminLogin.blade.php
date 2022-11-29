@@ -19,12 +19,10 @@
 <body>
 
     @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
+    <div class="alert alert-danger border-0 m-auto">
             @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+                <h5>{{ $error }}</h5>
             @endforeach
-        </ul>
     </div>
     @endif
     

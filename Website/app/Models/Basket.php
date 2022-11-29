@@ -9,8 +9,12 @@ class Basket extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+    protected $primaryKey = 'basketid';
+    protected $table = 'basket';
+
     protected $fillable = [
-        'basketID',
-        'userID',
+        'basketid',
+        'userfk',
     ];
 }

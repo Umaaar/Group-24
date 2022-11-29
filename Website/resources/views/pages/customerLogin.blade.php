@@ -23,6 +23,7 @@
         <h5>{{session('message')}}</h5>
     </div>
     @endif
+    
     <?php
     session()->forget('message');
     ?>
