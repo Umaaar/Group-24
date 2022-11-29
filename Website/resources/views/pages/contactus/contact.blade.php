@@ -23,29 +23,29 @@
 
   <!-- Insert ContactUs body here -->
   <section class = "container_contact_us">
-<h1> Contact Us </h1>
+  <h1> Contact Us </h1>
 
-<section class="container">
-<!-- Links to the social media pages -->
+  <section class="container">
+  <!-- Links to the social media pages -->
 
   <div class= "contactus_col1">
-<div class="column" >
-    <p><a href="https://www.instagram.com/?hl=en"> Instagram </a></p>
-    <p><a href="https://twitter.com/i/flow/login"> Twitter </a></p>
-    <p><a href="https://en-gb.facebook.com/login.php"> Facebook </a></p>
-    <p><a href="https://www.youtube.com/"> Youtube </a></p>
-    <p><a href="mailto: astondirect@outlook.com"> Send Query</a></p>
+    <div class="column" >
+      <p class="logos"><a href="https://www.instagram.com/?hl=en"><img src="instagram.png" alt="Instagram"></a></p>
+      <p class="logos"><a href="https://twitter.com/i/flow/login"><img src="twitter.png" alt="Twitter"></a></p>
+      <p class="logos"><a href="https://en-gb.facebook.com/login.php"><img src="facebook.png" alt="Facebook"></a></p>
+      <p class="logos"><a href="https://www.youtube.com/"><img src="youtube.png" alt="Youtube"></a></p>
+      <p class="logos"><a href="mailto: astondirect@outlook.com"> Send Query</a></p>
     </div>
-   
-</div>
+  </div>
 
     <div class= "contactus_col2">
-    <div class="column" >
-        <form action="connect.plade.php" method="post" class="form" id="form">
+    <div class="column">
+
+        <form action="connect.plade.php" method="post" class="form" id="form" enctype="multipart/form-data">
             <label for="name"> Name: </label><br>
-            <input type="text" id="name" name="name" placeholder="Name"><br>
+            <input type="text" id="firstname" name="firstname" placeholder="Name"><br>
             <label for="surname"> Surname: </label><br>
-            <input type="text" id="surname" name="surname" placeholder="Surname"><br>
+            <input type="text" id="lastname" name="lastname" placeholder="Surname"><br>
             <label for="email"> Email: </label><br>
             <input type="email" id="email" name="email" placeholder="Email"><br>
             <p><label for="product">What is your query about?</label></p>
@@ -54,10 +54,11 @@
             <input type="checkbox" id="delivery" name="delivery" value="Delivery">
             <label for="delivery">Delivery</label><br>
             <p><label for="text"> Please write your query:</label></p>
-            <textarea id="text" name="text" rows="5" cols="45" placeholder="Write your query..."></textarea><br>
+            <textarea id="text" name="text" rows="10" cols="70" placeholder="Write your query..."></textarea><br>
 
         <input type="submit" value="Submit">
 </form>
+</div>
 </div>
 
   <div class= "contactus_col3">
