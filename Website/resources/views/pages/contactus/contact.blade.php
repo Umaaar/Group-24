@@ -30,10 +30,10 @@
 
   <div class= "contactus_col1">
 <div class="column" >
-    <p><a href="https://www.instagram.com/?hl=en"> Instagram </a></p>
-    <p><a href="https://twitter.com/i/flow/login"> Twitter </a></p>
-    <p><a href="https://en-gb.facebook.com/login.php"> Facebook </a></p>
-    <p><a href="https://www.youtube.com/"> Youtube </a></p>
+    <p><a href="https://www.instagram.com/?hl=en"><img src="instagram.png" alt="Instagram"></a></p>
+    <p><a href="https://twitter.com/i/flow/login"><img src="twitter.png" alt="Twitter"></a></p>
+    <p><a href="https://en-gb.facebook.com/login.php"><img src="facebook.png" alt="Facebook"></a></p>
+    <p><a href="https://www.youtube.com/"><img src="youtube.png" alt="Youtube"></a></p>
     <p><a href="mailto: astondirect@outlook.com"> Send Query</a></p>
     </div>
    
