@@ -3,9 +3,17 @@
     <div class="text-center">
         <h1>Men's Clothing</h1>
         <p class="text-muted lead">Check out our selection on Men's clothing on this page. Looking for something else? Check out our other categories below...</p>
-          <a href="/menshoes" class="btn btn-outline-secondary my-2">Shoes</a>
-          <a href="/men-accessories" class="btn btn-outline-secondary my-2">Accessories</a>
-          <a href="/men-bags" class="btn btn-outline-secondary my-2">Bags</a>
+          <!-- <a href="/menshoes" class="btn btn-outline-secondary my-2">Shoes</a>
+          <a href="/men-accessories" class="btn btn-outline-secondary my-2">Clothes</a>
+          <a href="/men-bags" class="btn btn-outline-secondary my-2">Trousers</a> -->
+
+          <div class="input-group my-4">
+            <input type="text" class="form-control my-auto mt-4" placeholder="Enter search here...">
+            <div class="input-group-append">
+              <button class="btn bg-secondary text-light" type="button">Search</button>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

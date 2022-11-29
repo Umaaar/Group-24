@@ -11,7 +11,7 @@
 </head>
 
 <!-- Import page header -->
-@include('assets.products.header')
+@include('assets.products.header-men')
 
 <div class="py-5 album">
   <div class="container">

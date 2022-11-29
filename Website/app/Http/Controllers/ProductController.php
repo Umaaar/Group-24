@@ -26,9 +26,14 @@ class ProductController extends Controller
       return view('pages.admin.products', ['products' => $all]);
 	}
 
-	public function products_men() { 
+	public function products_men() {
 		$all = Product::where('gender', 'Male')->get();
       return view('pages.products-men', ['products' => $all]);
+	}
+
+	public function products_women() {
+		$all = Product::where('gender', 'Female')->get();
+			return view('pages.products-women', ['products' => $all]);
 	}
 
 	public function detail($id){
@@ -37,8 +42,6 @@ class ProductController extends Controller
 		return view('pages.products.men.preview',['product' => $data]);
 
 	}
-	public function products_women() {
-		 return view('pages.products-women'); }
 
 	public function display_addproduct_page() {
 		return view('pages.admin.addproduct');

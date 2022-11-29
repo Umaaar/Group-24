@@ -13,7 +13,6 @@
 <!-- Import page header -->
 @include('assets.products.header-women')
 
-
 <div class="py-5 album">
   <div class="container">
     <div class="row">
@@ -36,7 +35,6 @@
     </div>
   </div>
 </div>
-
 
 <!-- Import footer -->
 @include('assets.common.footer')
