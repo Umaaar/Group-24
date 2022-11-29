@@ -23,21 +23,20 @@
 
   <!-- Insert ContactUs body here -->
   <section class = "container_contact_us">
-<h1> Contact Us </h1>
+  <h1> Contact Us </h1>
 
-<section class="container">
-<!-- Links to the social media pages -->
+  <section class="container">
+  <!-- Links to the social media pages -->
 
   <div class= "contactus_col1">
-<div class="column" >
-    <p><a href="https://www.instagram.com/?hl=en"><img src="instagram.png" alt="Instagram"></a></p>
-    <p><a href="https://twitter.com/i/flow/login"><img src="twitter.png" alt="Twitter"></a></p>
-    <p><a href="https://en-gb.facebook.com/login.php"><img src="facebook.png" alt="Facebook"></a></p>
-    <p><a href="https://www.youtube.com/"><img src="youtube.png" alt="Youtube"></a></p>
-    <p><a href="mailto: astondirect@outlook.com"> Send Query</a></p>
+    <div class="column" >
+      <p class="logos"><a href="https://www.instagram.com/?hl=en"><img src="instagram.png" alt="Instagram"></a></p>
+      <p class="logos"><a href="https://twitter.com/i/flow/login"><img src="twitter.png" alt="Twitter"></a></p>
+      <p class="logos"><a href="https://en-gb.facebook.com/login.php"><img src="facebook.png" alt="Facebook"></a></p>
+      <p class="logos"><a href="https://www.youtube.com/"><img src="youtube.png" alt="Youtube"></a></p>
+      <p class="logos"><a href="mailto: astondirect@outlook.com"> Send Query</a></p>
     </div>
-   
-</div>
+  </div>
 
     <div class= "contactus_col2">
     <div class="column">
