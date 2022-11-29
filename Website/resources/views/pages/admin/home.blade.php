@@ -28,12 +28,12 @@
               </ul>
             </div>
 
-            <div class="col-10 pt-4 px-4 my-auto">
-              <div class="d-flex ">
+            <div class="col-lg-10 pt-4 px-4">
+              <div class="mb-4">
                 <h3><b>Home</b></h3>
               </div>
 
-              <div style="height:500px;" class="jumbotron border mb-4 bg-light">
+              <div style="height:500px;" class="jumbotron border mt-4 bg-light">
                 <div class="p-lg-1 col-md-5 mx-auto">       <!-- border-bottom border-secondary -->
                   <h1 class="lead text-dark text-center"><u>Welcome</u></h1>
                   <p class="text-dark text-center my-4">Use this page to navigate to the Administration pages. Here, you will be able to access a range of admin pages with full control, such as: customer list, product list, orders list, and a product editor & product creator.</p>
