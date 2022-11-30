@@ -1,48 +1,65 @@
 p {margin: 0 auto}
-.boxa {display: flex;
-    position:absolute;
-    width: 70%;
-    height: 50%;
-  justify-content: center;
-align-items: center;
-    color:white;
-background-color: black;
-font-family: Arial, Helvetica, sans-serif;
-border-style: solid}
-.boxb {
-  display: flex; 
-  justify-content:center;
-}
-
 .coontainer-about-us{
-  display: flex;
+  width: 100%;
+  height:auto;
   align-items: center;
-  align-content: center;
-  justify-content: center;
-  justify-items: center;
-  flex-direction: column;
-  width: 60%;
-  margin: auto;
-  background-color: black;
-  color: white;
-  margin-top: 200px;
-  margin-bottom: 200px;
-  padding: 30px 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+   
 }
+/* items are in the middle of the page next to each other */
+
+
+
 .container-sub-about{
   background-color: black;
+  width: 600px;
+  background-color: black;
+  color: white;
+ margin-top: 120px;
+  margin-bottom: 100px;
+padding: 30px 50px;
+float:right;
 
 }
+/* done the positioning and formatting of the about us container*/
+
+.container-sub-about h7{
+font-size: 15px;
+font-style: italic;
+color: rgb(38, 175, 230);
+text-decoration-line: underline;
+
+
+}
+
+/*formatting of the text*/
+
+.coontainer-about-us .container-sub-image img{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width:700px;
+  max-width: 100%;
+  height: auto;
+}
+
+/*adjusting the image*/
+
+
 .container-sub-about img{
   filter: invert(100%);
   position: absolute;
  margin-top:0px ;
- margin-left: -350px;
-
- 
+ margin-left:350px;
+ background-color: white;
 }
+
+/*adjusting the image inside the about us box*/
+
 .container-sub-about h1{
   padding-bottom: 20px;
 
  
 }
+/*formatting text*/
