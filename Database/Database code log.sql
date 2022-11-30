@@ -353,3 +353,7 @@ ALTER TABLE `product_categories` ADD FOREIGN KEY (`categoryck`) REFERENCES `cate
 ---Adding in a relationship between orders and users---
 ALTER TABLE `orders` ADD `userfk` INT NULL AFTER `orderid`;
 ALTER TABLE `orders` ADD FOREIGN KEY (`userfk`) REFERENCES `users`(`userid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+---Adding in relationship between orders and products---
+ALTER TABLE `orders` ADD `productfk` INT NULL AFTER `userfk`;
+ALTER TABLE `orders` ADD FOREIGN KEY (`productfk`) REFERENCES `products`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;

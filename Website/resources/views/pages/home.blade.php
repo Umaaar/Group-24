@@ -33,15 +33,15 @@ if (Auth::check()) {
                 <div id="test" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-50 mx-auto" src="{{ URL::asset('aston_sport_clear.png') }}"
+                            <img class="d-block w-50 mx-auto" src="{{ URL::asset('aston_sport_clear.png')}}" width="350" height="350"
                                 alt="First slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-50 mx-auto" src="{{ URL::asset('aston_sport.png') }}"
+                            <img class="d-block w-50 mx-auto" src="{{ URL::asset('sports.png') }}" width="350" height="350"
                                 alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-50 mx-auto" src="{{ URL::asset('aston_sport_clear.png') }}"
+                            <img class="d-block w-50 mx-auto" src="{{ URL::asset('mixsport.png')}}" width="350" height="350"
                                 alt="Third slide">
                         </div>
                     </div>

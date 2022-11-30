@@ -18,9 +18,16 @@ $decoded = json_decode(json_encode($basket), true);
 <body>
 
     <!-- Insert basket view body here -->
-    <div class="px-3 py-3 pt-md-2.5 pb-md-4 mx-auto text-center">
-        <h1 class="display-6">Basket</h1>
-    </div>
+    
+        <div class="bg-light">
+            <div class="p-lg-5 col-md-5 mx-auto">
+                <div class="text-center">
+                <h1>Basket</h1>
+              </div>
+            </div>
+          </div>
+      
+
     <div class="container-fluid d-fluid mx-auto my-4 my-auto col-lg-8">
         <table class="table table-bordered  w-1">
             <thead class="thead-primary  btn-primary table-sm table_col_padding">
@@ -68,7 +75,9 @@ $decoded = json_decode(json_encode($basket), true);
 
 
 
+    <div style="height:380px;" class="bg-white">
 
+    </div>
 
 
     <!-- Import footer -->

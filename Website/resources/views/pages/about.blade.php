@@ -19,9 +19,21 @@
     <!-- Import header -->
     @include('assets.common.navbar')
 
+
+
   <!--<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h1 class="display-6">About-Us</h1> 
+    <h1 class="display-6">About-Us</h1>
   </div> -->
+
+  <div class="bg-light">
+  <div class="p-lg-5 col-md-4 mx-auto">
+    <div class="text-center">
+        <h1>Our Vision</h1>
+        <p class="text-muted lead">To provide affordable sportswear to students on a budget, with a focus on quality.</p>
+        <p class="text-muted lead mt-4">Made by students, for students.</p>
+        </div>
+      </div>
+    </div>
 
     <!-- Insert About body here -->
 
@@ -51,6 +63,10 @@
 
 
     <div class="container-2">
+
+      <div style="height:110px;" class="bg-white">
+
+      </div>
         <!-- Import footer -->
         @include('assets.common.footer')
     </div>

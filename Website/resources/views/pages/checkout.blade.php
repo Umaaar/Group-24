@@ -12,9 +12,13 @@
 
 <body>
 
-    <div class="px-3 py-3 pt-md-2.5 pb-md-4 mx-auto text-center">
-        <h1 class="display-6">Checkout</h1>
-    </div>
+    <div class="bg-light">
+        <div class="p-lg-5 col-md-5 mx-auto">
+            <div class="text-center">
+            <h1>Checkout</h1>
+          </div>
+        </div>
+      </div>
     <!-- Insert checkout page here-->
 
     <div class="container mt-2 p-3 pt-2">
@@ -96,7 +100,9 @@
 
 
 
+    <div style="height:200px;" class="bg-white">
 
+    </div>
 
 
     <!-- Import footer -->

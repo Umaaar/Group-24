@@ -21,7 +21,7 @@
 </head>
 
 <body>
-
+    {{-- Error in case the email or password are wrong or the user tried to go to a page that required an account and they werent logged in --}}
     @if (null !== session('message'))
         <div class="alert alert-danger border-0 m-auto">
             <h5>{{ session('message') }}</h5>

@@ -25,7 +25,7 @@
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <a href="products/men/preview/{{ $product['id'] }}">
+                            <a href="products/preview/{{ $product['id'] }}">
                                 <img class="img-custom mx-auto d-block"
                                     src="{{ URL::asset('/images/' . $product->images) }}" width="250" height="300">
                             </a>
