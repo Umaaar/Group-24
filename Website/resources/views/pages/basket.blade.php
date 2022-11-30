@@ -70,7 +70,7 @@ $decoded = json_decode(json_encode($basket), true);
 
 
 
-    <div style="height:80px;" class="bg-white">
+    <div style="height: 40px;" class="bg-white">
 
     </div>
 
