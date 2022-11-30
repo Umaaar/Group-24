@@ -63,6 +63,10 @@ Route::get('/men',[ProductController::class,'products_men']);
 
 Route::get('/women',[ProductController::class,'products_women']);
 
+Route::get('/search',[ProductController::class,'search']);
+//
+// Route::post('/search',' ProductController@search');
+
 Route::get('/', function () {
   return view('pages.home');
 });
