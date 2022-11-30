@@ -18,8 +18,8 @@
         </ul>
       </div>
 
-      <div class="col-lg-10 ml-2 pt-4">
-        <div class="d-flex align-items-center mb-1">
+      <div class="col-lg-10 pt-4 px-4">
+        <div class="mb-4">
           <h3><b>My Orders</b></h3>
         </div>
 
@@ -31,30 +31,19 @@
                 <th>Product Name</th>
                 <th>Size</th>
                 <th>Price (£)</th>
-               
               </tr>
             </thead>
+
             <tbody>
-           <?php
-            $decoded = json_decode(json_encode($orders), true);
-            if($decoded !== null)
-          {
-            foreach ($decoded as $order) {
-              ?>
+            @foreach($orders as $order)
               <tr>
-                <td> <?= $order['orderck']; ?> </td>
-                <td> <?= $order['name']; ?> </td>
-                <td> <?= $order['size']; ?> </td>
-                <td> <?= $order['price']; ?> </td>
-            </tr>
-            <?php
-            }
+                <td>  {{ $order['orderid'] }} </td>
+                <td>  {{ $order['date'] }}</td>
+                <td>  {{ $order['status'] }} </td>
+                <!-- <td> {{ $order['price'] }} </td> -->
+              </tr>
+              @endforeach
 
-          } else {
-
-            echo "You haven't made any orders!";
-          }
-          ?>
               <tr>
                 <td>1</td>
                 <td></td>
@@ -190,10 +179,10 @@
                 <td></td>
                 <td></td>
               </tr>
-        
-          
+
+
             </tbody>
-           
+
           </table>
         </div>
       </div>

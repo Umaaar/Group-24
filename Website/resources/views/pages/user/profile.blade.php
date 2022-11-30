@@ -19,9 +19,9 @@
         </ul>
       </div>
 
-      <div class="col-10 pt-4 px-4">
-        <div class="d-flex">
-          <h3><b>Home</b></h3>
+      <div class="col-lg-10 pt-4 px-4">
+        <div class="mb-4">
+          <h3><b>Profile</b></h3>
         </div>
 
         <div class="jumbotron border mb-4 bg-light">
