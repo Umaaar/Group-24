@@ -19,13 +19,13 @@
   <!-- Import header -->
   @include('assets.common.navbar')
 
-  <!--<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h1 class="display-6">About-Us</h1> 
-  </div> -->
 
   <!-- Insert About body here -->
 
   <div class="coontainer-about-us">
+  <div class="container-sub-image">
+      <img src="aston.jpg" alt="image" style="width: 200%">
+</div>
     <div class="container-sub-about">
     <img src="{{ URL::asset('logo.jpg') }}" alt="" style="width:4%;">
       <h1> About Us</h1>
