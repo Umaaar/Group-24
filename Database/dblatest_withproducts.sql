@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 30, 2022 at 03:45 PM
+-- Generation Time: Nov 30, 2022 at 04:08 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -39,7 +39,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`adminid`, `name`, `email`, `password`) VALUES
-(1, 'Admin', 'admin@admin.com', '$2a$12$g/WmudqzTvRaIsVi9S1SVOWv3Enxws5IaQUvIpNoRCSlPz/tv6iGK');
+(1, 'Admin', 'admin@admin.com', '$2a$12$iWM4LhB8nR3O8hHAaD4he.gszRmSPN5y/s2/2PuLUsNUjYP37lSNq');
 
 -- --------------------------------------------------------
 
@@ -69,7 +69,8 @@ CREATE TABLE `basket` (
 --
 
 INSERT INTO `basket` (`basketid`, `userfk`) VALUES
-(2, 2);
+(2, 2),
+(17, 17);
 
 -- --------------------------------------------------------
 
@@ -243,7 +244,7 @@ INSERT INTO `users` (`userid`, `firstName`, `surname`, `address`, `postCode`, `g
 (14, 'Wesley', 'Peterson', '23 Example Road', '000 000', 'Male', '1997-05-06', 'Wesley@outlook.com', '$2a$12$4oCgj3HSCX3Vm9fuWzaThediJlciKUPsUyOg4WUeDmjmmiMTTVviy'),
 (15, 'Oliver', 'Scott', '24 Example Road', '000 000', 'Male', '1999-02-09', 'oliver@hotmail.com', '$2a$12$MHh/kkT26tS0aHpJ/jRvset5It5fcLXgRDL81iYP3/gbttOJbfsQij1v4jsm'),
 (16, 'Leah', 'Wilson', '25 Example Road', '000 000', 'Female', '1999-11-09', 'leah@hotmail.com', '$2a$12$oK.z/mXaHBbmNWMMbNReMulTr4M77/Bh4fT6SJ/RNpN2F2dLKQ'),
-(17, 'User', 'User', 'Example Test Address', '999 999', 'Male', '2021-10-13', 'user@user.com', 'user');
+(17, 'User', 'User', 'Example Test Address', '999 999', 'Male', '2021-10-13', 'user@user.com', '$2a$12$OcW2gISK84xsMdadB4QrQ.ItJvNXAO4J95XEym6xHoxNhvLxe.fGu');
 
 --
 -- Indexes for dumped tables
@@ -331,7 +332,7 @@ ALTER TABLE `admin_basket_view`
 -- AUTO_INCREMENT for table `basket`
 --
 ALTER TABLE `basket`
-  MODIFY `basketid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `basketid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `basket_contents`
