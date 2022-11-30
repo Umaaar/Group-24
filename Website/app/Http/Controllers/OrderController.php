@@ -34,8 +34,11 @@ class OrderController extends Controller
       $order->date = Carbon::now();
       $order->status = 'Ongoing';
       $order->save();
-      $basket = BasketContents::where('basketck', '=', Auth::id())->first();
-      $basket->delete();
+      $basket = BasketContents::where('basketck', '=', Auth::id())->get();
+
+      foreach($basket as $item) {
+        $item->delete();
+      }
 
       return redirect('/');
 
