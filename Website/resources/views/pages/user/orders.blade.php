@@ -42,9 +42,7 @@
                 <td> <?= $order['size']; ?> </td>
                 <td> <?= $order['price']; ?> </td>
             </tr>
-            <?php
-            }
-
+            
               <tr>
                 <td>1</td>
                 <td></td>
