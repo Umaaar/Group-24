@@ -35,11 +35,24 @@
   <!-- Import header -->
   @include('assets.common.navbar')
 
+  <div class="bg-light">
+    <div class="p-lg-5 col-md-5 mx-auto">
+      <div class="text-center">
+          <h1>Contact us</h1>
+          <p class="text-muted lead">You can fill this in for any enquiries you may have</p>
+            <!-- <a href="/menshoes" class="btn btn-outline-secondary my-2">Shoes</a>
+            <a href="/men-accessories" class="btn btn-outline-secondary my-2">Clothes</a>
+            <a href="/men-bags" class="btn btn-outline-secondary my-2">Trousers</a> -->
+
+  
+          </div>
+        </div>
+      </div>
+  
+
   
 
   <!-- Insert ContactUs body here -->
-  <section class = "container_contact_us">
-  <h1> Contact Us </h1>
 
   <section class="container-contact">
   <!-- Links to the social media pages -->

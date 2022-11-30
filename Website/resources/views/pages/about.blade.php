@@ -19,6 +19,8 @@
     <!-- Import header -->
     @include('assets.common.navbar')
 
+    
+
   <!--<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h1 class="display-6">About-Us</h1> 
   </div> -->
@@ -51,6 +53,10 @@
 
 
     <div class="container-2">
+
+      <div style="height:110px;" class="bg-white">
+
+      </div>
         <!-- Import footer -->
         @include('assets.common.footer')
     </div>
