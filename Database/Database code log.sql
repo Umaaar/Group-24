@@ -348,3 +348,8 @@ CREATE TABLE `laravel`.`product_categories`
     PRIMARY KEY (`productcategoriesid`)) ENGINE = InnoDB;
 ALTER TABLE `product_categories` ADD FOREIGN KEY (`productck`) REFERENCES `products`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 ALTER TABLE `product_categories` ADD FOREIGN KEY (`categoryck`) REFERENCES `categories`(`categoryid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--30/11/2022--
+---Adding in a relationship between orders and users---
+ALTER TABLE `orders` ADD `userfk` INT NULL AFTER `orderid`;
+ALTER TABLE `orders` ADD FOREIGN KEY (`userfk`) REFERENCES `users`(`userid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
