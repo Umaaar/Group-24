@@ -4,9 +4,12 @@
 
 .container_contact_us h1 {
     font-size: 50px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     margin-top: 20px;
+    color: white;
+    border-color: black;
+    background-color: black;
+    width: 100%;
 }
 
 .container{
@@ -14,6 +17,11 @@
     justify-content: center;
     flex-wrap: wrap;
 
+}
+
+.su{
+    margin-top: 20px;
+    border-color: black;
 }
 
 .contactus_col1 {
@@ -45,29 +53,39 @@ border-radius: 0px;
 }
 .contactus_col2 h3 {
     font-size: 30px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, monospace;
     text-align: center;
     color: black;
 }
 
 input {
     width: 90%;
-    border-color:  black;
+    border-color:  white;
     border-radius: 20px;
+    margin-left: 20px;
+    
 }
 
 input[type=submit] {
     background-color: black;
     color: white;
-    font-family: cursive;
+    margin-bottom: 20px;
+    
 }
+
+
 
 textarea {
     width: 90%;
-    border-color:  black;
+    border-color: white;
     border-radius: 20px;
     resize: none;
+    margin-left: 20px;;
     
+}
+label {
+    text-align: center;
+    margin-left: 20px;
+
 }
 
 
@@ -77,4 +95,6 @@ textarea {
     justify-content: left;
     padding: 20px;
 }
+
+
 

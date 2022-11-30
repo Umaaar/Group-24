@@ -55,10 +55,11 @@
             <textarea id="text" name="text" rows="1" cols="30" placeholder="Subject"></textarea><br>
             <label for="text"> Please write your query:</label><br>
             <textarea id="text" name="text" rows="6" cols="55" placeholder="Write your query..."></textarea><br> 
-
+<div class="su">
         <input type="submit" value="Submit">
-</form>
 </div>
+</form>
+
 </div>
 
 </section>
