@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2022 at 10:48 PM
+-- Generation Time: Nov 30, 2022 at 03:13 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -98,6 +98,7 @@ CREATE TABLE `categories` (
 
 CREATE TABLE `orders` (
   `orderid` int(11) NOT NULL,
+  `userfk` int(11) DEFAULT NULL,
   `date` date NOT NULL,
   `status` varchar(20) NOT NULL DEFAULT 'Ongoing'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
@@ -200,7 +201,8 @@ ALTER TABLE `categories`
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`orderid`);
+  ADD PRIMARY KEY (`orderid`),
+  ADD KEY `userfk` (`userfk`);
 
 --
 -- Indexes for table `products`
@@ -304,6 +306,12 @@ ALTER TABLE `basket_contents`
   ADD CONSTRAINT `basket_contents_ibfk_1` FOREIGN KEY (`basketck`) REFERENCES `basket` (`basketid`),
   ADD CONSTRAINT `basket_contents_ibfk_2` FOREIGN KEY (`productck`) REFERENCES `products` (`id`),
   ADD CONSTRAINT `basket_contents_ibfk_3` FOREIGN KEY (`orderfk`) REFERENCES `orders` (`orderid`);
+
+--
+-- Constraints for table `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`userfk`) REFERENCES `users` (`userid`);
 
 --
 -- Constraints for table `product_categories`
