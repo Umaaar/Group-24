@@ -27,7 +27,10 @@ li.linksetup {
   margin-right: 2px;
 }
 
-/*Needs to be a seperate class to fade in and out*/
-li.linkhover:hover {
+li.linksetup:active {
+  outline: 4px solid #134880;
+}
+
+li.linksetup:hover {
   background: #007BFF;
 }
