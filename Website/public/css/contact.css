@@ -1,7 +1,12 @@
 .container_contact_us{
     width:100%;
-    
+}
 
+.container_contact_us h1 {
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .container{
@@ -12,42 +17,64 @@
 }
 
 .contactus_col1 {
-    width: auto;
+    width: 300px;
     height: 600px;
     margin: 20px;
     border-style: solid;
     border-color:black;
-    border-radius: 12px;
+    border-radius: 0px;
+    background-color: black;
+}
+
+ .contactus_col1 h3 {
+    font-size: 30px;
+    font-family: cursive;
+    text-align: left;
+    color: white;
 }
 
 .contactus_col2 {
 
-width: 500px;
+width: auto;
 height:600px;
 margin:20px;
 border-style: solid;
-border-color:black;
-border-radius: 12px;
+border-color:rgb(38, 133, 249);
+background-color: rgb(38, 133, 249);
+border-radius: 0px;
 }
-.contactus_col3 {
-
-    width: 500px;
-height:600px;
-margin: 20px;
-border-style: solid;
-border-color:black;
-border-radius: 12px;
+.contactus_col2 h3 {
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, monospace;
+    text-align: center;
+    color: black;
 }
 
+input {
+    width: 90%;
+    border-color:  black;
+    border-radius: 20px;
+}
+
+input[type=submit] {
+    background-color: black;
+    color: white;
+    font-family: cursive;
+}
+
+textarea {
+    width: 90%;
+    border-color:  black;
+    border-radius: 20px;
+    resize: none;
+    
+}
 
 
-.logos{
-    display:block;
-    /*padding: 40px;*/
-    /*height: 20 px;*/
-    /*width:20px;*/
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+.fa{
+    font-size: 60px;
+    display: flex;
+    justify-content: left;
+    padding: 20px;
 }
 
