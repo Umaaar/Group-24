@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 30, 2022 at 03:09 PM
+-- Generation Time: Nov 30, 2022 at 03:45 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -227,22 +227,23 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`userid`, `firstName`, `surname`, `address`, `postCode`, `gender`, `dateOfBirth`, `email`, `password`) VALUES
-(1, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
-(2, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '1998-02-16', 'john@outlook.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
-(3, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
-(4, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
-(5, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
-(6, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '1998-02-16', 'john@outlook.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
-(7, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
-(8, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
-(9, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
-(10, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '1998-02-16', 'john@outlook.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
-(11, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
-(12, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
-(13, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
-(14, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '1998-02-16', 'john@outlook.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
-(15, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
-(16, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2');
+(1, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-05', 'john@hotmail.com', '$2a$12$9DIeWOa0spd8RnBcyMs4XOa/SwFOdMiEYqMl1UsdI08zTIWg6Ihbu'),
+(2, 'Bailey', 'Hill', '11 Example Road', '000 000', 'Female', '1998-02-12', 'bailey@outlook.com', '$2a$12$g0NGmXkAlCPbq2ceU02cBun0mt/KXuc2fAmwVe85ksfqr6UhhoYtG'),
+(3, 'Melody', 'Langley', '12 Example Road', '000 000', 'Female', '2000-01-24', 'melody@hotmail.com', '$2a$12$.5a85QAw1BhQLVkJ13E34emKgY52/fEbTC5pXVjoNRu19wEXm4B7m'),
+(4, 'Antonio', 'Young', '13 Example Road', '000 000', 'Male', '2000-01-09', 'antonio@hotmail.com', '$2a$12$aZfa1BH8G1vOHjHW36xcFzX13.ou185EFXcyP70KSBz6VBUGcqtEioJ7i'),
+(5, 'Liam', 'Stevens', '14 Example Road', '000 000', 'Male', '2000-01-28', 'liam@hotmail.com', '$2a$12$7nAlP0IR53N5ctTEEiaTOukJTlbqdqKXUWPpgysG40bWRrIr9X5UO2'),
+(6, 'Alaia', 'Levine', '15 Example Road', '000 000', 'Female', '1998-03-06', 'alaia@outlook.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasn2ghOzsfKtkx5w7kbu0zGW0YC2tc2'),
+(7, 'Lyla', 'Kade', '16 Example Road', '000 000', 'Female', '1999-10-04', 'lyla@hotmail.com', '$2a$12$tspzXjIBkiQuSmj.7/S5W.QcNhGsvV2VY8RGB5cBKViJFDbO5DxGa43'),
+(8, 'Ace', 'White', '17 Example Road', '000 000', 'Male', '2000-01-06', 'ace@hotmail.com', '$2a$12$lLOSJ4nlcfXGXRgLDAR61OS8sm7GnHONxYaOTGIxgEYS2a.FHKTM2'),
+(9, 'Elijah', 'Hall', '18 Example Road', '000 000', 'Male', '1999-10-12', 'elijah@hotmail.com', '$2a$12$qWlaVK9RzbVWso.dFEbVteGNQYzB6K1/oFu.0KE9xf9kTE.Xfd7vhv3c'),
+(10, 'Hailey', 'Jackson', '19 Example Road', '000 000', 'Female', '1998-07-16', 'hailey@outlook.com', '$2a$12$eKCf7tFNhTJwIMG0tEPugu6xcLJddpkz/noHYaVfS7cWShCDViQFu7s'),
+(11, 'Felix', 'Jones', '20 Example Road', '000 000', 'Male', '2000-06-29', 'felix@hotmail.com', '$2a$12$BUkPRcpL2/9jEdkkiRArFeWzvDhnT5K9hAH3r4RUWFVrk9AqYR9cal'),
+(12, 'Stella', 'Thompson', '21 Example Road', '000 000', 'Female', '2000-02-18', 'stella@hotmail.com', '$2a$12$vepFKmpJsbmjkjy0UhVs2eeiBb/HSyGi3LR9yvI2lPuWVW1r.oHnan28'),
+(13, 'Ivy', 'Clark', '22 Example Road', '000 000', 'Male', '2000-07-07', 'ivy@hotmail.com', '$2a$12$iISvDaxpX99umQBdQ4P2uOynaz15YSK14dXc3e6HMtyNIT6Lcs3O6f'),
+(14, 'Wesley', 'Peterson', '23 Example Road', '000 000', 'Male', '1997-05-06', 'Wesley@outlook.com', '$2a$12$4oCgj3HSCX3Vm9fuWzaThediJlciKUPsUyOg4WUeDmjmmiMTTVviy'),
+(15, 'Oliver', 'Scott', '24 Example Road', '000 000', 'Male', '1999-02-09', 'oliver@hotmail.com', '$2a$12$MHh/kkT26tS0aHpJ/jRvset5It5fcLXgRDL81iYP3/gbttOJbfsQij1v4jsm'),
+(16, 'Leah', 'Wilson', '25 Example Road', '000 000', 'Female', '1999-11-09', 'leah@hotmail.com', '$2a$12$oK.z/mXaHBbmNWMMbNReMulTr4M77/Bh4fT6SJ/RNpN2F2dLKQ'),
+(17, 'User', 'User', 'Example Test Address', '999 999', 'Male', '2021-10-13', 'user@user.com', 'user');
 
 --
 -- Indexes for dumped tables
@@ -366,7 +367,7 @@ ALTER TABLE `product_categories`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Constraints for dumped tables
