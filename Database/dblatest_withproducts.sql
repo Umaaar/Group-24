@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 30, 2022 at 12:08 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Nov 30, 2022 at 12:40 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -160,7 +160,22 @@ INSERT INTO `products` (`id`, `name`, `size`, `price`, `stock`, `description`, `
 (12, 'Hoodie (Grey)', 'L', 24.99, 30, 'High quality and breathable hoodie made for sports and leisure. Machine washable at 40 degrees and tumble dry suitable. Made using blended and recycled fabrics. 80% cotton and 20% polyester.', 'Male', 'm-grey-hoodie.png'),
 (13, 'Hoodie (Green)', 'M', 24.99, 30, 'High quality and breathable hoodie made for sports and leisure. Machine washable at 40 degrees and tumble dry suitable. Made using blended and recycled fabrics. 80% cotton and 20% polyester.', 'Male', 'm-green-hoodie.png'),
 (14, 'Hoodie (Blue)', 'L', 24.99, 30, 'High quality and breathable hoodie made for sports and leisure. Machine washable at 40 degrees and tumble dry suitable. Made using blended and recycled fabrics. 80% cotton and 20% polyester.', 'Male', 'm-blue-hoodie.png'),
-(15, 'Hoodie (Black)', 'M', 24.99, 30, 'High quality and breathable hoodie made for sports and leisure. Machine washable at 40 degrees and tumble dry suitable. Made using blended and recycled fabrics. 80% cotton and 20% polyester.', 'Male', 'm-black-hoodie.png');
+(15, 'Hoodie (Black)', 'M', 24.99, 30, 'High quality and breathable hoodie made for sports and leisure. Machine washable at 40 degrees and tumble dry suitable. Made using blended and recycled fabrics. 80% cotton and 20% polyester.', 'Male', 'm-black-hoodie.png'),
+(16, 'T-Shirt (Grey)', 'M', 14.99, 10, 'comfortable and breathable t-shirt, suitable for sports and leisure wear. Made using 100% recycled cotton. Machine washable at 40 degrees.', 'Female', 'f-grey-tshirt.png'),
+(17, 'T-Shirt (Pink)', 'L', 14.99, 10, 'comfortable and breathable t-shirt, suitable for sports and leisure wear. Made using 100% recycled cotton. Machine washable at 40 degrees.', 'Female', 'f-pink-tshirt.png'),
+(18, 'T-Shirt (Purple)', 'M', 14.99, 10, 'comfortable and breathable t-shirt, suitable for sports and leisure wear. Made using 100% recycled cotton. Machine washable at 40 degrees.', 'Female', 'f-purple-tshirt.png'),
+(19, 'T-Shirt (Yellow)', 'L', 14.99, 10, 'comfortable and breathable t-shirt, suitable for sports and leisure wear. Made using 100% recycled cotton. Machine washable at 40 degrees.', 'Female', 'f-yellow-tshirt.png'),
+(20, 'Sweatshirt (Grey)', 'L', 19.99, 10, 'Basic sweatshirts made using high quality and stretchable fabric. 40% polyester and 60% cotton. Machine washable at 55 degrees.', 'Female', 'f-grey-sweatshirt.png'),
+(21, 'Sweatshirt (Black)', 'S', 19.99, 10, 'Basic sweatshirts made using high quality and stretchable fabric. 40% polyester and 60% cotton. Machine washable at 55 degrees.', 'Female', 'f-black-sweatshirt.png'),
+(22, 'Sweatshirt (Pink)', 'L', 19.99, 10, 'Basic sweatshirts made using high quality and stretchable fabric. 40% polyester and 60% cotton. Machine washable at 55 degrees.', 'Female', 'f-pink.sweatshirt.png'),
+(23, 'Sweatshirt (Purple)', 'M', 19.99, 10, 'Basic sweatshirts made using high quality and stretchable fabric. 40% polyester and 60% cotton. Machine washable at 55 degrees.', 'Female', 'f-purple-sweatshirt.png'),
+(24, 'Joggers (Black)', 'L', 12.99, 20, 'Stretchable and comfortable made for sport and leisure. High quality and made to last. Made using 80% Polyamide, 20% Elastane.', 'Female', 'f-black-jogger.png'),
+(25, 'Joggers (Grey)', 'S', 12.99, 20, 'Stretchable and comfortable made for sport and leisure. High quality and made to last. Made using 80% Polyamide, 20% Elastane.', 'Female', 'f-grey-jogger.png'),
+(26, 'Hoodie (Black)', 'S', 24.99, 30, 'High quality and breathable hoodie made for sports and leisure. Machine washable at 40 degrees and tumble dry suitable. Made using blended and recycled fabrics. 80% cotton and 20% polyester.', 'Female', 'f-black-hoodie.png'),
+(27, 'Hoodie (Blue)', 'S', 24.99, 30, 'High quality and breathable hoodie made for sports and leisure. Machine washable at 40 degrees and tumble dry suitable. Made using blended and recycled fabrics. 80% cotton and 20% polyester.', 'Female', 'f-blue-hoodie.png'),
+(28, 'Hoodie (Green)', 'M', 24.99, 30, 'High quality and breathable hoodie made for sports and leisure. Machine washable at 40 degrees and tumble dry suitable. Made using blended and recycled fabrics. 80% cotton and 20% polyester.', 'Female', 'f-green-hoodie.png'),
+(29, 'Hoodie (Grey)', 'L', 24.99, 30, 'High quality and breathable hoodie made for sports and leisure. Machine washable at 40 degrees and tumble dry suitable. Made using blended and recycled fabrics. 80% cotton and 20% polyester.', 'Female', 'f-grey-hoodie.png'),
+(30, 'Hoodie (Red)', 'M', 24.99, 30, 'High quality and breathable hoodie made for sports and leisure. Machine washable at 40 degrees and tumble dry suitable. Made using blended and recycled fabrics. 80% cotton and 20% polyester.', 'Female', 'f-red-hoodie.png');
 
 -- --------------------------------------------------------
 
@@ -310,7 +325,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `product_categories`
