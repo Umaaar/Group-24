@@ -49,16 +49,16 @@
 
     <div class= "contactus_col2">
 
-        <form action="connect.plade.php" method="post" class="form" id="form" enctype="multipart/form-data">
+        <form method="post" class="form" action="/contact">
           <h3> Get in Touch! </h3>
             <label for="name"> Name: </label><br>
-            <input type="text" id="firstname" name="firstname" placeholder="Name"><br>
+            <input type="text" name="firstname" placeholder="Name"><br>
             <label for="surname"> Surname: </label><br>
-            <input type="text" id="lastname" name="lastname" placeholder="Surname"><br>
+            <input type="text" name="lastname" placeholder="Surname"><br>
             <label for="email"> Email: </label><br>
-            <input type="email" id="email" name="email" placeholder="Email"><br>
-            <label for="product">What is the subject of your query?</label><br>
-            <textarea id="text" name="text" rows="1" cols="30" placeholder="Subject"></textarea><br>
+            <input type="email"  name="email" placeholder="Email"><br>
+            <label for="subject">What is the subject of your query?</label><br>
+            <textarea  name="subject" rows="1" cols="30" placeholder="Subject"></textarea><br>
             <label for="text"> Please write your query:</label><br>
             <textarea id="text" name="text" rows="6" cols="55" placeholder="Write your query..."></textarea><br> 
 <div class="su">

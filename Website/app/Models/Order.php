@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
   use HasFactory;
-  public $timestamps = true;
+  public $timestamps = false;
   protected $table = 'orders';
 
   protected $fillable = [
-    'orderID',
+    'orderid',
     'date',
     'status',
   ];

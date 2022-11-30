@@ -7,6 +7,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Order;
+use App\Models\BasketContents;
 
 use function Termwind\render;
 
@@ -18,9 +19,9 @@ class OrderController extends Controller
     }
 
     public function display_user_orders() {
-      $ordersTemp = DB::table('basket contents') //get the basket content table
-                        ->join('products', 'productck', '=', 'productID')// join products table
-                        ->join('orders', 'orderck', '=', 'orderID')// join orders table
+      $ordersTemp = DB::table('basket_contents') //get the basket content table
+                        ->join('products', 'productck', '=', 'id')// join products table
+                        ->join('orders', 'orderfk', '=', 'orderid')// join orders table
                         ->where('basketck', '=', Auth::id())//find data where basketck= user id
                         ->get(); //gets everything that matches
                         
@@ -30,8 +31,11 @@ class OrderController extends Controller
 
     public function placeOrder() {
       $order = new Order();
-      $order->orderDate = Carbon::now();
-      $order->orderStatus = 'Ongoing';
+      $order->date = Carbon::now();
+      $order->status = 'Ongoing';
+      $order->save();
+      $basket = BasketContents::where('basketck', '=', Auth::id())->first();
+      $basket->delete();
 
       return redirect('/');
 

@@ -64,25 +64,25 @@
               </div>
               <div class="col-md-6 mb-4">
                 <label for="name">Product Name</label>
-                <input type="text" class="form-control" name="name" placeholder="" value="">
+                <input type="text" class="form-control" name="name" placeholder="" value="" required>
               </div>
               <div class="col-md-6 mb-4">
                 <label for="size">Size</label>
-                <input type="number" class="form-control" name="size" placeholder="" value="">
+                <input type="text" class="form-control" name="size" placeholder="" value="" required>
               </div>
 
               <div class="col-md-6 mb-4">
                <label for="price">Price (£)</label>
-               <input type="decimal" class="form-control" name="price" placeholder="£" value="">
+               <input type="decimal" class="form-control" name="price" placeholder="£" value="" required>
               </div>
             </div>
 
             <div class="mb-4">
               <label for="stock">Stock</label>
-              <input type="number" class="form-control" name="stock">
+              <input type="number" class="form-control" name="stock" required>
             </div>
               <div class="form-group">
-                <label for="description">Description</label>
+                <label for="description">Description</label required>
                 <textarea class="form-control" name="description" rows="7"></textarea>
               </div>
               <label for="gender">Gender</label>

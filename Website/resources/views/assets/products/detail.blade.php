@@ -35,7 +35,9 @@
 
                 </form>
 
-            <button class="btn btn-primary">Add to Cart</button>
+                <form action="{{ asset('addToBasket') }}" method="post">@csrf<input type="hidden"
+                    value="{{ $product['id'] }}" name="id"><button type="submit"
+                    class="btn btn-primary">Add to basket</button>
             <h4 class="mt-5 mb-3">Product Details</h4>
             <span>
                 {{$product['description']}}
