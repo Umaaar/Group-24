@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 30, 2022 at 02:24 PM
+-- Generation Time: Nov 30, 2022 at 03:09 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -227,8 +227,22 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`userid`, `firstName`, `surname`, `address`, `postCode`, `gender`, `dateOfBirth`, `email`, `password`) VALUES
-(1, 'Test', 'Man', 'test', 'test', 'male', '2000-01-01', 'testman@testers.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
-(2, 'Sukhpal', 'Shergill', '21312311', 'B436BB', 'male', '1998-02-16', 's@s.com', '$2y$10$rIFt0iQJyCiuWLWC.RTWZ.Tp2QXPnEU6U9yarJD.wxT.LlbzGJnwK');
+(1, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
+(2, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '1998-02-16', 'john@outlook.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
+(3, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
+(4, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
+(5, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
+(6, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '1998-02-16', 'john@outlook.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
+(7, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
+(8, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
+(9, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
+(10, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '1998-02-16', 'john@outlook.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
+(11, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
+(12, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
+(13, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
+(14, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '1998-02-16', 'john@outlook.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
+(15, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2'),
+(16, 'John', 'Smith', '10 Example Road', '000 000', 'Male', '2000-01-01', 'john@hotmail.com', '$2y$10$xQLlV3tNRA6/nhi1j.ysOOKMasnhOzsfKtkx5w7kbu0zGW0YC2tc2');
 
 --
 -- Indexes for dumped tables
@@ -352,7 +366,7 @@ ALTER TABLE `product_categories`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables
