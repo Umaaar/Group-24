@@ -18,9 +18,9 @@ class OrderController extends Controller
     }
 
     public function display_user_orders() {
-      $ordersTemp = DB::table('basket contents') //get the basket content table
-                        ->join('products', 'productck', '=', 'productID')// join products table
-                        ->join('orders', 'orderck', '=', 'orderID')// join orders table
+      $ordersTemp = DB::table('basket_contents') //get the basket content table
+                        ->join('products', 'productck', '=', 'id')// join products table
+                        ->join('orders', 'orderfk', '=', 'orderID')// join orders table
                         ->where('basketck', '=', Auth::id())//find data where basketck= user id
                         ->get(); //gets everything that matches
                         
@@ -30,8 +30,9 @@ class OrderController extends Controller
 
     public function placeOrder() {
       $order = new Order();
-      $order->orderDate = Carbon::now();
-      $order->orderStatus = 'Ongoing';
+      $order->date = Carbon::now();
+      $order->status = 'Ongoing';
+      $order->save();
 
       return redirect('/');
 
