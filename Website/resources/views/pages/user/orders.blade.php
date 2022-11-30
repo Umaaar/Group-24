@@ -37,12 +37,13 @@
             <tbody>
             @foreach($orders as $order)
               <tr>
-                <td>  {{ $order['orderid'] }} </td>
-                <td>  {{ $order['date'] }}</td>
-                <td>  {{ $order['status'] }} </td>
-                <!-- <td> {{ $order['price'] }} </td> -->
-              </tr>
-              @endforeach
+                <td> <?= $order['orderid']; ?> </td>
+                <td> <?= $order['name']; ?> </td>
+                <td> <?= $order['size']; ?> </td>
+                <td> <?= $order['price']; ?> </td>
+            </tr>
+            <?php
+            }
 
               <tr>
                 <td>1</td>
