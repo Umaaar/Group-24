@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 30, 2022 at 12:40 PM
+-- Generation Time: Nov 30, 2022 at 12:57 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.1.6
 
@@ -39,7 +39,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`adminid`, `name`, `email`, `password`) VALUES
-(1, 'Admin1', 'admin1@admins.com', '$2a$12$g/WmudqzTvRaIsVi9S1SVOWv3Enxws5IaQUvIpNoRCSlPz/tv6iGK');
+(1, 'Admin', 'admin@admin.com', '$2a$12$g/WmudqzTvRaIsVi9S1SVOWv3Enxws5IaQUvIpNoRCSlPz/tv6iGK');
 
 -- --------------------------------------------------------
 
@@ -113,7 +113,7 @@ CREATE TABLE `categories` (
 CREATE TABLE `orders` (
   `orderid` int(11) NOT NULL,
   `date` date NOT NULL,
-  `status` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'Ongoing'
+  `status` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'Completed'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
@@ -121,8 +121,21 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`orderid`, `date`, `status`) VALUES
-(1, '2022-11-30', 'Ongoing'),
-(2, '2022-11-30', 'Ongoing');
+(1, '2022-11-30', 'Completed'),
+(2, '2022-11-30', 'Completed'),
+(3, '2022-11-17', 'Completed'),
+(4, '2022-11-17', 'Completed'),
+(5, '2022-11-16', 'Completed'),
+(6, '2022-11-15', 'Completed'),
+(7, '2022-11-15', 'Completed'),
+(8, '2022-11-15', 'Completed'),
+(9, '2022-11-14', 'Completed'),
+(10, '2022-11-14', 'Completed'),
+(11, '2022-11-12', 'Completed'),
+(12, '2022-11-12', 'Completed'),
+(13, '2022-11-09', 'Completed'),
+(14, '2022-11-09', 'Completed'),
+(15, '2022-11-02', 'Completed');
 
 -- --------------------------------------------------------
 
@@ -289,7 +302,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `adminid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `adminid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `admin_basket_view`
@@ -319,7 +332,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `orderid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `orderid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `products`
