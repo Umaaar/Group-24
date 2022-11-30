@@ -2,14 +2,13 @@ p {margin: 0 auto}
 .coontainer-about-us{
   width: 100%;
   height:auto;
- 
   align-items: center;
     display: flex;
     justify-content: space-around;
     flex-wrap:wrap;
-  
    
 }
+/* items are in the middle of the page next to each other */
 
 
 
@@ -24,6 +23,7 @@ padding: 30px 50px;
 float:right;
 
 }
+/* done the positioning and formatting of the about us container*/
 
 .container-sub-about h7{
 font-size: 15px;
@@ -34,6 +34,8 @@ text-decoration-line: underline;
 
 }
 
+/*formatting of the text*/
+
 .coontainer-about-us .container-sub-image img{
   margin-top: 50px;
   margin-bottom: 50px;
@@ -42,6 +44,8 @@ text-decoration-line: underline;
   height: auto;
 }
 
+/*adjusting the image*/
+
 
 .container-sub-about img{
   filter: invert(100%);
@@ -49,11 +53,13 @@ text-decoration-line: underline;
  margin-top:0px ;
  margin-left:350px;
  background-color: white;
-
- 
 }
+
+/*adjusting the image inside the about us box*/
+
 .container-sub-about h1{
   padding-bottom: 20px;
 
  
 }
+/*formatting text*/
