@@ -19,7 +19,9 @@ class OrderController extends Controller
     }
 
     public function display_user_orders() {
-      $ordersTemp = Order::where('userfk', Auth::id())->get();
+      $ordersTemp = Order::join('products', 'productfk', '=', 'id')
+        ->where('userfk', '=', Auth::id())
+        ->get();
                         
      
       return view('pages.user.orders', ['orders' => $ordersTemp] );
@@ -32,8 +34,9 @@ class OrderController extends Controller
 
       $order = new Order();
       $order->userfk = Auth::id();
+      $order->productfk = $item->productck;
       $order->date = Carbon::now();
-      $order->status = $item['productck'];
+      $order->status = 'Ongoing';
       $order->save();
       $item->delete();
       }
