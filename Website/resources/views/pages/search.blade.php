@@ -14,17 +14,9 @@
     </style>
 </head>
 
-<?php
-$name = $query;
-
-
- ?>
-
 <div class="py-5 album">
     <div class="container">
         <div class="row">
-
-<p><?php echo($name) ?></p>
 
             @foreach ($searches as $item)
 
