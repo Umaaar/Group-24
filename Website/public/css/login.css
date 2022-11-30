@@ -29,7 +29,7 @@ h1[name="h1staffLogin"]{
     padding: 0%;
 }
 
-/* For container */
+/* Form container */
 .formContainer{
     padding: 0;
     margin: 0;
@@ -55,8 +55,6 @@ h1[name="h1staffLogin"]{
     height: 12%;
     margin: 20px;
 }
-
-/* Affects all 3 pages */
 
 /* Login container */
 .loginContainer{

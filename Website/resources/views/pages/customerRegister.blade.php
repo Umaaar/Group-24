@@ -21,7 +21,7 @@
 
 <body>
 
-
+{{-- Error in case one of the fields in the from was invalid when they subbmited it --}}
     @if ($errors->any())
         <div class="border-0 m-auto p-0">
             <ul class="border-0 m-auto p-0">

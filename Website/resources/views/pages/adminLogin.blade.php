@@ -21,7 +21,7 @@
 </head>
 
 <body>
-
+{{-- Error in case the email or password are wrong --}}
     @if ($errors->any())
         <div class="alert alert-danger border-0 m-auto">
             @foreach ($errors->all() as $error)
