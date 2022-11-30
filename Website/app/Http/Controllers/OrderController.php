@@ -19,25 +19,23 @@ class OrderController extends Controller
     }
 
     public function display_user_orders() {
-      $ordersTemp = DB::table('basket_contents') //get the basket content table
-                        ->join('products', 'productck', '=', 'id')// join products table
-                        ->join('orders', 'orderfk', '=', 'orderid')// join orders table
-                        ->where('basketck', '=', Auth::id())//find data where basketck= user id
-                        ->get(); //gets everything that matches
+      $ordersTemp = Order::where('userfk', Auth::id())->get();
                         
      
       return view('pages.user.orders', ['orders' => $ordersTemp] );
     }
 
     public function placeOrder() {
-      $order = new Order();
-      $order->date = Carbon::now();
-      $order->status = 'Ongoing';
-      $order->save();
+  
       $basket = BasketContents::where('basketck', '=', Auth::id())->get();
-
       foreach($basket as $item) {
-        $item->delete();
+
+      $order = new Order();
+      $order->userfk = Auth::id();
+      $order->date = Carbon::now();
+      $order->status = $item['productck'];
+      $order->save();
+      $item->delete();
       }
 
       return redirect('/');

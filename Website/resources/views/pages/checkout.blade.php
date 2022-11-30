@@ -67,7 +67,7 @@
                                 ?>
 
                                 @foreach ($decoded as $item)
-                                    <?php $total += $item['totalprice'] * $item['quantity']; ?>
+                                    <?php $total += $item['totalprice'] * $item['quantity'];?>
                                     <tr>
                                         <td>{{ $item['name'] }}</td>
                                         <td>{{ $item['totalprice'] }}</td>
@@ -85,8 +85,7 @@
                                 <h6>${{ $total }}</h6>
                             </div>
                         </div>
-
-                        <a href="{{ asset('placeOrder') }}"><button class="btn btn-primary">Place Order</button></a>
+                        <a href="{{ asset('placeOrder') }}"><button class="btn btn-primary" type="button">Place order</button></a>
                     </div>
                 </div>
             </div>
