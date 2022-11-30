@@ -50,14 +50,14 @@ Aston Direct Sport Clothing is a e-commerce platform where high quality sports w
 ---
 ### Admin Access
 
-Email: `admin@admin.com`
-Password: `admin`
+- Email: `admin@admin.com`
+- Password: `admin`
 
 ---
 ### User Access
 
-Email: `user@user.com`
-Password: `user`
+- Email: `user@user.com`
+- Password: `user`
 
 ---
 
