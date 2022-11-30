@@ -28,9 +28,9 @@ $decoded = json_decode(json_encode($basket), true);
           </div>
       
 
-    <div class="container-fluid d-fluid mx-auto my-4 my-auto col-lg-8">
-        <table class="table table-bordered  w-1">
-            <thead class="thead-primary  btn-primary table-sm table_col_padding">
+    <div class="container-fluid d-fluid mx-auto my-4 my-auto col-lg-8 pt-10">
+        <table class="table table-bordered table table-striped  w-10">
+            <thead class="thead-primary table-sm table_col_padding">
                 <tr>
                     <th scope="col">Product</th>
                     <th scope="col">Price</th>
@@ -44,10 +44,10 @@ $decoded = json_decode(json_encode($basket), true);
                     <tr>
                         <form action="removeFromBasket" method="POST">
                             @csrf
-                            <td class="table-primary">{{ $item['name'] }}</td>
-                            <td class="table-primary">${{ $item['totalprice'] }}</td>
-                            <td class="table-primary">{{ $item['quantity'] }}</td>
-                            <td class="table-primary"><button type="submit" class="btn btn-danger">Remove</button></td>
+                            <td>{{ $item['name'] }}</td>
+                            <td>£{{ $item['totalprice'] }}</td>
+                            <td>{{ $item['quantity'] }}</td>
+                            <td><button type="submit" class="btn btn-danger">Remove</button></td>
                             <input type="hidden" name="basketcontentsid" value="{{ $item['basketcontentsid'] }}">
                         </form>
                     </tr>
@@ -59,7 +59,7 @@ $decoded = json_decode(json_encode($basket), true);
         <div class="row">
             <div class="col-sm-4 alert alert-primary mx-3">
                 <span>
-                    <strong>Total: ${{ $total }}</strong>
+                    <strong>Total: £{{ $total }}</strong>
                 </span>
             </div>
             <div class="col-sm-4">
@@ -70,12 +70,7 @@ $decoded = json_decode(json_encode($basket), true);
 
 
 
-
-
-
-
-
-    <div style="height:380px;" class="bg-white">
+    <div style="height:80px;" class="bg-white">
 
     </div>
 
