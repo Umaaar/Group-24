@@ -29,7 +29,7 @@ Aston Direct Sport Clothing is a e-commerce platform where high quality sports w
 - Composer <= 2.4
 - XAMPP (Comes with PHP)
 
-### Installation
+### Local installation
 
 1. Clone the repository in the httdoc folder `https://github.com/Umaaar/Group-24`.
 2. Rename `.example.env` to `.env`. 
