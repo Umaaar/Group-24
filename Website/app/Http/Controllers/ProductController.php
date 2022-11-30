@@ -41,7 +41,7 @@ class ProductController extends Controller
 	public function detail($id){
 
 		$data = Product::find($id);
-		return view('pages.products.men.preview',['product' => $data]);
+		return view('pages.productPreview',['product' => $data]);
 
 	}
 

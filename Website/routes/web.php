@@ -78,7 +78,7 @@ Route::get('/', function () {
 
 
 
-Route::get('products/men/preview/{id}', [ProductController::class, 'detail']);
+Route::get('products/preview/{id}', [ProductController::class, 'detail']);
 
 
 
