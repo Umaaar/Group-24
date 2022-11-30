@@ -36,9 +36,10 @@
 
  .contactus_col1 h3 {
     font-size: 30px;
-    text-align: left;
+    text-align: center;
     color: white;
 }
+
 
 .contactus_col2 {
 
@@ -46,8 +47,8 @@ width: auto;
 height:600px;
 margin:20px;
 border-style: solid;
-border-color:rgb(38, 133, 249);
-background-color: rgb(38, 133, 249);
+border-color: #38b6ff;
+background-color: #38b6ff;
 border-radius: 0px;
 }
 .contactus_col2 h3 {
@@ -97,7 +98,7 @@ label {
 .fa{
     font-size: 60px;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     padding: 20px;
 }
 
