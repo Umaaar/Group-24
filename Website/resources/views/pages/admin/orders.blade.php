@@ -52,7 +52,7 @@
 
               @foreach($orders as $order)
               <tr>
-                <td> {{ $order['orderID'] }} </td>
+                <td> {{ $order['orderid'] }} </td>
                 <td> {{ $order['date'] }} </td>
                 <td> {{ $order['status'] }} </td>
                 <th></th>
