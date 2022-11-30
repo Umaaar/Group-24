@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 30, 2022 at 04:08 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Host: 127.0.0.1
+-- Generation Time: Nov 30, 2022 at 05:02 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,9 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admins` (
   `adminid` int(11) NOT NULL,
-  `name` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `password` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
@@ -51,7 +51,7 @@ CREATE TABLE `admin_basket_view` (
   `adminbasketviewid` int(11) NOT NULL,
   `adminck` int(11) NOT NULL,
   `basketck` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -85,7 +85,7 @@ CREATE TABLE `basket_contents` (
   `orderfk` int(11) DEFAULT NULL,
   `quantity` int(11) NOT NULL DEFAULT 0,
   `totalprice` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `basket_contents`
@@ -102,7 +102,7 @@ INSERT INTO `basket_contents` (`basketcontentsid`, `basketck`, `productck`, `ord
 
 CREATE TABLE `categories` (
   `categoryid` int(11) NOT NULL,
-  `name` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL
+  `name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
@@ -113,32 +113,34 @@ CREATE TABLE `categories` (
 
 CREATE TABLE `orders` (
   `orderid` int(11) NOT NULL,
+  `userfk` int(11) DEFAULT NULL,
+  `productfk` int(11) DEFAULT NULL,
   `date` date NOT NULL,
-  `status` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'Completed'
+  `status` varchar(20) NOT NULL DEFAULT 'Completed'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`orderid`, `date`, `status`) VALUES
-(1, '2022-11-30', 'Completed'),
-(2, '2022-11-30', 'Completed'),
-(3, '2022-11-17', 'Completed'),
-(4, '2022-11-17', 'Completed'),
-(5, '2022-11-16', 'Completed'),
-(6, '2022-11-15', 'Completed'),
-(7, '2022-11-15', 'Completed'),
-(8, '2022-11-15', 'Completed'),
-(9, '2022-11-14', 'Completed'),
-(10, '2022-11-14', 'Completed'),
-(11, '2022-11-12', 'Completed'),
-(12, '2022-11-12', 'Completed'),
-(13, '2022-11-09', 'Completed'),
-(14, '2022-11-09', 'Completed'),
-(15, '2022-11-02', 'Completed'),
-(16, '2022-11-01', 'Completed'),
-(17, '2022-10-31', 'Completed');
+INSERT INTO `orders` (`orderid`, `userfk`, `productfk`, `date`, `status`) VALUES
+(1, NULL, NULL, '2022-11-30', 'Completed'),
+(2, NULL, NULL, '2022-11-30', 'Completed'),
+(3, NULL, NULL, '2022-11-17', 'Completed'),
+(4, NULL, NULL, '2022-11-17', 'Completed'),
+(5, NULL, NULL, '2022-11-16', 'Completed'),
+(6, NULL, NULL, '2022-11-15', 'Completed'),
+(7, NULL, NULL, '2022-11-15', 'Completed'),
+(8, NULL, NULL, '2022-11-15', 'Completed'),
+(9, NULL, NULL, '2022-11-14', 'Completed'),
+(10, NULL, NULL, '2022-11-14', 'Completed'),
+(11, NULL, NULL, '2022-11-12', 'Completed'),
+(12, NULL, NULL, '2022-11-12', 'Completed'),
+(13, NULL, NULL, '2022-11-09', 'Completed'),
+(14, NULL, NULL, '2022-11-09', 'Completed'),
+(15, NULL, NULL, '2022-11-02', 'Completed'),
+(16, NULL, NULL, '2022-11-01', 'Completed'),
+(17, NULL, NULL, '2022-10-31', 'Completed');
 
 -- --------------------------------------------------------
 
@@ -148,13 +150,13 @@ INSERT INTO `orders` (`orderid`, `date`, `status`) VALUES
 
 CREATE TABLE `products` (
   `id` int(11) NOT NULL,
-  `name` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `size` varchar(5) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'S',
+  `name` varchar(100) NOT NULL,
+  `size` varchar(5) NOT NULL DEFAULT 'S',
   `price` float NOT NULL DEFAULT 0,
   `stock` int(11) NOT NULL DEFAULT 0,
-  `description` varchar(535) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'No description given.',
-  `gender` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `images` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL
+  `description` varchar(535) NOT NULL DEFAULT 'No description given.',
+  `gender` varchar(10) NOT NULL,
+  `images` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
@@ -203,7 +205,7 @@ CREATE TABLE `product_categories` (
   `productcategoriesid` int(11) NOT NULL,
   `productck` int(11) NOT NULL,
   `categoryck` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -213,14 +215,14 @@ CREATE TABLE `product_categories` (
 
 CREATE TABLE `users` (
   `userid` int(11) NOT NULL,
-  `firstName` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `surname` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `address` varchar(50) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `postCode` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `gender` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `firstName` varchar(50) NOT NULL,
+  `surname` varchar(50) NOT NULL,
+  `address` varchar(50) NOT NULL,
+  `postCode` varchar(10) NOT NULL,
+  `gender` varchar(10) NOT NULL,
   `dateOfBirth` date NOT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `password` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
@@ -290,7 +292,9 @@ ALTER TABLE `categories`
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`orderid`);
+  ADD PRIMARY KEY (`orderid`),
+  ADD KEY `userfk` (`userfk`),
+  ADD KEY `productfk` (`productfk`);
 
 --
 -- Indexes for table `products`
@@ -394,6 +398,13 @@ ALTER TABLE `basket_contents`
   ADD CONSTRAINT `basket_contents_ibfk_1` FOREIGN KEY (`basketck`) REFERENCES `basket` (`basketid`),
   ADD CONSTRAINT `basket_contents_ibfk_2` FOREIGN KEY (`productck`) REFERENCES `products` (`id`),
   ADD CONSTRAINT `basket_contents_ibfk_3` FOREIGN KEY (`orderfk`) REFERENCES `orders` (`orderid`);
+
+--
+-- Constraints for table `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`userfk`) REFERENCES `users` (`userid`),
+  ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`productfk`) REFERENCES `products` (`id`);
 
 --
 -- Constraints for table `product_categories`
