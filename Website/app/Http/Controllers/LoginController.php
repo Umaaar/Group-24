@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use App\Models\Basket;
 use Validator;
 
 class LoginController extends Controller
@@ -28,10 +29,20 @@ class LoginController extends Controller
             session(['gender' => $user->gender]);
             session(['dateOfBirth' =>$user->dateOfBirth]);
 
+            $tryBasket = Basket::where('userfk', $user->userid)->first();
+
+            if($tryBasket == null) {
+                $basket = new Basket;
+                $basket->basketid = $user->userid;
+                $basket->userfk = $user->userid;
+                $basket->save();
+            }
+
 
             return redirect('/');
         }else{
-            return back()->withErrors(['error' => 'The email or password are incorrect!']);
+            session(['message' => 'Invalid login details']);
+            return back();
         }
     }
 

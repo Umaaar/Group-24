@@ -281,3 +281,70 @@ ALTER TABLE `product categories` CHANGE `productCK` `productck` INT NOT NULL,
     CHANGE `categoryCK` `categoryck` INT NOT NULL;
 
 ALTER TABLE `users` CHANGE `userID` `userid` INT NOT NULL AUTO_INCREMENT;
+
+--29/11/22--
+---Removing all spaces from table names---
+RENAME TABLE `laravel`.`admin basket view` TO `laravel`.`admin_basket_view`;
+
+RENAME TABLE `laravel`.`basket contents` TO `laravel`.`basket_contents`;
+
+RENAME TABLE `laravel`.`product categories` TO `laravel`.`product_categories`;
+
+---Removing restraints on composite keys that makes it unique---
+ALTER TABLE `admin_basket_view` ADD INDEX(`adminck`, `basketck`);
+--removing useless code
+ALTER TABLE `admin_basket_view` DROP INDEX `BasketID`;
+ALTER TABLE `admin_basket_view` DROP INDEX `adminck`;
+
+ALTER TABLE `basket_contents` ADD INDEX(`basketck`, `productck`);
+ALTER TABLE `basket_contents` DROP INDEX `basketck`;
+ALTER TABLE `basket_contents` DROP INDEX `ProductID`;
+ALTER TABLE `basket_contents` DROP INDEX `orderID`;
+
+ALTER TABLE `product_categories` ADD INDEX(`productck`, `categoryck`);
+ALTER TABLE `product_categories` DROP INDEX `CategoryID`;
+
+---Changing productid to id and fixing orderfk so it isn't required---
+ALTER TABLE `products` CHANGE `productid` `id` INT(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `basket_contents` CHANGE `orderfk` `orderfk` INT(11) NULL;
+ALTER TABLE `basket_contents` ADD INDEX(`orderfk`); --accidently removed this
+
+---New setup for composite keys, new field to uniquely identfy the row and what would be the compsite key will have primary keys removed---
+ALTER TABLE `basket_contents` DROP PRIMARY KEY;
+ALTER TABLE `basket_contents` ADD `basketcontentsid` INT NOT NULL AUTO_INCREMENT AFTER `orderfk`, ADD PRIMARY KEY (`basketcontentsid`);
+--readding the foreign keys
+ALTER TABLE `basket_contents` DROP INDEX `basketck_2`;
+ALTER TABLE laravel.basket_contents DROP FOREIGN KEY basket_contents_ibfk_1;
+--Error in the way of adding foreign keys so remaking the table
+DROP TABLE `laravel`.`basket_contents`
+CREATE TABLE `laravel`.`basket_contents` 
+    (`basketcontentsid` INT NOT NULL AUTO_INCREMENT , 
+    `basketck` INT NOT NULL , `productck` INT NOT NULL , 
+    `orderfk` INT NULL , `quantity` INT NOT NULL DEFAULT '0' , 
+    `totalprice` INT NOT NULL DEFAULT '0' , 
+    PRIMARY KEY (`basketcontentsid`)) ENGINE = InnoDB;
+
+--Adding the foreign keys
+ALTER TABLE `basket_contents` ADD FOREIGN KEY (`basketck`) REFERENCES `basket`(`basketid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `basket_contents` ADD FOREIGN KEY (`productck`) REFERENCES `products`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `basket_contents` ADD FOREIGN KEY (`orderfk`) REFERENCES `orders`(`orderid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+---Doing the same for the other 2 composite key tables---
+DROP TABLE `laravel`.`admin_basket_view`
+CREATE TABLE `laravel`.`admin_basket_view` 
+    (`adminbasketviewid` INT NOT NULL AUTO_INCREMENT , 
+    `adminck` INT NOT NULL , 
+    `basketck` INT NOT NULL , 
+    PRIMARY KEY (`adminbasketviewid`)) ENGINE = InnoDB;
+ALTER TABLE `admin_basket_view` ADD FOREIGN KEY (`adminck`) REFERENCES `admins`(`adminid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `admin_basket_view` ADD FOREIGN KEY (`basketck`) REFERENCES `basket`(`basketid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+DROP TABLE `laravel`.`product_categories`
+CREATE TABLE `laravel`.`product_categories` 
+    (`productcategoriesid` INT NOT NULL AUTO_INCREMENT , 
+    `productck` INT NOT NULL , 
+    `categoryck` INT NOT NULL , 
+    PRIMARY KEY (`productcategoriesid`)) ENGINE = InnoDB;
+ALTER TABLE `product_categories` ADD FOREIGN KEY (`productck`) REFERENCES `products`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `product_categories` ADD FOREIGN KEY (`categoryck`) REFERENCES `categories`(`categoryid`) ON DELETE RESTRICT ON UPDATE RESTRICT;

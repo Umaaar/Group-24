@@ -173,3 +173,9 @@ Route::get('/basket', [BasketController::class, 'index']);
 Route::any('/orders',[OrderController::class, 'display_user_orders']);
 
 Route::any('/checkout',[BasketController::class, 'getInfo']);
+
+Route::post('addToBasket',[ProductController::class, 'addToBasket']);
+
+Route::post('removeFromBasket',[BasketController::class, 'removeFromBasket']);
+
+Route::any('placeOrder',[OrderController::class, 'placeOrder']);

@@ -5,9 +5,13 @@
 @include('assets.common.navbar')
 
 <head>
-  <style>
-  @import url('https://fonts.googleapis.com/css2?family=Oxygen'); * { font-family: 'Oxygen' }
-  </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oxygen');
+
+        * {
+            font-family: 'Oxygen'
+        }
+    </style>
 </head>
 
 <!-- Import product details -->
@@ -17,4 +21,3 @@
 
 <!-- Import footer -->
 @include('assets.common.footer')
-
