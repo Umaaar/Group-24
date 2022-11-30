@@ -131,7 +131,7 @@ if (Auth::check()) {
         </div>
     </div>
 
-    <img class="img-custom mx-auto d-block" src="{{ URL::asset('Second_Slide_Show_Image.jpg') }}" width="500"
+    <img class="img-custom mx-auto d-block" src="{{ URL::asset('Second_Slide_Show_Image.png.jpg') }}" width="500"
         height="350">
 
     <div class="col-md-4 p-lg-5 mx-auto my-1">
