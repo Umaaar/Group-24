@@ -12,7 +12,7 @@
     width: 100%;
 }
 
-.container{
+.container-contact{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -36,7 +36,6 @@
 
  .contactus_col1 h3 {
     font-size: 30px;
-    font-family: cursive;
     text-align: left;
     color: white;
 }
@@ -62,10 +61,16 @@ input {
     border-color:  white;
     border-radius: 20px;
     margin-left: 20px;
+    margin-bottom: 10px;
     
 }
 
+textarea{
+    margin-bottom: 10px;
+}
+
 input[type=submit] {
+    border-color: black;
     background-color: black;
     color: white;
     margin-bottom: 20px;

@@ -6,6 +6,12 @@
   <link rel="stylesheet" href="/Website/public/css/contact.css">
   @include('assets.main')
 
+  <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oxygen');
+
+        * {font-family: 'Oxygen' }
+  </style>
+
   <!-- social media buttons link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -28,7 +34,7 @@
   <section class = "container_contact_us">
   <h1> Contact Us </h1>
 
-  <section class="container">
+  <section class="container-contact">
   <!-- Links to the social media pages -->
 
   <div class= "contactus_col1">
