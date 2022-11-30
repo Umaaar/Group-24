@@ -19,8 +19,8 @@
         </ul>
       </div>
 
-      <div class="col-lg-10 pt-4 px-4">
-        <div class="mb-4">
+      <div class="col-lg-10 pt-4">
+        <div class="d-flex align-items-center mb-1">
           <h3><b>Profile</b></h3>
         </div>
 
