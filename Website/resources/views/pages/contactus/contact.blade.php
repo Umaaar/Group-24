@@ -18,6 +18,13 @@
   <title>@yield('title')</title>
   <link rel="stylesheet" type="text/css" href="/css/contact.css">
 
+  <script>
+    function sayAlert(){
+      alert("Form subbmited. Thank you!");
+      window.location.reload();
+    }
+  </script>
+
 
 </head>
 
@@ -49,22 +56,22 @@
 
     <div class= "contactus_col2">
 
-        <form method="post" class="form" action="/contact">
+        <form method="" class="form" action="" onsubmit="sayAlert()">
           <h3> Get in Touch! </h3>
             <label for="name"> Name: </label><br>
-            <input type="text" name="firstname" placeholder="Name"><br>
+            <input type="text" name="firstname" placeholder="Name" required><br>
             <label for="surname"> Surname: </label><br>
-            <input type="text" name="lastname" placeholder="Surname"><br>
+            <input type="text" name="lastname" placeholder="Surname" required><br>
             <label for="email"> Email: </label><br>
-            <input type="email"  name="email" placeholder="Email"><br>
+            <input type="email"  name="email" placeholder="Email" required><br>
             <label for="subject">What is the subject of your query?</label><br>
-            <textarea  name="subject" rows="1" cols="30" placeholder="Subject"></textarea><br>
+            <textarea  name="subject" rows="1" cols="30" placeholder="Subject" required></textarea><br>
             <label for="text"> Please write your query:</label><br>
-            <textarea id="text" name="text" rows="6" cols="55" placeholder="Write your query..."></textarea><br> 
-<div class="su">
-        <input type="submit" value="Submit">
-</div>
-</form>
+            <textarea id="text" name="text" rows="6" cols="55" placeholder="Write your query..." required></textarea><br> 
+            <div class="su">
+            <input type="submit" value="Submit">
+            </div>
+            </form>
 
 </div>
 

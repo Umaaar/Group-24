@@ -22,6 +22,21 @@ use Illuminate\Support\Carbon;
 |
 */
 
+// Route::get('/contact',[
+//   'uses' => 'PageController@create'
+// ]);
+
+// Route::post('/contact',[
+//   'uses' => 'PageController@store',
+//   'as' => 'contact.store'
+// ]);
+
+
+
+
+
+
+
 Route::get('/user/{name}/{id}', function($name, $id) {
     return '<h2>Displaying user: ' . $name . ' (#' . $id . ')';
 });
