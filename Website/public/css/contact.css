@@ -29,9 +29,9 @@
     height: 600px;
     margin: 20px;
     border-style: solid;
-    border-color:black;
+    border-color:#333;
     border-radius: 0px;
-    background-color: black;
+    background-color: #333;
 }
 
  .contactus_col1 h3 {
