@@ -70,7 +70,13 @@ class ProductController extends Controller
 		return redirect('/admin/addproduct')->with('alert', "Added new product");
 	}
 
-	public function search() {
+	public function search(Request $request) {
+		// return $request->input();
+		$query = $request->input('search');
+		$search = Product::where('name', 'like', '%' . $request->input('search') . '%')->get();
+		 return view('pages.search', ['searches' => $search], ['input' => $query]);
+		// $search = Product::where('name', 'LIKE', '%' . $req->search . '%');
+		// return view('/search', ['searches' => $search]);
 
 	}
 
@@ -86,10 +92,10 @@ class ProductController extends Controller
 		//$basket->orderfk = 1;
 		$basket->quantity = 1;
 		$basket->totalprice = $price;
-		
+
 		$basket->save();
 
 		return redirect()->back();
-		
+
 	}
 }

@@ -86,7 +86,7 @@
                                 <h6>Subtotal</h6>
                             </div>
                             <div class="col-md-4">
-                                <h6>${{ $total }}</h6>
+                                <h6>£{{ $total }}</h6>
                             </div>
                         </div>
                         <a href="{{ asset('placeOrder') }}"><button class="btn btn-primary" type="button">Place order</button></a>
@@ -100,7 +100,7 @@
 
 
 
-    <div style="height:200px;" class="bg-white">
+    <div style="height:20px;" class="bg-white">
 
     </div>
 
