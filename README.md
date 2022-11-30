@@ -48,6 +48,12 @@ Aston Direct Sport Clothing is a e-commerce platform where high quality sports w
 9. Open `http://127.0.0.1:8000` in your browser
     
 ---
+### Admin Access
+
+Email: `admin@admin.com`
+Password: `admin123`
+
+---
 
 ### Authors
 
