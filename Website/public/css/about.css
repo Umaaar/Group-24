@@ -2,6 +2,7 @@ p {margin: 0 auto}
 .coontainer-about-us{
   width: 100%;
   height:auto;
+ 
   align-items: center;
     display: flex;
     justify-content: space-around;
@@ -17,26 +18,31 @@ p {margin: 0 auto}
   width: 600px;
   background-color: black;
   color: white;
-  margin-top: 100px;
+ margin-top: 120px;
   margin-bottom: 100px;
 padding: 30px 50px;
 float:right;
 
- 
+}
+
+.container-sub-about h7{
+font-size: 15px;
+font-style: italic;
+color: rgb(38, 175, 230);
+text-decoration-line: underline;
+
 
 }
 
-.container-sub-image{
-  
-  width: 300px;
+.coontainer-about-us .container-sub-image img{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width:700px;
+  max-width: 100%;
   height: auto;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  
- 
-
-  
 }
+
+
 .container-sub-about img{
   filter: invert(100%);
   position: absolute;

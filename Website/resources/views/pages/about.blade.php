@@ -25,9 +25,9 @@
 
     <!-- Insert About body here -->
 
-  <div class="coontainer-about-us">
+  <section class="coontainer-about-us">
     <div class="container-sub-image">
-      <img src="aston.jpg" alt="image" style="width:200%">
+      <img src="aston.jpg" alt="image" >
 </div>
     <div class="container-sub-about">
     <img src="{{ URL::asset('logo.jpg') }}" alt="" style="width:4%;">
@@ -37,9 +37,13 @@
                 prices perfect for all students on a tight budget. Our modern look reflects our emphasis on being
                 ethical and sustainable durin development of our products. We are proud to be able to provide such a
                 service and hope all you guys are as excited about AstonDirect as we are.
-            </p>
+            </p> <br>
+
+            <h7> Where we are? </h7>
+            <p>Aston Express Way Birmingham<br>
+               B4 7ET, Birmingham</p>
         </div>
-    </div>
+</section>
 
 
 
