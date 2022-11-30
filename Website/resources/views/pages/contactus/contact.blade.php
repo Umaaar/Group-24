@@ -18,6 +18,13 @@
   <title>@yield('title')</title>
   <link rel="stylesheet" type="text/css" href="/css/contact.css">
 
+  <script>
+    function sayAlert(){
+      alert("Form subbmited. Thank you!");
+      window.location.reload();
+    }
+  </script>
+
 
 </head>
 
@@ -28,11 +35,24 @@
   <!-- Import header -->
   @include('assets.common.navbar')
 
+  <div class="bg-light">
+    <div class="p-lg-5 col-md-5 mx-auto">
+      <div class="text-center">
+          <h1>Contact us</h1>
+          <p class="text-muted lead">You can fill this in for any enquiries you may have</p>
+            <!-- <a href="/menshoes" class="btn btn-outline-secondary my-2">Shoes</a>
+            <a href="/men-accessories" class="btn btn-outline-secondary my-2">Clothes</a>
+            <a href="/men-bags" class="btn btn-outline-secondary my-2">Trousers</a> -->
+
+  
+          </div>
+        </div>
+      </div>
+  
+
   
 
   <!-- Insert ContactUs body here -->
-  <section class = "container_contact_us">
-  <h1> Contact Us </h1>
 
   <section class="container-contact">
   <!-- Links to the social media pages -->
@@ -49,22 +69,22 @@
 
     <div class= "contactus_col2">
 
-        <form action="connect.plade.php" method="post" class="form" id="form" enctype="multipart/form-data">
+        <form method="" class="form" action="" onsubmit="sayAlert()">
           <h3> Get in Touch! </h3>
             <label for="name"> Name: </label><br>
-            <input type="text" id="firstname" name="firstname" placeholder="Name"><br>
+            <input type="text" name="firstname" placeholder="Name" required><br>
             <label for="surname"> Surname: </label><br>
-            <input type="text" id="lastname" name="lastname" placeholder="Surname"><br>
+            <input type="text" name="lastname" placeholder="Surname" required><br>
             <label for="email"> Email: </label><br>
-            <input type="email" id="email" name="email" placeholder="Email"><br>
-            <label for="product">What is the subject of your query?</label><br>
-            <textarea id="text" name="text" rows="1" cols="30" placeholder="Subject"></textarea><br>
+            <input type="email"  name="email" placeholder="Email" required><br>
+            <label for="subject">What is the subject of your query?</label><br>
+            <textarea  name="subject" rows="1" cols="30" placeholder="Subject" required></textarea><br>
             <label for="text"> Please write your query:</label><br>
-            <textarea id="text" name="text" rows="6" cols="55" placeholder="Write your query..."></textarea><br> 
-<div class="su">
-        <input type="submit" value="Submit">
-</div>
-</form>
+            <textarea id="text" name="text" rows="6" cols="55" placeholder="Write your query..." required></textarea><br> 
+            <div class="su">
+            <input type="submit" value="Submit">
+            </div>
+            </form>
 
 </div>
 

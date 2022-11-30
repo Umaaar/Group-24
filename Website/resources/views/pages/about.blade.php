@@ -19,9 +19,21 @@
     <!-- Import header -->
     @include('assets.common.navbar')
 
+
+
   <!--<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h1 class="display-6">About-Us</h1> 
+    <h1 class="display-6">About-Us</h1>
   </div> -->
+
+  <div class="bg-light">
+  <div class="p-lg-5 col-md-4 mx-auto">
+    <div class="text-center">
+        <h1>Our Vision</h1>
+        <p class="text-muted lead">To provide affordable sportswear to students on a budget, with a focus on quality.</p>
+        <p class="text-muted lead mt-4">Made by students, for students.</p>
+        </div>
+      </div>
+    </div>
 
     <!-- Insert About body here -->
 
@@ -31,7 +43,7 @@
       <!-- intake, Available at: https://intake.education/ng/university/aston-university. Accessed: 29/11/22-->
 </div>
     <div class="container-sub-about">
-    <img src="{{ URL::asset('logo.jpg') }}" alt="" style="width:50px;">
+    <img src="{{ URL::asset('logo.jpg') }}" alt="" style="width:70px;">
     <!-- Running Sport Athlete, Clker-Free-Vector-Images,  Canva, Available at:https://www.canva.com/icons/MAEF43O25uU-running-sport-athlete/. Accessed: 09/11/22 -->
       <h1> About Us</h1>
 
@@ -51,6 +63,10 @@
 
 
     <div class="container-2">
+
+      <div style="height:110px;" class="bg-white">
+
+      </div>
         <!-- Import footer -->
         @include('assets.common.footer')
     </div>

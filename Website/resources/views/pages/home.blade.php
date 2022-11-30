@@ -33,15 +33,15 @@ if (Auth::check()) {
                 <div id="test" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-50 mx-auto" src="{{ URL::asset('aston_sport_clear.png') }}"
+                            <img class="d-block w-50 mx-auto" src="{{ URL::asset('aston_sport_clear.png')}}" width="350" height="350"
                                 alt="First slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-50 mx-auto" src="{{ URL::asset('aston_sport.png') }}"
+                            <img class="d-block w-50 mx-auto" src="{{ URL::asset('sports.png') }}" width="350" height="350"
                                 alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-50 mx-auto" src="{{ URL::asset('aston_sport_clear.png') }}"
+                            <img class="d-block w-50 mx-auto" src="{{ URL::asset('mixsport.png')}}" width="350" height="350"
                                 alt="Third slide">
                         </div>
                     </div>
@@ -84,33 +84,39 @@ if (Auth::check()) {
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <img class="img-custom mx-auto d-block" src="{{ URL::asset('aston_sport_clear.png') }}"
-                                width="300" height="200">
+                            <img class="img-custom mx-auto d-block" src="{{ URL::asset('/products/men/Hoodies/m-black-hoodie.png')}}"
+                                width="300" height="300">
                             <p class="text-center"><b>Hoodies</b></p>
-                            <button type="button" class="btn btn-sm btn-outline-secondary mx-auto d-block">View all
-                                products</button>
+                            <a href="/men">
+                                <button type="button" class="btn btn-sm btn-outline-secondary mx-auto d-block">View all
+                                    products</button>
+                                </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <img class="img-custom mx-auto d-block" src="{{ URL::asset('aston_sport_clear.png') }}"
-                                width="300" height="200">
+                            <img class="img-custom mx-auto d-block" src="{{ URL::asset('/products/men/joggers/m-black-jogger.png') }}"
+                                width="300" height="300">
                             <p class="text-center"><b>Trousers</b></p>
-                            <button type="button" class="btn btn-sm btn-outline-secondary mx-auto d-block">View all
-                                products</button>
+                            <a href="/men">
+                                <button type="button" class="btn btn-sm btn-outline-secondary mx-auto d-block">View all
+                                    products</button>
+                                </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <img class="img-custom mx-auto d-block" src="{{ URL::asset('aston_sport_clear.png') }}"
-                                width="300" height="200">
-                            <p class="text-center"><b>Sports Gear</b></p>
-                            <button type="button" class="btn btn-sm btn-outline-secondary mx-auto d-block">View all
-                                products</button>
+                            <img class="img-custom mx-auto d-block" src="{{ URL::asset('/products/men/t-shirts/m-black-tshirt.png') }}"
+                                width="300" height="300">
+                            <p class="text-center"><b>T Shirts</b></p>
+                            <a href="/men">
+                                <button type="button" class="btn btn-sm btn-outline-secondary mx-auto d-block">View all
+                                    products</button>
+                                </a>
                         </div>
                     </div>
                 </div>
