@@ -46,7 +46,7 @@
         {{-- Form container --}}
         <div class="formContainerRegister">
 
-            {{-- --}}
+            {{-- Form --}}
             <form action="{{ asset('register') }} " method="post">
                 {{ csrf_field() }}
 

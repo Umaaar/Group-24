@@ -10,6 +10,14 @@
   </style>
 </head>
 
+@if ($errors->any())
+<div class="alert alert-danger border-0 m-auto">
+    @foreach ($errors->all() as $error)
+        <h5>{{ $error }}</h5>
+    @endforeach
+</div>
+@endif
+
 <!-- Import product details -->
 @include('assets.products.detail')
 

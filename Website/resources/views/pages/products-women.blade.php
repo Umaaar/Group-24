@@ -1,5 +1,11 @@
+
+
+
+
 <!-- Import boilerplate -->
 @include('assets.main')
+
+
 
 <!-- Import navigation bar -->
 @include('assets.common.navbar')
@@ -14,8 +20,20 @@
     </style>
 </head>
 
+@if ($errors->any())
+<div class="alert alert-danger border-0 m-auto">
+    @foreach ($errors->all() as $error)
+        <h5>{{ $error }}</h5>
+    @endforeach
+</div>
+@endif
+
+    
+
 <!-- Import page header -->
 @include('assets.products.header-women')
+
+       
 
 <div class="py-5 album">
     <div class="container">
