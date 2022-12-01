@@ -1,8 +1,8 @@
 <div class="bg-light">
 <div class="p-lg-5 col-md-5 mx-auto">
   <div class="text-center">
-      <h1>Men's Clothing</h1>
-      <p class="text-muted lead">Check out our selection on Men's clothing on this page. Looking for something else? Search for another product below...</p>
+      <h1>Women's Clothing</h1>
+      <p class="text-muted lead">Check out our selection on Women's clothing on this page. Looking for something else? Search for another product below...</p>
 
       <div class="col-md-8 mx-auto mt-4">
         <form action="{{ url('/search') }}" method="GET" role="search">
