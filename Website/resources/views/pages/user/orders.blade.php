@@ -6,20 +6,19 @@
 
 <body>
   <div class="container-fluid">
-    <div class="row">
+      <div class="row">
+        <div style="width: 300px;" class="col-2 d-flex flex-column p-4 text-white bg-dark">
+        <h4 class="text-white ">Welcome</h4>
+          <ul class="nav nav-pills flex-column mb-auto">
+            <a href="/profile" class="nav-link text-white">Home</a>
+            <li>
+              <a href="/profile/orders" class="nav-link text-white active">My Orders</a>
+            </li>
+          </ul>
+        </div>
 
-      <div style="width: 300px;" class="d-flex flex-column p-4 text-white bg-dark">
-      <h4 class="text-white ">Welcome</h4>
-        <ul class="nav nav-pills flex-column mb-auto">
-          <a href="/profile" class="nav-link text-white">Home</a>
-          <li>
-            <a href="/profile/orders" class="nav-link text-white active">My Orders</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="col-lg-10 pt-4">
-        <div class="d-flex align-items-center mb-1">
+      <div class="col-lg-10 mx-auto pt-4 px-4">
+        <div class="mb-4">
           <h3><b>My Orders</b></h3>
         </div>
 
@@ -48,6 +47,7 @@
           </table>
         </div>
       </div>
+      <div style="height:400px;" class="bg-white"></div>
     </div>
   </div>
 </body>
