@@ -28,16 +28,16 @@ class OrderController extends Controller
     }
 
     public function placeOrder() {
+      $basket = BasketContents::where('basketck', '=', Auth::id())->get();
+      
+      foreach($basket as $item) {
       $order = new Order();
       $order->userfk = Auth::id();
       $order->productfk = $item->productck;
       $order->date = Carbon::now();
       $order->status = 'Ongoing';
       $order->save();
-      $basket = BasketContents::where('basketck', '=', Auth::id())->get();
-
-      foreach($basket as $item) {
-        $item->delete();
+      $item->delete();
       }
 
       return redirect('/');

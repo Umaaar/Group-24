@@ -18,6 +18,7 @@
     <div class="container">
         <div class="row">
 
+          @if($searches->isNotEmpty())
             @foreach ($searches as $item)
 
                 <div class="col-md-4">
@@ -37,10 +38,31 @@
                     </div>
                 </div>
             @endforeach
+            @else
+            @endif
 
         </div>
     </div>
 </div>
+<div class="bg-light">
+<div class="p-lg-5 col-md-5 my-auto mx-auto">
+  <div class="text-center">
+      <h1>Search Not Found</h1>
+      <p class="text-muted lead">Please enter a new query below.</p>
+
+      <div class="col-md-8 mx-auto mt-4">
+        <form action="{{ url('/search') }}" method="GET" role="search">
+          @csrf
+          <div class="input-group">
+            <input class="form-control" type="text" name="search" placeholder="Enter search here:" >
+            <button class="btn-md btn-secondary text-light" type="submit">Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="height:410px;" class="bg-white"></div>
 
 <!-- Import footer -->
 @include('assets.common.footer')

@@ -72,6 +72,7 @@ class ProductController extends Controller
 
 	public function search(Request $request) {
 		// return $request->input();
+		// return $request->getQueryString();
 		$query = $request->input('search');
 		$search = Product::where('name', 'like', '%' . $request->input('search') . '%')->get();
 		 return view('pages.search', ['searches' => $search], ['input' => $query]);
