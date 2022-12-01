@@ -36,6 +36,7 @@
             </ul>
         </div>
     @endif
+{{-- Code inspired from the official Laravel documentation https://laravel.com/docs/9.x/validation --}}
 
     @include('assets.common.navbar')
 
