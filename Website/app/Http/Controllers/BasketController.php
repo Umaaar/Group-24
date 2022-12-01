@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 
 class BasketController extends Controller
 {
-    
+    // Display the items in basket
     public function index(){
         
         $basket = DB::table('basket_contents')
@@ -23,7 +23,7 @@ class BasketController extends Controller
          return view('pages.basket') -> with('basket', $basket);
     }
 
-
+    // Display the items in place order website
     public function getInfo(){
         $basketInfo = DB::table('basket_contents')
                     ->join('basket', 'basketck', "=", "basketID")

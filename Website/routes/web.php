@@ -187,7 +187,7 @@ Route::post('loginAdmin',[AdminLoginController::class, 'login']);
 
 Route::any('logOut',[LoginController::class, 'logOut']);
 
-Route::get('/basket', [BasketController::class, 'index']);
+Route::get('/basket', [BasketController::class, 'index'])->middleware('auth');
 
 Route::any('/orders',[OrderController::class, 'display_user_orders']);
 
